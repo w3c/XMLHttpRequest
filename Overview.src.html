@@ -77,6 +77,17 @@
     <dd><a href="http://www.w3.org/TR/2006/WD-XMLHttpRequest-20060405/">http://www.w3.org/TR/2006/WD-XMLHttpRequest-20060405/</a>
 
     <dt>Editor:</dt>
+    <dd><a href="http://jaubourg.net/">Julian Aubourg</a>
+     (<a href="http://www.creative-area.net/">Creative Area</a>)
+     &lt;<a href="mailto:j@ubourg.net">j@ubourg.net</a>&gt;</dd>
+    <dd><a href="mailto:jungkee.song@samsung.com">송정기(Jungkee Song)</a>
+     (<a href="http://www.samsung.com/sec/">Samsung Electronics Co., Ltd.</a>)
+     &lt;<a href="mailto:jungkee.song@samsung.com">jungkee.song@samsung.com</a>&gt;</dd>
+    <dd><a href="http://my.opera.com/hallvors/">Hallvord R. M. Steen</a>
+     (<a href="http://www.opera.com/">Opera Software ASA</a>)
+     &lt;<a href="mailto:hallvord@opera.com">hallvord@opera.com</a>&gt;</dd>
+   </dl>
+    <dt>Previous Editor:</dt>
     <dd><a href="http://annevankesteren.nl/">Anne van Kesteren</a>
      (<a href="http://www.opera.com/">Opera Software ASA</a>)
      &lt;<a href="mailto:annevk@annevk.nl">annevk@annevk.nl</a>&gt;</dd>
@@ -98,7 +109,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
   <hr>
 
 
-<div class=publish>
+<div class=dontpublish>
   <h2 class="no-num no-toc" id="specabstract">Abstract</h2>
 
   <p>The XMLHttpRequest specification defines an API that provides scripted
@@ -112,7 +123,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
   found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a>
   at http://www.w3.org/TR/.</em></p>
 
-  <p>This is the [DATE: 3 August 2002] [LONGSTATUS] of XMLHttpRequest.
+  <p>This is the [DATE: 8 October 2012] W3C Editor's Draft of XMLHttpRequest.
   Please send comments to
   <a href="mailto:public-webapps@w3.org?subject=[XHR]%20">public-webapps@w3.org</a>
   (<a href="http://lists.w3.org/Archives/Public/public-webapps/">archived</a>)
@@ -138,10 +149,12 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
   <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
   6 of the W3C Patent Policy</a>.</p>
 
-  <p>Publication as a Working Draft does not imply endorsement by the W3C
+  <p>Publication as an Editor's Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
   obsoleted by other documents at any time. It is inappropriate to cite this
   document as other than work in progress.</p>
+
+  <p>This document supersedes XMLHttpRequest 1.</p>
 </div>
 
 
@@ -1279,7 +1292,7 @@ X-Test: one, two</code></pre>
      <dt><span data-anolis-spec=dom title=concept-document>document</span>
      <dd>
       <p>Let <var title>encoding</var> be the
-      <span data-anolis-spec=dom>preferred MIME name</span> of the
+      <span data-anolis-spec=dom title=preferred-mime-name>preferred MIME name</span> of the
       <span data-anolis-spec=dom title=concept-document-encoding>encoding</span>
       of <var title>data</var>. If <var title>encoding</var> is utf-16 change it to
       utf-8.
