@@ -40,7 +40,7 @@
 
    <h1 class="head" id="xmlhttprequest-ls">XMLHttpRequest</h1>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 27 June 2012</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 8 October 2012</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -70,10 +70,21 @@
     <dd><a href="http://www.w3.org/TR/2006/WD-XMLHttpRequest-20060405/">http://www.w3.org/TR/2006/WD-XMLHttpRequest-20060405/</a>
 
     <dt>Editor:</dt>
+    <dd><a href="http://jaubourg.net/">Julian Aubourg</a>
+     (<a href="http://www.creative-area.net/">Creative Area</a>)
+     &lt;<a href="mailto:j@ubourg.net">j@ubourg.net</a>&gt;</dd>
+    <dd><a href="mailto:jungkee.song@samsung.com">&#xc1a1;&#xc815;&#xae30;(Jungkee Song)</a>
+     (<a href="http://www.samsung.com/sec/">Samsung Electronics Co., Ltd.</a>)
+     &lt;<a href="mailto:jungkee.song@samsung.com">jungkee.song@samsung.com</a>&gt;</dd>
+    <dd><a href="http://my.opera.com/hallvors/">Hallvord R. M. Steen</a>
+     (<a href="http://www.opera.com/">Opera Software ASA</a>)
+     &lt;<a href="mailto:hallvord@opera.com">hallvord@opera.com</a>&gt;</dd>
+   </dl>
+    <dt>Previous Editor:</dt>
     <dd><a href="http://annevankesteren.nl/">Anne van Kesteren</a>
      (<a href="http://www.opera.com/">Opera Software ASA</a>)
      &lt;<a href="mailto:annevk@annevk.nl">annevk@annevk.nl</a>&gt;</dd>
-   </dl>
+   
 
 <div class="w3conly">
 <!--begin-copyright-->
@@ -85,7 +96,57 @@
   <hr>
 
 
-<h2 class="no-num no-toc" id="toc">Table of Contents</h2>
+<div class="dontpublish">
+  <h2 class="no-num no-toc" id="specabstract">Abstract</h2>
+
+  <p>The XMLHttpRequest specification defines an API that provides scripted
+  client functionality for transferring data between a client and a server.
+
+  <h2 class="no-num no-toc" id="sotd">Status of this Document</h2>
+
+  <p><em>This section describes the status of this document at the time of its
+  publication. Other documents may supersede this document. A list of current
+  W3C publications and the latest revision of this technical report can be
+  found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a>
+  at http://www.w3.org/TR/.</em></p>
+
+  <p>This is the 8 October 2012 W3C Editor's Draft of XMLHttpRequest.
+  Please send comments to
+  <a href="mailto:public-webapps@w3.org?subject=[XHR]%20">public-webapps@w3.org</a>
+  (<a href="http://lists.w3.org/Archives/Public/public-webapps/">archived</a>)
+  with <samp>[XHR]</samp> at the start of the subject line.</p>
+  <!-- XXX bug database link -->
+
+  <p>This document is produced by the
+  <a href="http://www.w3.org/2008/webapps/">Web Applications</a> (WebApps) Working Group.
+  The WebApps Working Group is part of the
+  <a href="http://www.w3.org/2006/rwc/Activity">Rich Web Clients Activity</a>
+  in the W3C <a href="http://www.w3.org/Interaction/">Interaction Domain</a>.</p>
+
+  <p>This document was produced by a group operating under the
+  <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004
+  W3C Patent Policy</a>. W3C maintains a
+  <a href="http://www.w3.org/2004/01/pp-impl/42538/status" rel="disclosure">public
+  list of any patent disclosures</a> made in connection with the deliverables of
+  the group; that page also includes instructions for disclosing a patent. An
+  individual who has actual knowledge of a patent which the individual believes
+  contains
+  <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
+  Claim(s)</a> must disclose the information in accordance with
+  <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
+  6 of the W3C Patent Policy</a>.</p>
+
+  <p>Publication as an Editor's Draft does not imply endorsement by the W3C
+  Membership. This is a draft document and may be updated, replaced or
+  obsoleted by other documents at any time. It is inappropriate to cite this
+  document as other than work in progress.</p>
+
+  <p>This document supersedes XMLHttpRequest 1.</p>
+</div>
+
+
+
+  <h2 class="no-num no-toc" id="toc">Table of Contents</h2>
 
   
 <!--begin-toc-->
@@ -1013,7 +1074,7 @@ discarding any further data received from the network for them.
      <li><code>Via</code></li>
     </ul>
 
-    <p>&hellip; or if the start of <var>header</var> is a case-insensitive
+    <p>&mldr; or if the start of <var>header</var> is a case-insensitive
     match for <code>Proxy-</code> or <code>Sec-</code> (including when
     <var>header</var> is just <code>Proxy-</code> or <code>Sec-</code>).</p>
 
@@ -1056,7 +1117,7 @@ client.setRequestHeader('X-Test', 'one');
 client.setRequestHeader('X-Test', 'two');
 client.send();
 
-// &hellip;results in the following header being sent:
+// &mldr;results in the following header being sent:
 X-Test: one, two</code></pre>
   </div>
 
@@ -1267,7 +1328,7 @@ X-Test: one, two</code></pre>
      <dt><a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document" title="concept-document">document</a>
      <dd>
       <p>Let <var title="">encoding</var> be the
-      <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#preferred-mime-name">preferred MIME name</a> of the
+      <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#preferred-mime-name" title="preferred-mime-name">preferred MIME name</a> of the
       <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document-encoding" title="concept-document-encoding">encoding</a>
       of <var title="">data</var>. If <var title="">encoding</var> is utf-16 change it to
       utf-8.
@@ -1432,7 +1493,7 @@ X-Test: one, two</code></pre>
 
 
 
-      <p>Make a <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request">cross-origin request</a>,
+      <p>Make a <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request">cross-origin request</a>,
       passing these as parameters:</p>
 
       <dl>
@@ -1462,7 +1523,7 @@ X-Test: one, two</code></pre>
 
       <p class="note"><a href="#request-username">Request username</a> and
       <a href="#request-password">request password</a> are always ignored as part of a
-      <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request">cross-origin request</a>; including
+      <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request">cross-origin request</a>; including
       them would allow a site to perform a distributed password search.
       However, user agents will include <a href="#user-credentials">user credentials</a> in the
       request (if the user has any and if
@@ -1674,16 +1735,16 @@ X-Test: one, two</code></pre>
   <p>The <dfn id="cross-origin-request-event-rules">cross-origin request event rules</dfn> are as follows:</p>
 
   <dl class="switch">
-   <dt>If the <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a>
    is <i>preflight complete</i> and the <a href="#synchronous-flag">synchronous flag</a> is
    unset</dt>
    <dd><p><a href="#make-upload-progress-notifications">Make upload progress notifications</a>.</dd>
 
-   <dt>If the <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a>
    is <i title="">network error</i></dt>
    <dd><p>This is a <a href="#network-error">network error</a>.</dd>
 
-   <dt>If the <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a>
    is <i title="">abort error</i></dt>
    <dd><p>This is an <a href="#abort-error">abort error</a>.</dd>
 
@@ -1693,7 +1754,7 @@ X-Test: one, two</code></pre>
    <dd><p>This is a <a href="#timeout-error">timeout error</a>.</dd>
 
    <dt>Once all HTTP headers have been received, the
-   <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dd>
     <p><a href="#switch-headers-received">Switch to the HEADERS_RECEIVED state</a>.</p>
@@ -1703,22 +1764,22 @@ X-Test: one, two</code></pre>
 
    <dt>Once the first byte (or more) of the
    <a href="#response-entity-body">response entity body</a> has been received, the
-   <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dd><p><a href="#switch-loading">Switch to the LOADING state</a>.</dd>
 
    <dt>Once the whole <a href="#response-entity-body">response entity body</a> has been received
-   and the <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a> is
+   and the <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i></dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the state is
    <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a></dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a class="external" href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is set</dt>
    <dd><p><a href="#switch-done">Switch to the DONE state</a>.</dd>
   </dl>
@@ -2681,7 +2742,7 @@ algorithm:</p>
     <tr>
      <th>Event name</th>
      <th>Interface</th>
-     <th>Dispatched when&hellip;</th>
+     <th>Dispatched when&mldr;</th>
     </tr>
    </thead>
    <tbody>
@@ -2849,13 +2910,13 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
 <dd><cite><a href="http://tools.ietf.org/html/rfc6265">HTTP State Management Mechanism</a></cite>, Adam Barth. IETF.
 
 <dt id="refsCORS">[CORS]
-<dd><cite><a href="http://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html">Cross-Origin Resource Sharing</a></cite>, Anne van Kesteren. W3C.
+<dd><cite><a href="http://fetch.spec.whatwg.org/">Cross-Origin Resource Sharing</a></cite>, Anne van Kesteren. WHATWG.
 
 <dt id="refsDOM">[DOM]
-<dd><cite><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html">DOM4</a></cite>, Anne van Kesteren, Aryeh Gregor and Ms2ger. W3C.
+<dd><cite><a href="http://dom.spec.whatwg.org/">DOM</a></cite>, Anne van Kesteren, Aryeh Gregor and Ms2ger. WHATWG.
 
 <dt id="refsDOMPS">[DOMPS]
-<dd><cite><a href="http://html5.org/specs/dom-parsing.html">DOM Parsing and Serialization</a></cite>, Ms2ger. WHATWG.
+<dd><cite><a href="http://domparsing.spec.whatwg.org/">DOM Parsing and Serialization</a></cite>, Ms2ger. WHATWG.
 
 <dt id="refsECMASCRIPT">[ECMASCRIPT]
 <dd><cite><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript Language Specification</a></cite>. ECMA.
@@ -2864,7 +2925,7 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
 <dd><cite><a href="http://dev.w3.org/2006/webapi/FileAPI/">File API</a></cite>, Arun Ranganathan and Jonas Sicking. W3C.
 
 <dt id="refsHTML">[HTML]
-<dd><cite><a href="http://www.whatwg.org/C">HTML</a></cite>, Ian Hickson. WHATWG.
+<dd><cite><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML</a></cite>, Ian Hickson. WHATWG.
 
 <dt id="refsHTTP">[HTTP]
 <dd><cite><a href="http://tools.ietf.org/html/rfc2616">Hypertext Transfer Protocol -- HTTP/1.1</a></cite>, Roy Fielding, James Gettys, Jeffrey Mogul et al.. IETF.
@@ -2880,7 +2941,7 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
 <dd><cite><a href="http://www.kb.cert.org/vuls/id/150227">HTTP proxy default configurations allow arbitrary TCP connections</a></cite>. US-CERT.
 
 <dt id="refsPROGRESSEVENTS">[PROGRESSEVENTS]
-<dd><cite><a href="http://dvcs.w3.org/hg/progress/raw-file/tip/Overview.html">Progress Events</a></cite>, Anne van Kesteren. W3C.
+<dd><cite><a href="http://dev.w3.org/2006/webapi/progress/">Progress Events</a></cite>, Anne van Kesteren and Charles McCathieNevile. W3C.
 
 <dt id="refsRFC2119">[RFC2119]
 <dd><cite><a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a></cite>, Scott Bradner. IETF.
@@ -2948,7 +3009,7 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
   Joe Farro,
   Jonas Sicking,
   Julian Reschke,
-  &#21570;&#24247;&#35946; (Kang-Hao Lu),
+  &#x5442;&#x5eb7;&#x8c6a; (Kang-Hao Lu),
   Karl Dubost,
   Lachlan Hunt,
   Maciej Stachowiak,
