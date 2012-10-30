@@ -31,6 +31,14 @@
    table td, table th { border-left:solid; border-right:solid; border-bottom:solid thin; vertical-align:top; padding:0.2em }
   </style>
   <link rel="stylesheet" href="http://www.w3.org/StyleSheets/TR/W3C-[STATUS]">
+  <link class="dontpublish" href="coverage/coverage.css" rel="stylesheet">
+  <script class="dontpublish" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script class="dontpublish" src="coverage/coverage.js"></script>
+  <script class="dontpublish">
+  	showCoverage({
+  		suite: "xhr-ms xhr-Ms2ger xhr-opera",
+	});
+  </script>
  </head>
  <body>
   <div class="head">
@@ -165,7 +173,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 
 
 
-  <h2 id="introduction">Introduction</h2>
+  <h2 class="no-test" id="introduction">Introduction</h2>
 
   <p><em>This section is non-normative.</em></p>
 
@@ -235,7 +243,7 @@ client.send();</code></pre>
   </div>
 
 
-<h3>Specification history</h3>
+<h3 class="no-test">Specification history</h3>
 
 <p>The <code>XMLHttpRequest</code> object was initially defined as part of
 the WHATWG's HTML effort. (Long after Microsoft shipped an implementation.)
@@ -257,7 +265,7 @@ archives:
 
 
 
-<h2 id="conformance">Conformance</h2>
+<h2 class="no-test" id="conformance">Conformance</h2>
 
 <p>All diagrams, examples, and notes in this specification are
 non-normative, as are all sections explicitly marked non-normative.
@@ -271,7 +279,7 @@ not appear in all uppercase letters in this specification.
 <span data-anolis-ref>RFC2119</span>
 
 
-  <h3 id="dependencies">Dependencies</h3>
+  <h3 class="no-test" id="dependencies">Dependencies</h3>
 
   <p>This specification relies on several underlying specifications.</p>
 
@@ -336,7 +344,7 @@ not appear in all uppercase letters in this specification.
   </dl>
 
 
-  <h3 id="extensibility">Extensibility</h3>
+  <h3 class="no-test" id="extensibility">Extensibility</h3>
 
   <p>User agents, Working Groups, and other interested parties are
   <em>strongly encouraged</em> to discuss new features on a relevant public
@@ -349,7 +357,7 @@ not appear in all uppercase letters in this specification.
 
 
 
-  <h2 id="terminology">Terminology</h2>
+  <h2 class="no-test" id="terminology">Terminology</h2>
 
 
   <p>The term <dfn>user credentials</dfn> for the purposes of this
