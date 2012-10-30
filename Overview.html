@@ -29,6 +29,14 @@
    table td, table th { border-left:solid; border-right:solid; border-bottom:solid thin; vertical-align:top; padding:0.2em }
   </style>
   <link href="http://www.w3.org/StyleSheets/TR/W3C-ED" rel="stylesheet">
+  <link class="dontpublish" href="coverage/coverage.css" rel="stylesheet">
+  <script class="dontpublish" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script class="dontpublish" src="coverage/coverage.js"></script>
+  <script class="dontpublish">
+  	showCoverage({
+  		suite: "xhr-ms xhr-Ms2ger xhr-opera",
+	});
+  </script>
  </head>
  <body>
   <div class="head">
@@ -40,7 +48,7 @@
 
    <h1 class="head" id="xmlhttprequest-ls">XMLHttpRequest</h1>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 8 October 2012</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 30 October 2012</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -110,7 +118,7 @@
   found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a>
   at http://www.w3.org/TR/.</em></p>
 
-  <p>This is the 8 October 2012 W3C Editor's Draft of XMLHttpRequest.
+  <p>This is the 30 October 2012 W3C Editor's Draft of XMLHttpRequest.
   Please send comments to
   <a href="mailto:public-webapps@w3.org?subject=[XHR]%20">public-webapps@w3.org</a>
   (<a href="http://lists.w3.org/Archives/Public/public-webapps/">archived</a>)
@@ -151,14 +159,14 @@
   
 <!--begin-toc-->
 <ol class="toc">
- <li><a href="#introduction"><span class="secno">1 </span>Introduction</a>
+ <li><a class="no-test" href="#introduction"><span class="secno">1 </span>Introduction</a>
   <ol class="toc">
-   <li><a href="#specification-history"><span class="secno">1.1 </span>Specification history</a></ol></li>
- <li><a href="#conformance"><span class="secno">2 </span>Conformance</a>
+   <li><a class="no-test" href="#specification-history"><span class="secno">1.1 </span>Specification history</a></ol></li>
+ <li><a class="no-test" href="#conformance"><span class="secno">2 </span>Conformance</a>
   <ol class="toc">
-   <li><a href="#dependencies"><span class="secno">2.1 </span>Dependencies</a></li>
-   <li><a href="#extensibility"><span class="secno">2.2 </span>Extensibility</a></ol></li>
- <li><a href="#terminology"><span class="secno">3 </span>Terminology</a></li>
+   <li><a class="no-test" href="#dependencies"><span class="secno">2.1 </span>Dependencies</a></li>
+   <li><a class="no-test" href="#extensibility"><span class="secno">2.2 </span>Extensibility</a></ol></li>
+ <li><a class="no-test" href="#terminology"><span class="secno">3 </span>Terminology</a></li>
  <li><a href="#interface-xmlhttprequest"><span class="secno">4 </span>Interface <code title="">XMLHttpRequest</code></a>
   <ol class="toc">
    <li><a href="#origin-and-base-url"><span class="secno">4.1 </span>Origin and base URL</a></li>
@@ -201,7 +209,7 @@
 
 
 
-  <h2 id="introduction"><span class="secno">1 </span>Introduction</h2>
+  <h2 class="no-test" id="introduction"><span class="secno">1 </span>Introduction</h2>
 
   <p><em>This section is non-normative.</em></p>
 
@@ -271,7 +279,7 @@ client.send();</code></pre>
   </div>
 
 
-<h3 id="specification-history"><span class="secno">1.1 </span>Specification history</h3>
+<h3 class="no-test" id="specification-history"><span class="secno">1.1 </span>Specification history</h3>
 
 <p>The <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object was initially defined as part of
 the WHATWG's HTML effort. (Long after Microsoft shipped an implementation.)
@@ -293,7 +301,7 @@ archives:
 
 
 
-<h2 id="conformance"><span class="secno">2 </span>Conformance</h2>
+<h2 class="no-test" id="conformance"><span class="secno">2 </span>Conformance</h2>
 
 <p>All diagrams, examples, and notes in this specification are
 non-normative, as are all sections explicitly marked non-normative.
@@ -307,7 +315,7 @@ not appear in all uppercase letters in this specification.
 <a href="#refsRFC2119">[RFC2119]</a>
 
 
-  <h3 id="dependencies"><span class="secno">2.1 </span>Dependencies</h3>
+  <h3 class="no-test" id="dependencies"><span class="secno">2.1 </span>Dependencies</h3>
 
   <p>This specification relies on several underlying specifications.</p>
 
@@ -372,7 +380,7 @@ not appear in all uppercase letters in this specification.
   </dl>
 
 
-  <h3 id="extensibility"><span class="secno">2.2 </span>Extensibility</h3>
+  <h3 class="no-test" id="extensibility"><span class="secno">2.2 </span>Extensibility</h3>
 
   <p>User agents, Working Groups, and other interested parties are
   <em>strongly encouraged</em> to discuss new features on a relevant public
@@ -385,7 +393,7 @@ not appear in all uppercase letters in this specification.
 
 
 
-  <h2 id="terminology"><span class="secno">3 </span>Terminology</h2>
+  <h2 class="no-test" id="terminology"><span class="secno">3 </span>Terminology</h2>
 
 
   <p>The term <dfn id="user-credentials">user credentials</dfn> for the purposes of this
