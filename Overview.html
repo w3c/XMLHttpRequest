@@ -48,7 +48,7 @@
 
    <h1 class="head" id="xmlhttprequest-ls">XMLHttpRequest</h1>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 30 October 2012</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 12 November 2012</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -118,7 +118,7 @@
   found in the <a href="http://www.w3.org/TR/">W3C technical reports index</a>
   at http://www.w3.org/TR/.</em></p>
 
-  <p>This is the 30 October 2012 W3C Editor's Draft of XMLHttpRequest.
+  <p>This is the 12 November 2012 W3C Editor's Draft of XMLHttpRequest.
   Please send comments to
   <a href="mailto:public-webapps@w3.org?subject=[XHR]%20">public-webapps@w3.org</a>
   (<a href="http://lists.w3.org/Archives/Public/public-webapps/">archived</a>)
@@ -169,7 +169,7 @@
  <li><a class="no-test" href="#terminology"><span class="secno">3 </span>Terminology</a></li>
  <li><a href="#interface-xmlhttprequest"><span class="secno">4 </span>Interface <code title="">XMLHttpRequest</code></a>
   <ol class="toc">
-   <li><a href="#origin-and-base-url"><span class="secno">4.1 </span>Origin and base URL</a></li>
+   <li><a href="#base-url,-origin,-and-referer"><span class="secno">4.1 </span>Base URL, origin, and referer</a></li>
    <li><a href="#task-sources"><span class="secno">4.2 </span>Task sources</a></li>
    <li><a href="#constructors"><span class="secno">4.3 </span>Constructors</a></li>
    <li><a href="#garbage-collection"><span class="secno">4.4 </span>Garbage collection</a></li>
@@ -329,7 +329,7 @@ not appear in all uppercase letters in this specification.
    <dd><p>A <span>conforming user agent</span> must
    support at least the subset of the functionality defined in DOM4 that
    this specification relies upon, such as various exceptions and
-   <code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#eventtarget">EventTarget</a></code>. <a href="#refsDOM">[DOM]</a></dd>
+   <code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#eventtarget">EventTarget</a></code>. <a href="#refsDOM">[DOM]</a></dd>
 
    <dt>DOM Parsing and Serialization
    <dd><p>A <span>conforming user agent</span> must support at least the
@@ -347,7 +347,7 @@ not appear in all uppercase letters in this specification.
    <dd><p>A <span>conforming user agent</span> must
    support at least the subset of the functionality defined in HTML that
    this specification relies upon, such as the basics of the
-   <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code> object and serializing a <code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#document">Document</a></code>
+   <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code> object and serializing a <code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a></code>
    object. <a href="#refsHTML">[HTML]</a>
 
    <dt>HTTP</dt>
@@ -406,7 +406,7 @@ not appear in all uppercase letters in this specification.
   <h2 id="interface-xmlhttprequest"><span class="secno">4 </span>Interface <code title="">XMLHttpRequest</code></h2>
 
   <pre class="idl">[NoInterfaceObject]
-interface <dfn id="xmlhttprequesteventtarget">XMLHttpRequestEventTarget</dfn> : <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#eventtarget">EventTarget</a> {
+interface <dfn id="xmlhttprequesteventtarget">XMLHttpRequestEventTarget</dfn> : <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#eventtarget">EventTarget</a> {
   // <a href="#event-handlers">event handlers</a>
   attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadstart" title="handler-xhr-onloadstart">onloadstart</a>;
   attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onprogress" title="handler-xhr-onprogress">onprogress</a>;
@@ -449,7 +449,7 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
            attribute unsigned long <a href="#dom-xmlhttprequest-timeout" title="dom-XMLHttpRequest-timeout">timeout</a>;
            attribute boolean <a href="#dom-xmlhttprequest-withcredentials" title="dom-XMLHttpRequest-withCredentials">withCredentials</a>;
   readonly attribute <a href="#xmlhttprequestupload">XMLHttpRequestUpload</a> <a href="#dom-xmlhttprequest-upload" title="dom-XMLHttpRequest-upload">upload</a>;
-  void <a href="#dom-xmlhttprequest-send" title="dom-XMLHttpRequest-send">send</a>(optional (<a class="external" href="http://www.khronos.org/registry/typedarray/specs/latest/#6">ArrayBufferView</a> or <a class="external" href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a> or <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#document">Document</a> or DOMString or <a href="#formdata">FormData</a>)? <var>data</var> = null);
+  void <a href="#dom-xmlhttprequest-send" title="dom-XMLHttpRequest-send">send</a>(optional (<a class="external" href="http://www.khronos.org/registry/typedarray/specs/latest/#6">ArrayBufferView</a> or <a class="external" href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a> or <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a> or DOMString or <a href="#formdata">FormData</a>)? <var>data</var> = null);
   void <a href="#dom-xmlhttprequest-abort" title="dom-XMLHttpRequest-abort">abort</a>();
 
   // <a href="#response">response</a>
@@ -461,7 +461,7 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
            attribute <a href="#xmlhttprequestresponsetype">XMLHttpRequestResponseType</a> <a href="#dom-xmlhttprequest-responsetype" title="dom-XMLHttpRequest-responseType">responseType</a>;
   readonly attribute any <a href="#dom-xmlhttprequest-response" title="dom-XMLHttpRequest-response">response</a>;
   readonly attribute DOMString <a href="#dom-xmlhttprequest-responsetext" title="dom-XMLHttpRequest-responseText">responseText</a>;
-  readonly attribute <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#document">Document</a>? <a href="#dom-xmlhttprequest-responsexml" title="dom-XMLHttpRequest-responseXML">responseXML</a>;
+  readonly attribute <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a>? <a href="#dom-xmlhttprequest-responsexml" title="dom-XMLHttpRequest-responseXML">responseXML</a>;
 };
 
 [<a href="#dom-anonxmlhttprequest" title="dom-AnonXMLHttpRequest">Constructor</a>]
@@ -470,17 +470,19 @@ interface <dfn id="anonxmlhttprequest">AnonXMLHttpRequest</dfn> : <a href="#xmlh
 
 
 
-  <h3 id="origin-and-base-url"><span class="secno">4.1 </span>Origin and base URL</h3>
+  <h3 id="base-url,-origin,-and-referer"><span class="secno">4.1 </span>Base URL, origin, and referer</h3>
 
   <p>Each <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has an associated
-  <dfn id="xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</dfn> and an
-  <dfn id="xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</dfn>.
+  <dfn id="xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</dfn>,
+  <dfn id="xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</dfn>, and
+  <dfn id="xmlhttprequest-referer-source"><code>XMLHttpRequest</code> referer source</dfn> (originally a misspelling of referrer).
 
   <p class="note">The XMLHttpRequest standard defines
-  <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a> and
-  <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a> when the global object
-  is represented by the <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code> object.
-  Other contexts will have to define them as appropriate for
+  <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a>,
+  <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>, and
+  <a href="#xmlhttprequest-referer-source"><code>XMLHttpRequest</code> referer source</a> when the global
+  object is represented by the <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code>
+  object. Other contexts will have to define them as appropriate for
   <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> to function as other contexts are considered
   out of scope for this document.</p>
 
@@ -488,14 +490,18 @@ interface <dfn id="anonxmlhttprequest">AnonXMLHttpRequest</dfn> : <a href="#xmlh
   <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code> object the
   <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has an associated
   <dfn id="xmlhttprequest-document"><code>XMLHttpRequest</code> document</dfn> which is the
-  <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document" title="concept-document">document</a>
+  <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
   associated with the <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code> object for
   which the <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> interface object was created.</p>
 
+  <p>In these environments the
+  <a href="#xmlhttprequest-referer-source"><code>XMLHttpRequest</code> referer source</a> is that
+  <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a>.
+
   <p class="note">The
-  <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a> is used to
-  determine the <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a> and
-  <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a> at a later stage.</p>
+  <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a> is also used to
+  determine the <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a> and
+  <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a> at a later stage.
 
 
 
@@ -554,7 +560,7 @@ one of the following is true:
 
 <ul>
  <li><p>It has one or more
- <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-listener" title="concept-event-listener">event listeners</a>
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-listener" title="concept-event-listener">event listeners</a>
  registered whose <b>type</b> is
  <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>,
  <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>,
@@ -565,7 +571,7 @@ one of the following is true:
  <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>.
  <li><p>The <a href="#upload-complete-flag">upload complete flag</a> is unset and the associated
  <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object has one or more
- <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-listener" title="concept-event-listener">event listeners</a>
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-listener" title="concept-event-listener">event listeners</a>
  registered whose <b>type</b> is
  <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>,
  <code title="event-xhr-abort"><a href="#event-xhr-abort">abort</a></code>,
@@ -756,7 +762,7 @@ discarding any further data received from the network for them.
     <a href="#synchronous-flag">synchronous flag</a>, <a href="#request-username">request username</a>, and
     <a href="#request-password">request password</a>.</p>
 
-    <p>Throws a "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" exception if
+    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
     one of the following is true:</p>
 
     <ul>
@@ -766,11 +772,11 @@ discarding any further data received from the network for them.
      format in the <code class="external"><a href="http://tools.ietf.org/html/rfc2616/#section-3.2.1">userinfo</a></code> production.
     </ul>
 
-    <p>Throws a "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#securityerror">SecurityError</a></code>" exception
+    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#securityerror">SecurityError</a></code>" exception
     if <var title="">method</var> is a case-insensitive match for
     <code>CONNECT</code>, <code>TRACE</code> or <code>TRACK</code>.</p>
 
-    <p>Throws an "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>"
+    <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>"
     exception if one of the following is true:</p>
 
     <ul>
@@ -804,8 +810,8 @@ discarding any further data received from the network for them.
      <li><p>If the
      <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a> is not
      <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#fully-active">fully active</a>,
-     <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-     "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
      terminate the overall set of steps.
 
      <li><p>Let <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a> be the
@@ -822,8 +828,8 @@ discarding any further data received from the network for them.
 
    <li><p>If <var>method</var> does not match the
    <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-5.1.1">Method</a> token production,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> a
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" exception and terminate
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception and terminate
    these steps.
 
    <li>
@@ -843,8 +849,8 @@ discarding any further data received from the network for them.
    <li>
     <p>If <var>method</var> is a case-sensitive match for
     <code>CONNECT</code>, <code>TRACE</code>, or <code>TRACK</code>,
-    <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> a
-    "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#securityerror">SecurityError</a></code>" exception and
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#securityerror">SecurityError</a></code>" exception and
     terminate these steps.
 
     <p class="note">Allowing these methods would pose a security risk.
@@ -858,8 +864,8 @@ discarding any further data received from the network for them.
    <var title="">url</var> relative to the
    <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a>. If the algorithm
    returns an error,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> a
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" exception and terminate
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception and terminate
    these steps.
 
    <!-- Presto and Gecko override the encoding. WebKit does not. Trident
@@ -875,8 +881,8 @@ discarding any further data received from the network for them.
    for the relevant
    <code class="external" title="url-scheme"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url-scheme">&lt;scheme&gt;</a></code> and
    <var title="">url</var> contains this format,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> a
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" and terminate these
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" and terminate these
    steps.
 
    <!-- XXX need to throw here for "user:password" or just "user" for
@@ -897,8 +903,8 @@ discarding any further data received from the network for them.
    attribute value is true, or the
    <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code>
    attribute value is not the empty string,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception and
    terminate these steps.
 
    <li>
@@ -910,8 +916,8 @@ discarding any further data received from the network for them.
      <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin">origin</a> of <var title="">url</var> is not
      <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin">same origin</a> with the
      <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>,
-     <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-     "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception and
+     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception and
      terminate the overall set of steps.
 
      <li><p>Let <var>temp user</var> be <var>user</var>.</li>
@@ -930,8 +936,8 @@ discarding any further data received from the network for them.
      <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin">origin</a> of <var title="">url</var> is not
      <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin">same origin</a> with the
      <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>,
-     <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-     "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception and
+     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception and
      terminate the overall set of steps.</li>
 
      <li><p>Let <var>temp password</var> be <var>password</var>.</li>
@@ -982,7 +988,7 @@ discarding any further data received from the network for them.
    <li><p>Change the state to
    <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>.</li>
 
-   <li><p><a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
   </ol>
 
 
@@ -998,12 +1004,12 @@ discarding any further data received from the network for them.
     in the list of <a href="#author-request-headers">author request headers</a>, combines its value
     with <var>value</var>.</p>
 
-    <p>Throws an "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>"
+    <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>"
     exception if the state is not
     <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> or if the
     <a href="#send-flag"><code>send()</code> flag</a> is set.</p>
 
-    <p>Throws a "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" exception if
+    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
     <var title="">header</var> is not a valid HTTP header field name or if
     <var title="">value</var> is not a valid HTTP header field value.</p>
    </dd>
@@ -1028,26 +1034,26 @@ discarding any further data received from the network for them.
   <ol>
    <li><p>If the state is not
    <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
    <li><p>If the <a href="#send-flag"><code>send()</code> flag</a> is set,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
    <li><p>If <var>header</var> does not match the
    <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-4.2">field-name</a> production,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> a
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" exception and terminate
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception and terminate
    these steps.
 
    <li>
     <p>If <var>value</var> does not match the
     <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-4.2">field-value</a> production,
-    <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> a
-    "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" exception and terminate
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception and terminate
     these steps.
 
     <p class="note">The empty string is legal and represents the empty
@@ -1140,12 +1146,12 @@ X-Test: one, two</code></pre>
     terminate after the given time has passed. When the time has passed, if
     the <a href="#synchronous-flag">synchronous flag</a> is unset, a
     <code title="event-xhr-timeout"><a href="#event-xhr-timeout">timeout</a></code> event will then be
-    <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-dispatch" title="concept-event-dispatch">dispatched</a>,
-    or a "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#timeouterror">TimeoutError</a></code>" exception will be
-    <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">thrown</a> otherwise
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-dispatch" title="concept-event-dispatch">dispatched</a>,
+    or a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#timeouterror">TimeoutError</a></code>" exception will be
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">thrown</a> otherwise
     (for the <code title="dom-XMLHttpRequest"><a href="#dom-xmlhttprequest">send()</a></code> method).
     <p>When set: throws an
-    "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception if
+    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if
     the <a href="#synchronous-flag">synchronous flag</a> is set when there is an
     associated <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a>.
    </dd>
@@ -1162,8 +1168,8 @@ X-Test: one, two</code></pre>
    <li><p>If there is an associated
    <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception and
    terminate these steps.
 
    <li><p>Set its value to the new value.
@@ -1187,12 +1193,12 @@ X-Test: one, two</code></pre>
     Initially false.
 
     <p>When set: throws an
-    "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception if the
+    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception if the
     state is not <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> or
     <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>, or if
     the <a href="#send-flag"><code>send()</code> flag</a> is set.</p>
     <p>When set: throws an
-    "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception if
+    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if
     either the <a href="#synchronous-flag">synchronous flag</a> is set when there is an
     associated <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a> or if the
     <a href="#anonymous-flag">anonymous flag</a> is set.</p>
@@ -1211,25 +1217,25 @@ X-Test: one, two</code></pre>
    <li><p>If the state is not
    <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> or
    <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
    <li><p>If the <a href="#send-flag"><code>send()</code> flag</a> is set,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
    <li><p>If the <a href="#anonymous-flag">anonymous flag</a> is set,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception and
    terminate these steps.
 
    <li><p>If there is an associated
    <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception and
    terminate these steps.
 
    <li><p>Set the
@@ -1273,7 +1279,7 @@ X-Test: one, two</code></pre>
     <a href="#request-method">request method</a> is <code>GET</code> or
     <code>HEAD</code>.</p>
 
-    <p>Throws an "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>"
+    <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>"
     exception if the state is not
     <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> or if the
     <a href="#send-flag"><code>send()</code> flag</a> is set.</p>
@@ -1296,13 +1302,13 @@ X-Test: one, two</code></pre>
   <ol>
    <li><p>If the state is not
    <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
    <li><p>If the <a href="#send-flag"><code>send()</code> flag</a> is set,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
    <li><p>If the <a href="#request-method">request method</a> is <code>GET</code> or
@@ -1333,16 +1339,16 @@ X-Test: one, two</code></pre>
      </dd>
 
 
-     <dt><a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document" title="concept-document">document</a>
+     <dt><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
      <dd>
       <p>Let <var title="">encoding</var> be the
-      <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#preferred-mime-name" title="preferred-mime-name">preferred MIME name</a> of the
-      <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document-encoding" title="concept-document-encoding">encoding</a>
+      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#preferred-mime-name" title="preferred-mime-name">preferred MIME name</a> of the
+      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-encoding" title="concept-document-encoding">encoding</a>
       of <var title="">data</var>. If <var title="">encoding</var> is utf-16 change it to
       utf-8.
 
-      <p>If <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document" title="concept-document">document</a> is an
-      <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#html-document">HTML document</a>, let
+      <p>If <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a> is an
+      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#html-document">HTML document</a>, let
       <var>mime type</var> be "<code>text/html</code>", or let
       <var>mime type</var> be "<code>application/xml</code>" otherwise. Then
       append "<code>;charset=<var>encoding</var></code>" to
@@ -1355,11 +1361,11 @@ X-Test: one, two</code></pre>
       throws.</p>
 
       <p class="note">In particular, if the document cannot be serialized an
-      "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception is
+      "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception is
       thrown.</p>
 
       <p class="note">Subsequent changes to the
-      <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document" title="concept-document">document</a> have
+      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a> have
       no effect on what is transferred.
      </dd>
 
@@ -1451,7 +1457,9 @@ X-Test: one, two</code></pre>
 
       <p><a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch">Fetch</a> the
       <a href="#request-url">request URL</a> from <i title="">origin</i>
-      <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>, with the
+      <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>, using
+      <a href="#xmlhttprequest-referer-source"><code>XMLHttpRequest</code> referer source</a> as
+      <i title="">override referer source</i>, with the
       <i title="">synchronous flag</i> set if the
       <a href="#synchronous-flag">synchronous flag</a> is set, using HTTP method
       <a href="#request-method">request method</a>, user <a href="#request-username">request username</a> (if
@@ -1797,18 +1805,18 @@ X-Test: one, two</code></pre>
 
   <p>When something is said to be a <dfn id="network-error">network error</dfn> run the
   <a href="#request-error">request error</a> steps for exception
-  "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#networkerror">NetworkError</a></code>" and
+  "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#networkerror">NetworkError</a></code>" and
   event <code title="event-xhr-error"><a href="#event-xhr-error">error</a></code>.</p>
 
   <p>When something is said to be an <dfn id="abort-error">abort error</dfn> run the
   <a href="#request-error">request error</a> steps for exception
-  "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#aborterror">AbortError</a></code>" and event
+  "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#aborterror">AbortError</a></code>" and event
   <code title="event-xhr-abort"><a href="#event-xhr-abort">abort</a></code>.</p>
 
 
   <p>When something is said to be an <dfn id="timeout-error">timeout error</dfn> run the
   <a href="#request-error">request error</a> steps for exception
-  "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#timeouterror">TimeoutError</a></code>" and event
+  "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#timeouterror">TimeoutError</a></code>" and event
   <code title="event-xhr-timeout"><a href="#event-xhr-timeout">timeout</a></code>.</p>
 
 
@@ -1831,12 +1839,12 @@ X-Test: one, two</code></pre>
    <li><p>Change the state to <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.</li>
 
    <li><p>If the <a href="#synchronous-flag">synchronous flag</a> is set,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    <var>exception</var> exception and terminate the overall set of
    steps.</li>
 
    <li>
-    <p><a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</p>
+    <p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</p>
 
     <p class="note">At this point it is clear that the
     <a href="#synchronous-flag">synchronous flag</a> is unset.</p>
@@ -1877,7 +1885,7 @@ X-Test: one, two</code></pre>
   <ol>
    <li><p>Change the state to <a href="#dom-xmlhttprequest-headers_received" title="dom-XMLHttpRequest-HEADERS_RECEIVED">HEADERS_RECEIVED</a>.</li>
 
-   <li><p><a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
   </ol>
 
   <p>When it is said to
@@ -1887,7 +1895,7 @@ X-Test: one, two</code></pre>
   <ol>
    <li><p>Change the state to <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a>.</li>
 
-   <li><p><a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
   </ol>
 
   <p>When it is said to
@@ -1901,7 +1909,7 @@ X-Test: one, two</code></pre>
 
    <li><p>Change the state to <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.</li>
 
-   <li><p><a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
 
    <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>.
 
@@ -2005,7 +2013,7 @@ X-Test: one, two</code></pre>
 
      <li><p>Unset the <a href="#send-flag"><code>send()</code> flag</a>.
 
-     <li><p><a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
 
      <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>.
 
@@ -2229,7 +2237,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
   <p>The <dfn id="response-mime-type">response MIME type</dfn> is the
   MIME type the <code>Content-Type</code> header contains excluding any
   parameters and
-  <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#converted-to-ascii-lowercase">converted to ASCII lowercase</a>, or null if
+  <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#converted-to-ascii-lowercase">converted to ASCII lowercase</a>, or null if
   the response header can not be parsed or was omitted. The
   <dfn id="override-mime-type">override MIME type</dfn> is initially null
   and can get a value if
@@ -2302,7 +2310,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
   <p>The
   <dfn id="document-response-entity-body">document response entity body</dfn>
   is either a
-  <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document" title="concept-document">document</a>
+  <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
   representing the <a href="#response-entity-body">response entity body</a> or null. If the
   <a href="#document-response-entity-body">document response entity body</a> has no value assigned to it let
   it be the return value of the following algorithm:</p>
@@ -2359,19 +2367,19 @@ Content-Type: text/plain; charset=utf-8</code></pre>
 
      <li><p>Decode the <a href="#response-entity-body">response entity body</a> using
      <var>charset</var> and then let <var title="">document</var> be a
-     <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document" title="concept-document">document</a> that
+     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a> that
      represents the result of that decoding, parsed following the rules set
      forth in the HTML specification for an HTML parser with scripting
      disabled. <a href="#refsHTML">[HTML]</a>
 
      <li><p>Set <var title="">document</var>'s
-     <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document-encoding" title="concept-document-encoding">encoding</a>
+     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-encoding" title="concept-document-encoding">encoding</a>
      to <var>charset</var>.
     </ol>
 
    <li>
     <p>Otherwise, let <var title="">document</var> be a
-    <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document" title="concept-document">document</a>
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
     that represents the result of parsing the
     <a href="#response-entity-body">response entity body</a> following the rules set forth in the
     XML specifications. If that fails (unsupported character encoding,
@@ -2390,11 +2398,11 @@ Content-Type: text/plain; charset=utf-8</code></pre>
    <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>.
 
    <li><p>Set <var title="">document</var>'s
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document-content-type" title="concept-document-content-type">content type</a>
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-content-type" title="concept-document-content-type">content type</a>
    to <a href="#final-mime-type">final MIME type</a>.
 
    <li><p>Set <var title="">document</var>'s
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-document-url" title="concept-document-url">URL</a> to
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-url" title="concept-document-url">URL</a> to
    <a href="#request-url">request URL</a>.
 
    <li><p>Return <var title="">document</var>.
@@ -2483,12 +2491,12 @@ algorithm:</p>
     <p>Sets the <code>Content-Type</code> header for the response to
     <var title="">mime</var>.</p>
 
-    <p>Throws an "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>"
+    <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>"
     exception if the state is
     <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
     <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.
 
-    <p>Throws a "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" exception if
+    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
     <var title="">mime</var> is not a valid media type.</p>
    </dd>
   </dl>
@@ -2501,20 +2509,20 @@ algorithm:</p>
    <li><p>If the state is
    <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
    <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
    <li><p>If parsing <var title="">mime</var> analogously to the value of
    the <code>Content-Type</code> headers fails,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> a
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#syntaxerror">SyntaxError</a></code>" exception and terminate
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception and terminate
    these steps.
 
    <li><p>If a MIME type is successfully parsed, set
    <a href="#override-mime-type">override MIME type</a> to that MIME type,
    excluding any parameters, and
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#converted-to-ascii-lowercase">converted to ASCII lowercase</a>.
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#converted-to-ascii-lowercase">converted to ASCII lowercase</a>.
 
    <li><p>If a <code>charset</code> parameter is successfully parsed, set
    <a href="#override-charset">override charset</a> to its value.</li>
@@ -2537,11 +2545,11 @@ algorithm:</p>
     "<code title="">json</code>", and
     "<code title="">text</code>".</p>
     <p>When set: throws an
-    "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception if the
+    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception if the
     state is <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
     <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.
     <p>When set: throws an
-    "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception if the
+    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if the
     <a href="#synchronous-flag">synchronous flag</a> is set and there is an associated
     <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a>.</p>
   </dl>
@@ -2560,15 +2568,15 @@ algorithm:</p>
    <li><p>If the state is
    <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
    <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
    <li><p>If there is an associated
    <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidaccesserror">InvalidAccessError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception and
    terminate these steps.
 
    <li><p>Set the
@@ -2657,7 +2665,7 @@ algorithm:</p>
    <dd>
     <p>Returns the <a href="#text-response-entity-body">text response entity body</a>.</p>
 
-    <p>Throws an "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>"
+    <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>"
     exception if
     <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> is not
     the empty string or "<code title="">text</code>".
@@ -2675,8 +2683,8 @@ algorithm:</p>
    <li><p>If
    <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> is not
    the empty string or "<code title="">text</code>",
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.
 
 
@@ -2699,7 +2707,7 @@ algorithm:</p>
    <dd>
     <p>Returns the <a href="#document-response-entity-body">document response entity body</a>.</p>
 
-    <p>Throws an "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>"
+    <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>"
     exception if
     <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> is not
     the empty string or "<code title="">document</code>".
@@ -2716,8 +2724,8 @@ algorithm:</p>
    <li><p>If
    <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> is not
    the empty string or "<code title="">document</code>",
-   <a class="external" href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#concept-throw" title="concept-throw">throw</a> an
-   "<code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#invalidstateerror">InvalidStateError</a></code>" exception and
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
    terminate these steps.</li>
 
 
@@ -2756,7 +2764,7 @@ algorithm:</p>
    <tbody>
     <tr>
      <td><dfn id="event-xhr-readystatechange" title="event-xhr-readystatechange"><code>readystatechange</code></dfn></td>
-     <td><code class="external"><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html#event">Event</a></code></td>
+     <td><code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#event">Event</a></code></td>
      <td>The <code title="dom-XMLHttpRequest-readyState"><a href="#dom-xmlhttprequest-readystate">readyState</a></code>
      attribute changes at some seemingly arbitrary times for historical
      reasons.</td>
