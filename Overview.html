@@ -337,6 +337,12 @@ not appear in all uppercase letters in this specification.
    concept from DOM Parsing and Serialization.
    <a href="#refsDOMPS">[DOMPS]</a>
 
+   <dt>Encoding Standard
+   <dd><p>A <span>conforming user agent</span> must 
+   support at least the subset of the functionality defined in Encoding Standard that
+   this specification relies upon, such as the <code class="external" title="utf-8"><a href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a></code> <code class="external" title="encoding"><a href="http://encoding.spec.whatwg.org/#encoding">encoding</a></code>.
+   <a href="#refsENCODING">[ENCODING]</a>
+
    <dt>File API</dt>
    <dd><p>A <span>conforming user agent</span> must
    support at least the subset of the functionality defined in File API that
@@ -1342,12 +1348,14 @@ X-Test: one, two</code></pre>
      <dt><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
      <dd>
       <p>Let <var title="">encoding</var> be the
-      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#preferred-mime-name" title="preferred-mime-name">preferred MIME name</a> of the
       <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-encoding" title="concept-document-encoding">encoding</a>
-      of <var title="">data</var>. If <var title="">encoding</var> is utf-16 change it to
-      utf-8.
+      of <var title="">data</var>. If <var title="">encoding</var> is
+      <a class="external" href="http://encoding.spec.whatwg.org/#utf-16">utf-16</a> or
+      <a class="external" href="http://encoding.spec.whatwg.org/#utf-16be">utf-16be</a>, set
+      <var title="">encoding</var> to
+      <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
-      <p>If <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a> is an
+      <p>If <var title="">data</var> is an
       <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#html-document">HTML document</a>, let
       <var>mime type</var> be "<code>text/html</code>", or let
       <var>mime type</var> be "<code>application/xml</code>" otherwise. Then
@@ -1357,8 +1365,12 @@ X-Test: one, two</code></pre>
       <p><a class="external" href="http://html5.org/specs/dom-parsing.html#concept-serialize" title="concept-serialize">Serialize</a>
       <var title="">data</var>, and let the <a href="#request-entity-body">request entity body</a> be the result,
       <a class="external" href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-obtain-unicode" title="convert a DOMString to a sequence of Unicode characters">converted to Unicode</a>
-      and encoded as <var>encoding</var>. Re-throw any exception this
+      and <a class="external" href="http://encoding.spec.whatwg.org/#encode" title="encode">encoded</a> using
+      encoding <var>encoding</var>. Re-throw any exception this
       throws.</p>
+
+      <p class="XXX">Should we only encode as utf-8? What happens in the face
+      of an <a class="external" href="http://encoding.spec.whatwg.org/#encoder-error">encoder error</a>?
 
       <p class="note">In particular, if the document cannot be serialized an
       "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception is
@@ -2348,36 +2360,22 @@ Content-Type: text/plain; charset=utf-8</code></pre>
     substeps:
 
     <ol>
-     <li><!-- XXX this step should move to Encoding -->
-      <p>For each of the rows in the following table, starting with the
-      first one and going down, if the first bytes of the
-      <a href="#response-entity-body">response entity body</a> match the bytes given in the first
-      column, then let <var>charset</var> be the encoding given in the cell
-      in the second column of that row. Otherwise, let <var>charset</var> be
-      null.
-
-      <table>
-       <tr><th>Bytes<th>Encoding
-       <tr><td>0xFE 0xFF<td>UTF-16BE
-       <tr><td>0xFF 0xFE<td>UTF-16LE
-       <tr><td>0xEF 0xBB 0xBF<td>UTF-8
-      </table>
-
-     <li><p>If <var>charset</var> is null, let <var>charset</var> be the
-     <a href="#final-charset">final charset</a>.
+     <li><p>Let <var>charset</var> be the <a href="#final-charset">final charset</a>.
 
      <li><p>If <var>charset</var> is null,
      <span title="prescan a byte stream to determine its encoding">prescan</span>
      the first 1024 bytes of the <a href="#response-entity-body">response entity body</a> and if
-     that does not abort unsuccessfully let <var>charset</var> be the return
-     value.
+     that does not terminate unsuccessfully then let <var>charset</var> be
+     the return value.
 
-     <li><p>If <var>charset</var> is null, let <var>charset</var> be UTF-8.
+     <li><p>If <var>charset</var> is null, set <var>charset</var> to
+     <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
-     <li><p>Decode the <a href="#response-entity-body">response entity body</a> using
+     <li><p><a class="external" href="http://encoding.spec.whatwg.org/#decode">Decode</a> the byte stream
+     <a href="#response-entity-body">response entity body</a> using fallback encoding
      <var>charset</var> and then let <var title="">document</var> be a
      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a> that
-     represents the result of that decoding, parsed following the rules set
+     represents the result of that, parsed following the rules set
      forth in the HTML specification for an HTML parser with scripting
      disabled. <a href="#refsHTML">[HTML]</a>
 
@@ -2443,23 +2441,7 @@ algorithm:</p>
    <li><p>If the <a href="#response-entity-body">response entity body</a> is null, return the empty
    string and terminate these steps.</p>
 
-   <li><!-- XXX this needs to move to Encoding -->
-    <p>For each of the rows in the following table, starting with the first
-    one and going down, if the first bytes of the
-    <a href="#response-entity-body">response entity body</a> match the bytes given in the first
-    column, then let <var>charset</var> be the encoding given in the cell in
-    the second column of that row. Otherwise, let <var>charset</var> be
-    null.
-
-    <table>
-     <tr><th>Bytes<th>Encoding
-     <tr><td>0xFE 0xFF<td>UTF-16BE
-     <tr><td>0xFF 0xFE<td>UTF-16LE
-     <tr><td>0xEF 0xBB 0xBF<td>UTF-8
-    </table>
-
-   <li><p>If <var>charset</var> is null, let <var>charset</var> be the
-   <a href="#final-charset">final charset</a>.
+   <li><p>Let <var>charset</var> be the <a href="#final-charset">final charset</a>.
 
    <li>
     <p>If <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> is
@@ -2476,15 +2458,13 @@ algorithm:</p>
     <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> value
     "<code title="">text</code>" simple.
 
-   <li><p>If <var>charset</var> is null, let <var>charset</var> be UTF-8.
+   <li><p>If <var>charset</var> is null, set <var>charset</var> to
+   <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
-   <!-- XXX this needs to move to Encoding -->
-   <li><p>Return the result of decoding the
-   <a href="#response-entity-body">response entity body</a> using <var>charset</var>. Replace bytes
-   or sequences of bytes that are not valid according to the
-   <var>charset</var> with a single
-   U+FFFD REPLACEMENT CHARACTER character. Remove one leading
-   U+FEFF BYTE ORDER MARK character, if present.
+   <li><p>Return the result of
+   <a class="external" href="http://encoding.spec.whatwg.org/#decode" title="decode">decoding</a> the
+   byte stream <a href="#response-entity-body">response entity body</a> using fallback encoding
+   <var>charset</var>.
   </ol>
 
   <p class="note">Authors are strongly encouraged to always encode their
@@ -2945,6 +2925,9 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
 
 <dt id="refsECMASCRIPT">[ECMASCRIPT]
 <dd><cite><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript Language Specification</a></cite>. ECMA.
+
+<dt id="refsENCODING">[ENCODING]
+<dd><cite><a href="http://encoding.spec.whatwg.org/">Encoding Standard</a></cite>, Anne van Kesteren. WHATWG.
 
 <dt id="refsFILEAPI">[FILEAPI]
 <dd><cite><a href="http://dev.w3.org/2006/webapi/FileAPI/">File API</a></cite>, Arun Ranganathan and Jonas Sicking. W3C.
