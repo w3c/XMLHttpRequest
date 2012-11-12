@@ -434,17 +434,19 @@ interface <dfn id="anonxmlhttprequest">AnonXMLHttpRequest</dfn> : <span>XMLHttpR
 
 
 
-  <h3>Origin and base URL</h3>
+  <h3>Base URL, origin, and referer</h3>
 
   <p>Each <code>XMLHttpRequest</code> object has an associated
-  <dfn><code>XMLHttpRequest</code> origin</dfn> and an
-  <dfn><code>XMLHttpRequest</code> base URL</dfn>.
+  <dfn><code>XMLHttpRequest</code> base URL</dfn>,
+  <dfn><code>XMLHttpRequest</code> origin</dfn>, and
+  <dfn><code>XMLHttpRequest</code> referer source</dfn> (originally a misspelling of referrer).
 
   <p class=note>The XMLHttpRequest standard defines
-  <span><code>XMLHttpRequest</code> origin</span> and
-  <span><code>XMLHttpRequest</code> base URL</span> when the global object
-  is represented by the <code data-anolis-spec=html>Window</code> object.
-  Other contexts will have to define them as appropriate for
+  <span><code>XMLHttpRequest</code> base URL</span>,
+  <span><code>XMLHttpRequest</code> origin</span>, and
+  <span><code>XMLHttpRequest</code> referer source</span> when the global
+  object is represented by the <code data-anolis-spec=html>Window</code>
+  object. Other contexts will have to define them as appropriate for
   <code>XMLHttpRequest</code> to function as other contexts are considered
   out of scope for this document.</p>
 
@@ -456,10 +458,14 @@ interface <dfn id="anonxmlhttprequest">AnonXMLHttpRequest</dfn> : <span>XMLHttpR
   associated with the <code data-anolis-spec=html>Window</code> object for
   which the <code>XMLHttpRequest</code> interface object was created.</p>
 
+  <p>In these environments the
+  <span><code>XMLHttpRequest</code> referer source</span> is that
+  <span><code>XMLHttpRequest</code> document</span>.
+
   <p class=note>The
-  <span><code>XMLHttpRequest</code> document</span> is used to
-  determine the <span><code>XMLHttpRequest</code> origin</span> and
-  <span><code>XMLHttpRequest</code> base URL</span> at a later stage.</p>
+  <span><code>XMLHttpRequest</code> document</span> is also used to
+  determine the <span><code>XMLHttpRequest</code> base URL</span> and
+  <span><code>XMLHttpRequest</code> origin</span> at a later stage.
 
 
 
@@ -1415,7 +1421,9 @@ X-Test: one, two</code></pre>
 
       <p><span data-anolis-spec=html>Fetch</span> the
       <span>request URL</span> from <i title>origin</i>
-      <span><code>XMLHttpRequest</code> origin</span>, with the
+      <span><code>XMLHttpRequest</code> origin</span>, using
+      <span><code>XMLHttpRequest</code> referer source</span> as
+      <i title>override referer source</i>, with the
       <i title>synchronous flag</i> set if the
       <span>synchronous flag</span> is set, using HTTP method
       <span>request method</span>, user <span>request username</span> (if
