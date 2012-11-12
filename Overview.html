@@ -2371,7 +2371,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
      <li><p>If <var>charset</var> is null, set <var>charset</var> to
      <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
-     <li><p><a class="external" href="http://encoding.spec.whatwg.org/#decode">Decode</a> the byte stream
+     <li><p><a class="external" href="http://encoding.spec.whatwg.org/#decode">Decode</a> byte stream
      <a href="#response-entity-body">response entity body</a> using fallback encoding
      <var>charset</var> and then let <var title="">document</var> be a
      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a> that
@@ -2421,9 +2421,9 @@ representing the <a href="#response-entity-body">response entity body</a>. The
 algorithm:</p>
 
 <ol>
- <li><p>Let <var title="">JSON text</var> be the
- <a href="#response-entity-body">response entity body</a> decoded using UTF-8. Remove one leading
- U+FEFF BYTE ORDER MARK character, if present.</li>
+ <li><p>Let <var title="">JSON text</var> be the result of running
+ <a class="external" href="http://encoding.spec.whatwg.org/#utf-8-decode">utf-8 decode</a> on byte stream
+ <a href="#response-entity-body">response entity body</a>.
 
  <li><p>Return the result of invoking the <code title="">parse</code> function
  of the <code title="">JSON</code> object defined in ECMAScript, with
@@ -2461,9 +2461,9 @@ algorithm:</p>
    <li><p>If <var>charset</var> is null, set <var>charset</var> to
    <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
-   <li><p>Return the result of
-   <a class="external" href="http://encoding.spec.whatwg.org/#decode" title="decode">decoding</a> the
-   byte stream <a href="#response-entity-body">response entity body</a> using fallback encoding
+   <li><p>Return the result of running
+   <a class="external" href="http://encoding.spec.whatwg.org/#decode">decode</a> on byte stream
+   <a href="#response-entity-body">response entity body</a> using fallback encoding
    <var>charset</var>.
   </ol>
 
