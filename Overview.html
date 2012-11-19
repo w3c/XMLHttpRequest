@@ -726,7 +726,8 @@ discarding any further data received from the network for them.
 
    <dt><dfn id="author-request-headers">author request headers</dfn></dt>
    <dd>A list consisting of HTTP header name/value pairs to be used in the
-   request.
+   request. Checking against the header names in this list must always be
+   done in a case-insensitive manner.
 
    <dt><dfn id="request-entity-body">request entity body</dfn></dt>
    <dd>The <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-7.2">entity body</a> used in the
