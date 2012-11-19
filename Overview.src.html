@@ -693,7 +693,8 @@ discarding any further data received from the network for them.
 
    <dt><dfn id="author-request-headers">author request headers</dfn></dt>
    <dd>A list consisting of HTTP header name/value pairs to be used in the
-   request.
+   request. Checking against the header names in this list must always be
+   done in a case-insensitive manner.
 
    <dt><dfn>request entity body</dfn></dt>
    <dd>The <span data-anolis-spec=http>entity body</span> used in the
