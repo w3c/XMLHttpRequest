@@ -1388,16 +1388,15 @@ X-Test: one, two</code></pre>
    <li><p>If the <a href="#synchronous-flag">synchronous flag</a> is set, release the
    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#storage-mutex">storage mutex</a>.</li>
 
+   <li><p>Unset the <a href="#error-flag">error flag</a>,
+   <a href="#upload-complete-flag">upload complete flag</a> and <a href="#upload-events-flag">upload events flag</a>.
+
+   <li><p>If there is no <a href="#request-entity-body">request entity body</a> or if it is empty,
+   set the <a href="#upload-complete-flag">upload complete flag</a>.
+
    <li><p>If the <a href="#synchronous-flag">synchronous flag</a> is unset and one or more
    event listeners are registered on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code>
    object, set the <a href="#upload-events-flag">upload events flag</a>.
-
-   <li><p>Unset the <a href="#error-flag">error flag</a>.</li>
-
-   <li><p>Set the <a href="#upload-complete-flag">upload complete flag</a> if there is no
-   <a href="#request-entity-body">request entity body</a> or if the
-   <a href="#request-entity-body">request entity body</a> is empty.
-
 
    <li>
     <p>If the <a href="#synchronous-flag">synchronous flag</a> is unset, run these substeps:</p>
@@ -1501,7 +1500,7 @@ X-Test: one, two</code></pre>
        <dd>The <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>.</dd>
 
        <dt>referer source
-       <dd>If the <a href="#anonymous-flag">anonymous flag</a> is set the
+       <dd>If the <a href="#anonymous-flag">anonymous flag</a> is set, the
        <a class="external" href="http://dev.w3.org/html5/spec/urls.html#url">URL</a>
        "<code title="">about:blank</code>", or the
        <a href="#xmlhttprequest-referer-source"><code>XMLHttpRequest</code> referer source</a> otherwise.
