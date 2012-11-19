@@ -353,7 +353,7 @@ not appear in all uppercase letters in this specification.
    <dd><p>A <span>conforming user agent</span> must
    support at least the subset of the functionality defined in HTML that
    this specification relies upon, such as the basics of the
-   <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code> object and serializing a <code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a></code>
+   <code class="external"><a href="http://dev.w3.org/html5/spec/browsers.html#window">Window</a></code> object and serializing a <code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a></code>
    object. <a href="#refsHTML">[HTML]</a>
 
    <dt>HTTP</dt>
@@ -414,13 +414,13 @@ not appear in all uppercase letters in this specification.
   <pre class="idl">[NoInterfaceObject]
 interface <dfn id="xmlhttprequesteventtarget">XMLHttpRequestEventTarget</dfn> : <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#eventtarget">EventTarget</a> {
   // <a href="#event-handlers">event handlers</a>
-  attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadstart" title="handler-xhr-onloadstart">onloadstart</a>;
-  attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onprogress" title="handler-xhr-onprogress">onprogress</a>;
-  attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onabort" title="handler-xhr-onabort">onabort</a>;
-  attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onerror" title="handler-xhr-onerror">onerror</a>;
-  attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onload" title="handler-xhr-onload">onload</a>;
-  attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-ontimeout" title="handler-xhr-ontimeout">ontimeout</a>;
-  attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadend" title="handler-xhr-onloadend">onloadend</a>;
+  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadstart" title="handler-xhr-onloadstart">onloadstart</a>;
+  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onprogress" title="handler-xhr-onprogress">onprogress</a>;
+  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onabort" title="handler-xhr-onabort">onabort</a>;
+  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onerror" title="handler-xhr-onerror">onerror</a>;
+  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onload" title="handler-xhr-onload">onload</a>;
+  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-ontimeout" title="handler-xhr-ontimeout">ontimeout</a>;
+  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadend" title="handler-xhr-onloadend">onloadend</a>;
 };
 
 interface <dfn id="xmlhttprequestupload">XMLHttpRequestUpload</dfn> : <a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a> {
@@ -443,7 +443,7 @@ dictionary <dfn id="xmlhttprequestoptions">XMLHttpRequestOptions</dfn> {
 [<a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">Constructor</a>(optional <a href="#xmlhttprequestoptions">XMLHttpRequestOptions</a> <var title="">options</var>)]
 interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a> {
   // <a href="#event-handlers">event handler</a>
-  attribute <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onreadystatechange" title="handler-xhr-onreadystatechange">onreadystatechange</a>;
+  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onreadystatechange" title="handler-xhr-onreadystatechange">onreadystatechange</a>;
 
   // <a href="#states">states</a>
   const unsigned short <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> = 0;
@@ -487,17 +487,17 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
   <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a>,
   <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>, and
   <a href="#xmlhttprequest-referer-source"><code>XMLHttpRequest</code> referer source</a> when the global
-  object is represented by the <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code>
+  object is represented by the <code class="external"><a href="http://dev.w3.org/html5/spec/browsers.html#window">Window</a></code>
   object. Other contexts will have to define them as appropriate for
   <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> to function as other contexts are considered
   out of scope for this document.</p>
 
   <p>In environments where the global object is represented by the
-  <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code> object the
+  <code class="external"><a href="http://dev.w3.org/html5/spec/browsers.html#window">Window</a></code> object the
   <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has an associated
   <dfn id="xmlhttprequest-document"><code>XMLHttpRequest</code> document</dfn> which is the
   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
-  associated with the <code class="external"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#window">Window</a></code> object for
+  associated with the <code class="external"><a href="http://dev.w3.org/html5/spec/browsers.html#window">Window</a></code> object for
   which the <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> interface object was created.</p>
 
   <p>In these environments the
@@ -514,7 +514,7 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
 <h3 id="task-sources"><span class="secno">4.2 </span>Task sources</h3>
 
 <p>Each <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has its own
-<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#task-source">task source</a>. Namely, the
+<a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-source">task source</a>. Namely, the
 <dfn id="xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</dfn>.
 
 
@@ -524,7 +524,7 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
   <dfn id="anonymous-flag">anonymous flag</dfn>. If the <a href="#anonymous-flag">anonymous flag</a> is set,
   <a href="#user-credentials">user credentials</a> and the
   <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a> are not exposed when
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch" title="fetch">fetching</a> resources.
+  <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a> resources.
 
   <dl class="domintro">
     <dt><code><var title="">client</var> = new <a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">XMLHttpRequest</a>()</code>
@@ -586,9 +586,9 @@ one of the following is true:
 
 <p>If an <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object is garbage collected while its
 connection is still open, the user agent must cancel any instance of the
-<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch">fetch</a> algorithm opened by this object,
-discarding any <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#concept-task" title="concept-task">tasks</a>
-<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#queue-a-task" title="queue a task">queued</a> for them, and
+<a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch">fetch</a> algorithm opened by this object,
+discarding any <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-task" title="concept-task">tasks</a>
+<a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task" title="queue a task">queued</a> for them, and
 discarding any further data received from the network for them.
 
 
@@ -597,16 +597,16 @@ discarding any further data received from the network for them.
 
 
   <p>The following are the
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#event-handlers">event handlers</a> (and their corresponding
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#event-handler-event-type" title="event handler event type">event handler event types</a>)
+  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handlers">event handlers</a> (and their corresponding
+  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handler-event-type" title="event handler event type">event handler event types</a>)
   that must be supported on objects implementing an interface that inherits
   from <code><a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a></code> as attributes:</p>
 
   <table>
    <thead>
     <tr>
-     <th><a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#event-handlers" title="event handlers">event handler</a>
-     <th><a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#event-handler-event-type">event handler event type</a>
+     <th><a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handlers" title="event handlers">event handler</a>
+     <th><a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handler-event-type">event handler event type</a>
    <tbody>
     <tr>
      <td><dfn id="handler-xhr-onloadstart" title="handler-xhr-onloadstart"><code>onloadstart</code></dfn>
@@ -633,17 +633,17 @@ discarding any further data received from the network for them.
 
 
   <p>The following is the
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#event-handlers" title="event handlers">event handler</a>
+  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handlers" title="event handlers">event handler</a>
   (and its corresponding
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#event-handler-event-type">event handler event type</a>) that must be
+  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handler-event-type">event handler event type</a>) that must be
   supported as attribute solely by the
   <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object:</p>
 
   <table>
    <thead>
     <tr>
-     <th><a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#event-handlers" title="event handlers">event handler</a>
-     <th><a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#event-handler-event-type">event handler event type</a>
+     <th><a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handlers" title="event handlers">event handler</a>
+     <th><a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handler-event-type">event handler event type</a>
    <tbody>
     <tr>
      <td><dfn id="handler-xhr-onreadystatechange" title="handler-xhr-onreadystatechange"><code>onreadystatechange</code></dfn>
@@ -709,14 +709,14 @@ discarding any further data received from the network for them.
 
   <dl>
    <dt><dfn id="synchronous-flag">synchronous flag</dfn></dt>
-   <dd>Set when <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch" title="fetch">fetching</a> is
+   <dd>Set when <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a> is
    done synchronously. Initially unset.</dd>
 
    <dt><dfn id="request-method">request method</dfn></dt>
    <dd>The HTTP method used in the request.</dd>
 
    <dt><dfn id="request-url">request URL</dfn></dt>
-   <dd>The resolved <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url">URL</a> used in the
+   <dd>The resolved <a class="external" href="http://dev.w3.org/html5/spec/urls.html#url">URL</a> used in the
    request.</dd>
 
    <dt><dfn id="request-username">request username</dfn></dt>
@@ -804,17 +804,17 @@ discarding any further data received from the network for them.
     <ol>
      <li><p>If the
      <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a> is not
-     <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#fully-active">fully active</a>,
+     <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#fully-active">fully active</a>,
      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
      "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
      terminate the overall set of steps.
 
      <li><p>Let <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a> be the
-     <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#document-base-url">document base URL</a> of the
+     <a class="external" href="http://dev.w3.org/html5/spec/urls.html#document-base-url">document base URL</a> of the
      <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a>.</li>
 
      <li><p>Let <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a> be the
-     <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin">origin</a> of the
+     <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> of the
      <a href="#xmlhttprequest-document"><code>XMLHttpRequest</code> document</a>
      and let it be a globally unique identifier if the
      <a href="#anonymous-flag">anonymous flag</a> is set.</li>
@@ -853,9 +853,9 @@ discarding any further data received from the network for them.
    </li>
 
    <li><p>Let <var title="">url</var> be a
-   <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url">URL</a> with character encoding UTF-8.
+   <a class="external" href="http://dev.w3.org/html5/spec/urls.html#url">URL</a> with character encoding UTF-8.
 
-   <li><p><a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#resolve-a-url" title="Resolve a URL">Resolve</a>
+   <li><p><a class="external" href="http://dev.w3.org/html5/spec/urls.html#resolve-a-url" title="Resolve a URL">Resolve</a>
    <var title="">url</var> relative to the
    <a href="#xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</a>. If the algorithm
    returns an error,
@@ -868,13 +868,13 @@ discarding any further data received from the network for them.
    see HTML. -->
 
    <li><p>Drop
-   <code class="external" title="url-fragment"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url-fragment">&lt;fragment&gt;</a></code> from
+   <code class="external" title="url-fragment"><a href="http://dev.w3.org/html5/spec/urls.html#url-fragment">&lt;fragment&gt;</a></code> from
    <var title="">url</var>.</li>
 
    <li><p>If the <code>"user:password"</code> format in the
    <code class="external"><a href="http://tools.ietf.org/html/rfc2616/#section-3.2.1">userinfo</a></code> production is not supported
    for the relevant
-   <code class="external" title="url-scheme"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url-scheme">&lt;scheme&gt;</a></code> and
+   <code class="external" title="url-scheme"><a href="http://dev.w3.org/html5/spec/urls.html#url-scheme">&lt;scheme&gt;</a></code> and
    <var title="">url</var> contains this format,
    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" and terminate these
@@ -918,9 +918,9 @@ discarding any further data received from the network for them.
    <!-- we can hardly require it... -->
 
    <li><p>If there are any
-   <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#concept-task" title="concept-task">tasks</a> from the
+   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-task" title="concept-task">tasks</a> from the
    object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of
-   the <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#task-queue" title="task queue">task queues</a>,
+   the <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-queue" title="task queue">task queues</a>,
    then remove them.
 
    <li>
@@ -984,7 +984,7 @@ discarding any further data received from the network for them.
   <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> method section.</p>
 
 
-  <p class="note">For non <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin">same origin</a> requests using the HTTP
+  <p class="note">For non <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a> requests using the HTTP
   <code>GET</code> method a preflight request is made when headers other
   than <code>Accept</code> and <code>Accept-Language</code> are set.</p>
 
@@ -1104,7 +1104,7 @@ X-Test: one, two</code></pre>
    <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-timeout" title="dom-XMLHttpRequest-timeout">timeout</a></code>
    <dd>
     <p>Can be set to a time in milliseconds. When set to a non-zero value
-    will cause <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch" title="fetch">fetching</a> to
+    will cause <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a> to
     terminate after the given time has passed. When the time has passed, if
     the <a href="#synchronous-flag">synchronous flag</a> is unset, a
     <code title="event-xhr-timeout"><a href="#event-xhr-timeout">timeout</a></code> event will then be
@@ -1139,9 +1139,9 @@ X-Test: one, two</code></pre>
 
   <p class="note">This implies that the
   <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code> attribute can be
-  set while <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch" title="fetch">fetching</a> is in
+  set while <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a> is in
   progress. If that occurs it will still be measured relative to the start
-  of <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch" title="fetch">fetching</a>.
+  of <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a>.
 
 
   <h4 id="the-withcredentials-attribute"><span class="secno">4.7.4 </span>The <code title="">withCredentials</code> attribute</h4>
@@ -1208,8 +1208,8 @@ X-Test: one, two</code></pre>
   <p class="note">The
   <code title="dom-XMLHttpRequest-withCredentials"><a href="#dom-xmlhttprequest-withcredentials">withCredentials</a></code>
   attribute has no effect when
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch" title="fetch">fetching</a>
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin" title="same origin">same-origin</a>
+  <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a>
+  <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin" title="same origin">same-origin</a>
   resources.</p>
 
 
@@ -1353,7 +1353,7 @@ X-Test: one, two</code></pre>
      <dd>
       <p>Let the <a href="#request-entity-body">request entity body</a> be the result of running
       the
-      <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>
+      <a class="external" href="http://dev.w3.org/html5/spec/constraints.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>
       with <var>data</var> as <var>form data set</var> and with
       <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a> as the
       explicit character encoding.
@@ -1364,16 +1364,16 @@ X-Test: one, two</code></pre>
       "<code title="">multipart/form-data;</code>",
       a U+0020 SPACE character,
       "<code title="">boundary=</code>", and the
-      <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#multipart/form-data-boundary-string"><code>multipart/form-data</code> boundary string</a>
+      <a class="external" href="http://dev.w3.org/html5/spec/constraints.html#multipart/form-data-boundary-string"><code>multipart/form-data</code> boundary string</a>
       generated by the
-      <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>.
+      <a class="external" href="http://dev.w3.org/html5/spec/constraints.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>.
      </dd>
 
     </dl>
 
     <p>If a <code>Content-Type</code> header is in
     <a href="#author-request-headers">author request headers</a> and its value is a
-    <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#valid-mime-type">valid MIME type</a> that has a
+    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#valid-mime-type">valid MIME type</a> that has a
     <code>charset</code> parameter whose value is not a case-insensitive
     match for <var title="">encoding</var>, and <var title="">encoding</var>
     is not null, set all the <code>charset</code> parameters of that
@@ -1389,7 +1389,7 @@ X-Test: one, two</code></pre>
    </li>
 
    <li><p>If the <a href="#synchronous-flag">synchronous flag</a> is set, release the
-   <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#storage-mutex">storage mutex</a>.</li>
+   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#storage-mutex">storage mutex</a>.</li>
 
    <li><p>If the <a href="#synchronous-flag">synchronous flag</a> is unset and one or more
    event listeners are registered on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code>
@@ -1422,15 +1422,15 @@ X-Test: one, two</code></pre>
    <li>
     <dl class="switch">
      <dt>If the <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a> and the
-     <a href="#request-url">request URL</a> are <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin">same origin</a></dt>
+     <a href="#request-url">request URL</a> are <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a></dt>
      <dt>If the <a href="#request-url">request URL</a>'s
-     <code class="external" title="url-scheme"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url-scheme">&lt;scheme&gt;</a></code> is
+     <code class="external" title="url-scheme"><a href="http://dev.w3.org/html5/spec/urls.html#url-scheme">&lt;scheme&gt;</a></code> is
      "<code title="">data</code>"
 
      <dd>
       <p>These are the <dfn id="same-origin-request-steps">same-origin request steps</dfn>.</p>
 
-      <p><a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch">Fetch</a> the
+      <p><a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch">Fetch</a> the
       <a href="#request-url">request URL</a> from <i title="">origin</i>
       <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>, using
       <a href="#xmlhttprequest-referer-source"><code>XMLHttpRequest</code> referer source</a> as
@@ -1470,7 +1470,7 @@ X-Test: one, two</code></pre>
 
         <p>While processing the request, as data becomes available and when
         the user interferes with the request,
-        <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#queue-a-task" title="queue a task">queue tasks</a>
+        <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task" title="queue a task">queue tasks</a>
         to update the <a href="#response-entity-body">response entity body</a> and follow the
         <a href="#same-origin-request-event-rules">same-origin request event rules</a>.</p>
        </dd>
@@ -1505,7 +1505,7 @@ X-Test: one, two</code></pre>
 
        <dt>referer source
        <dd>If the <a href="#anonymous-flag">anonymous flag</a> is set the
-       <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url">URL</a>
+       <a class="external" href="http://dev.w3.org/html5/spec/urls.html#url">URL</a>
        "<code title="">about:blank</code>", or the
        <a href="#xmlhttprequest-referer-source"><code>XMLHttpRequest</code> referer source</a> otherwise.
 
@@ -1570,7 +1570,7 @@ X-Test: one, two</code></pre>
 
   <p>If authentication fails,
   <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a> and the
-  <a href="#request-url">request URL</a> are <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin">same origin</a>,
+  <a href="#request-url">request URL</a> are <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a>,
   <code title="http-authorization">Authorization</code> is not in the list
   of <a href="#author-request-headers">author request headers</a>, <a href="#request-username">request username</a> is
   null, and <a href="#request-password">request password</a> is null, user agents
@@ -1584,7 +1584,7 @@ X-Test: one, two</code></pre>
   <p class="note">Unfortunately end users are prompted because of legacy
   content constraints. However, when possible this behavior is prohibited,
   as it is bad UI. E.g. that is why the
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin">same origin</a> restriction is made above.
+  <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a> restriction is made above.
 
   <hr>
 
@@ -1658,12 +1658,12 @@ X-Test: one, two</code></pre>
 
     <ol>
      <li><p>Set the <a href="#request-url">request URL</a> to the
-     <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url">URL</a> conveyed by the
+     <a class="external" href="http://dev.w3.org/html5/spec/urls.html#url">URL</a> conveyed by the
      <code>Location</code> header.</li>
 
      <li><p>If the <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a> and the
-     <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin">origin</a> of <a href="#request-url">request URL</a>
-     are <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin">same origin</a> transparently follow
+     <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> of <a href="#request-url">request URL</a>
+     are <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a> transparently follow
      the redirect while observing the
      <a href="#same-origin-request-event-rules">same-origin request event rules</a>.
 
@@ -1803,9 +1803,9 @@ X-Test: one, two</code></pre>
    activity for which the object is responsible.</li>
 
    <li><p>If there are any
-   <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#concept-task" title="concept-task">tasks</a> from the
+   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-task" title="concept-task">tasks</a> from the
    object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of
-   the <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#task-queue" title="task queue">task queues</a>,
+   the <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-queue" title="task queue">task queues</a>,
    then remove them.
 
    <li><p>Set the the <a href="#error-flag">error flag</a>.
@@ -1897,7 +1897,7 @@ X-Test: one, two</code></pre>
   <hr>
 
   <p>When it is said to <dfn id="make-progress-notifications">make progress notifications</dfn>, while the
-  download is progressing, <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#queue-a-task">queue a task</a> to
+  download is progressing, <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task">queue a task</a> to
   <a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
   about every 50ms or for every byte received, whichever is <em>least</em>
   frequent.</p>
@@ -1910,7 +1910,7 @@ X-Test: one, two</code></pre>
   <ul>
    <li><p>While the request entity body is being transmitted and the
    <a href="#upload-complete-flag">upload complete flag</a> is unset,
-   <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#queue-a-task">queue a task</a> to
+   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task">queue a task</a> to
    <a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code> on
    the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object about every 50ms or for
    every byte transmitted, whichever is <em>least</em> frequent.</li>
@@ -1920,7 +1920,7 @@ X-Test: one, two</code></pre>
     (irrespective of whether the server has started transmitting a response
     or the status code of such a response) and the
     <a href="#upload-complete-flag">upload complete flag</a> is still unset,
-    <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#queue-a-task">queue a task</a> to run these substeps:
+    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task">queue a task</a> to run these substeps:
 
     <ol>
      <li><p>Set the <a href="#upload-complete-flag">upload complete flag</a>.
@@ -1965,9 +1965,9 @@ X-Test: one, two</code></pre>
    activity for which the object is responsible.</li>
 
    <li><p>If there are any
-   <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#concept-task" title="concept-task">tasks</a> from the
+   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-task" title="concept-task">tasks</a> from the
    object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of
-   the <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#task-queue" title="task queue">task queues</a>,
+   the <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-queue" title="task queue">task queues</a>,
    then remove them.
 
    <li><p>Set the <a href="#error-flag">error flag</a>.
@@ -2119,7 +2119,7 @@ X-Test: one, two</code></pre>
   <p class="note">The Cross-Origin Resource Sharing specification filters
   the headers that are exposed by
   <code title="dom-XMLHttpRequest-getResponseHeader"><a href="#dom-xmlhttprequest-getresponseheader">getResponseHeader()</a></code>
-  for non <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin" title="same origin">same-origin</a>
+  for non <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin" title="same origin">same-origin</a>
   requests. <a href="#refsCORS">[CORS]</a>
 
 
@@ -2177,7 +2177,7 @@ client.onreadystatechange = function() {
   <p class="note">The Cross-Origin Resource Sharing specification filters
   the headers that are exposed by
   <code title="dom-XMLHttpRequest-getAllResponseHeaders"><a href="#dom-xmlhttprequest-getallresponseheaders">getAllResponseHeaders()</a></code>
-  for non <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#same-origin" title="same origin">same-origin</a>
+  for non <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin" title="same origin">same-origin</a>
   requests. <a href="#refsCORS">[CORS]</a>
 
 
@@ -2354,7 +2354,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
     <!-- XXX what about document's encoding? -->
 
    <li><p>Set <var title="">document</var>'s
-   <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin">origin</a> to the
+   <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> to the
    <a href="#xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</a>.
 
    <li><p>Set <var title="">document</var>'s
@@ -2754,8 +2754,7 @@ algorithm:</p>
   entries. Each entry has a name, a value, a type, and optionally a
   filename (if type is "file").</p>
 
-  <pre class="idl">[<a href="#dom-formdata" title="dom-FormData">Constructor</a>,
- <a href="#dom-formdata-form" title="dom-FormData-form">Constructor</a>(<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/forms.html#htmlformelement">HTMLFormElement</a> <var>form</var>)]
+  <pre class="idl">[<a href="#dom-formdata" title="dom-FormData">Constructor</a>(optional <a class="external" href="http://dev.w3.org/html5/spec/the-form-element.html#htmlformelement">HTMLFormElement</a> <var>form</var>)]
 interface <dfn id="formdata">FormData</dfn> {
   void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>(DOMString <var>name</var>, <a class="external" href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a> <var title="">value</var>, optional DOMString <var title="">filename</var>);
   void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>(DOMString <var>name</var>, DOMString <var>value</var>);
@@ -2765,20 +2764,25 @@ interface <dfn id="formdata">FormData</dfn> {
   <h3 id="formdata-constructors"><span class="secno">5.1 </span>Constructors</h3>
 
   <dl class="domintro">
-   <dt><code><var title="">fd</var> = new <a href="#dom-formdata" title="dom-FormData">FormData</a>()</code>
-   <dd><p>Returns a new <code><a href="#formdata">FormData</a></code> object.
+   <dt><code><var title="">fd</var> = new <a href="#dom-formdata" title="dom-FormData">FormData</a>([<var title="">form</var>])</code>
+   <dd><p>Returns a new <code><a href="#formdata">FormData</a></code> object initialized with the
+   data from <var title="">form</var>.
   </dl>
 
-  <p>The <dfn id="dom-formdata" title="dom-FormData"><code>FormData()</code></dfn> constructor
-  must return a new <code><a href="#formdata">FormData</a></code> object.
-
   <p>The
-  <dfn id="dom-formdata-form" title="dom-FormData-form"><code>FormData(<var>form</var>)</code></dfn>
-  constructor must return a new <code><a href="#formdata">FormData</a></code> object with as entries
-  the result of
-  <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#constructing-form-data-set">constructing the form data set</a> for
-  <var>form</var>.
+  <dfn id="dom-formdata" title="dom-FormData"><code>FormData(<var>form</var>)</code></dfn>
+  constructor must run these steps:
 
+  <ol>
+   <li><p>Let <var title="">fd</var> be a new <code><a href="#formdata">FormData</a></code> object.
+
+   <li><p>If <var>form</var> is given, set <var title="">fd</var>'s entries to
+   the result of
+   <a class="external" href="http://dev.w3.org/html5/spec/constraints.html#constructing-form-data-set">constructing the form data set</a> for
+   <var>form</var>.
+
+   <li><p>Return <var title="">fd</var>.
+  </ol>
 
   <h3 id="the-append()-method"><span class="secno">5.2 </span>The <code title="">append()</code> method</h3>
 
@@ -2812,15 +2816,15 @@ interface <dfn id="formdata">FormData</dfn> {
 <h2 id="data:-urls-and-http"><span class="secno">6 </span><code>data:</code> URLs and HTTP</h2>
 
 <p class="note">To ensure
-<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URLs</a>
+<a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URLs</a>
 can function in APIs designed around HTTP, such as
 <code><a href="#xmlhttprequest">XMLHttpRequest</a></code>, this section details how they work.
 Specifications defining similar URL schemes ought to take inspiration from
 this section.
 
 <p>When a
-<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
-<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch" title="fetch">fetched</a> using the HTTP method
+<a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
+<a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetched</a> using the HTTP method
 <code>GET</code>, determine the response as follows:
 
 <ul>
@@ -2836,13 +2840,13 @@ this section.
  <span><code>data:</code> URL</span>, or the default otherwise.
 
  <li><p>Set the <a href="#response-entity-body">response entity body</a> to the data the
- <a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/urls.html#url">URL</a> encodes, base64 decoded if the
+ <a class="external" href="http://dev.w3.org/html5/spec/urls.html#url">URL</a> encodes, base64 decoded if the
  "<code title="">;base64</code>" flag is present.
 </ul>
 
 <p>When a
-<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
-<a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/fetching-resources.html#fetch" title="fetch">fetched</a> using the HTTP method
+<a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
+<a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetched</a> using the HTTP method
 that is <em>not</em> <code>GET</code>, determine the response as follows:
 
 <ul>
