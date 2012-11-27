@@ -1473,7 +1473,7 @@ X-Test: one, two</code></pre>
 
 
 
-      <p>Make a <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request">cross-origin request</a>,
+      <p>Make a <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request">cross-origin request</a>,
       passing these as parameters:</p>
 
       <dl>
@@ -1714,16 +1714,16 @@ X-Test: one, two</code></pre>
   <p>The <dfn id="cross-origin-request-event-rules">cross-origin request event rules</dfn> are as follows:</p>
 
   <dl class="switch">
-   <dt>If the <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a>
    is <i>preflight complete</i> and the <a href="#synchronous-flag">synchronous flag</a> is
    unset</dt>
    <dd><p><a href="#make-upload-progress-notifications">Make upload progress notifications</a>.</dd>
 
-   <dt>If the <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a>
    is <i title="">network error</i></dt>
    <dd><p>This is a <a href="#network-error">network error</a>.</dd>
 
-   <dt>If the <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a>
    is <i title="">abort error</i></dt>
    <dd><p>This is an <a href="#abort-error">abort error</a>.</dd>
 
@@ -1733,7 +1733,7 @@ X-Test: one, two</code></pre>
    <dd><p>This is a <a href="#timeout-error">timeout error</a>.</dd>
 
    <dt>Once all HTTP headers have been received, the
-   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dd>
     <p><a href="#switch-headers-received">Switch to the HEADERS_RECEIVED state</a>.</p>
@@ -1743,22 +1743,22 @@ X-Test: one, two</code></pre>
 
    <dt>Once the first byte (or more) of the
    <a href="#response-entity-body">response entity body</a> has been received, the
-   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dd><p><a href="#switch-loading">Switch to the LOADING state</a>.</dd>
 
    <dt>Once the whole <a href="#response-entity-body">response entity body</a> has been received
-   and the <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
+   and the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i></dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the state is
    <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a></dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a class="external" href="http://fetch.spec.whatwg.org/#cross-origin-request-status">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is set</dt>
    <dd><p><a href="#switch-done">Switch to the DONE state</a>.</dd>
   </dl>
@@ -2867,13 +2867,13 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
 <dd><cite><a href="http://tools.ietf.org/html/rfc6265">HTTP State Management Mechanism</a></cite>, Adam Barth. IETF.
 
 <dt id="refsCORS">[CORS]
-<dd><cite><a href="http://fetch.spec.whatwg.org/">Cross-Origin Resource Sharing</a></cite>, Anne van Kesteren. WHATWG.
+<dd><cite><a href="http://www.w3.org/TR/cors/">Cross-Origin Resource Sharing</a></cite>, Anne van Kesteren. W3C.
 
 <dt id="refsDOM">[DOM]
-<dd><cite><a href="http://dom.spec.whatwg.org/">DOM</a></cite>, Anne van Kesteren, Aryeh Gregor and Ms2ger. WHATWG.
+<dd><cite><a href="http://www.w3.org/TR/dom/">DOM</a></cite>, Anne van Kesteren, Aryeh Gregor and Ms2ger. W3C.
 
 <dt id="refsDOMPS">[DOMPS]
-<dd><cite><a href="http://domparsing.spec.whatwg.org/">DOM Parsing and Serialization</a></cite>, Ms2ger. WHATWG.
+<dd><cite><a href="http://www.w3.org/TR/DOM-Parsing/">DOM Parsing and Serialization</a></cite>, Travis Leithead and Ms2ger. W3C.
 
 <dt id="refsECMASCRIPT">[ECMASCRIPT]
 <dd><cite><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript Language Specification</a></cite>. ECMA.
@@ -2882,10 +2882,10 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
 <dd><cite><a href="http://encoding.spec.whatwg.org/">Encoding Standard</a></cite>, Anne van Kesteren. WHATWG.
 
 <dt id="refsFILEAPI">[FILEAPI]
-<dd><cite><a href="http://dev.w3.org/2006/webapi/FileAPI/">File API</a></cite>, Arun Ranganathan and Jonas Sicking. W3C.
+<dd><cite><a href="http://www.w3.org/TR/FileAPI/">File API</a></cite>, Arun Ranganathan and Jonas Sicking. W3C.
 
 <dt id="refsHTML">[HTML]
-<dd><cite><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML</a></cite>, Ian Hickson. WHATWG.
+<dd><cite><a href="http://www.w3.org/TR/html5/">HTML</a></cite>, Robin Berjon, Travis Leithead, Erika Doyle Navara et al.. W3C.
 
 <dt id="refsHTTP">[HTTP]
 <dd><cite><a href="http://tools.ietf.org/html/rfc2616">Hypertext Transfer Protocol -- HTTP/1.1</a></cite>, Roy Fielding, James Gettys, Jeffrey Mogul et al.. IETF.
@@ -2901,7 +2901,7 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
 <dd><cite><a href="http://www.kb.cert.org/vuls/id/150227">HTTP proxy default configurations allow arbitrary TCP connections</a></cite>. US-CERT.
 
 <dt id="refsPROGRESSEVENTS">[PROGRESSEVENTS]
-<dd><cite><a href="http://dev.w3.org/2006/webapi/progress/">Progress Events</a></cite>, Anne van Kesteren and Charles McCathieNevile. W3C.
+<dd><cite><a href="http://www.w3.org/TR/progress-events/">Progress Events</a></cite>, Anne van Kesteren and Charles McCathieNevile. W3C.
 
 <dt id="refsRFC2119">[RFC2119]
 <dd><cite><a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a></cite>, Scott Bradner. IETF.
@@ -2910,7 +2910,7 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
 <dd><cite><a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Array</a></cite>, David Herman and Kenneth Russell. Khronos.
 
 <dt id="refsWEBIDL">[WEBIDL]
-<dd><cite><a href="http://dev.w3.org/2006/webapi/WebIDL/">Web IDL</a></cite>, Cameron McCormack. W3C.
+<dd><cite><a href="http://www.w3.org/TR/WebIDL/">Web IDL</a></cite>, Cameron McCormack. W3C.
 
 <dt id="refsXML">[XML]
 <dd><cite><a href="http://www.w3.org/TR/xml/">Extensible Markup Language</a></cite>, Tim Bray, Jean Paoli, C. M. Sperberg-McQueen et al.. W3C.

@@ -27,10 +27,10 @@
   },
   "CORS" :
   {
-    "href" : "http://fetch.spec.whatwg.org/",
+    "href" : "http://www.w3.org/TR/cors/",
     "title" : "Cross-Origin Resource Sharing",
     "authors" : ["Anne van Kesteren"],
-    "publisher" : "WHATWG"
+    "publisher" : "W3C"
   },
   "CSRF" :
   {
@@ -114,18 +114,18 @@
   },
   "DOM" :
   {
-    "href" : "http://dom.spec.whatwg.org/",
+    "href" : "http://www.w3.org/TR/dom/",
     "oldhref" : "http://www.w3.org/TR/domcore/",
     "title" : "DOM",
     "authors" : ["Anne van Kesteren", "Aryeh Gregor", "Ms2ger"],
-    "publisher" : "WHATWG"
+    "publisher" : "W3C"
   },
   "DOMPS" :
   {
-    "href" : "http://domparsing.spec.whatwg.org/",
+    "href" : "http://www.w3.org/TR/DOM-Parsing/",
     "title" : "DOM Parsing and Serialization",
-    "authors" : ["Ms2ger"],
-    "publisher" : "WHATWG"
+    "authors" : ["Travis Leithead", "Ms2ger"],
+    "publisher" : "W3C"
   },
   "ECMASCRIPT" :
   {
@@ -160,17 +160,17 @@
   },
   "FILEAPI" :
   {
-     "href" : "http://dev.w3.org/2006/webapi/FileAPI/",
+     "href" : "http://www.w3.org/TR/FileAPI/",
      "title" : "File API",
      "authors" : ["Arun Ranganathan", "Jonas Sicking"],
      "publisher" : "W3C"
   },
   "HTML" :
   {
-    "href" : "http://www.whatwg.org/specs/web-apps/current-work/multipage/",
+    "href" : "http://www.w3.org/TR/html5/",
     "title" : "HTML",
-    "authors" : ["Ian Hickson"],
-    "publisher" : "WHATWG"
+    "authors" : ["Robin Berjon", "Travis Leithead", "Erika Doyle Navara", "Edward O'Connor", "Silvia Pfeiffer", "Ian Hickson"],
+    "publisher" : "W3C"
   },
   "HTML4" : {
     "href" : "http://www.w3.org/TR/html4/",
@@ -260,7 +260,7 @@
     "publisher" : "IETF"
   },
   "PROGRESSEVENTS" : {
-    "href" : "http://dev.w3.org/2006/webapi/progress/",
+    "href" : "http://www.w3.org/TR/progress-events/",
     "title" : "Progress Events",
     "authors" : ["Anne van Kesteren", "Charles McCathieNevile"],
     "publisher" : "W3C"
@@ -349,7 +349,7 @@
   },
   "WEBIDL" :
   {
-    "href" : "http://dev.w3.org/2006/webapi/WebIDL/",
+    "href" : "http://www.w3.org/TR/WebIDL/",
     "title" : "Web IDL",
     "authors" : ["Cameron McCormack"],
     "publisher" : "W3C"
@@ -363,10 +363,10 @@
   },
   "XHR" :
   {
-    "href" : "http://xhr.spec.whatwg.org/",
+    "href" : "http://www.w3.org/TR/XMLHttpRequest/",
     "title" : "XMLHttpRequest",
-    "authors" : ["Anne van Kesteren"],
-    "publisher" : "WHATWG"
+    "authors" : ["Julian Aubourg", "Jungkee Song", "Hallvord R. M. Steen", "Anne van Kesteren"],
+    "publisher" : "W3C"
   },
   "XHTML1" : {
     "href" : "http://www.w3.org/TR/xhtml11/",
