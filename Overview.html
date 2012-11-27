@@ -48,7 +48,7 @@
 
    <h1 class="head" id="xmlhttprequest-ls">XMLHttpRequest</h1>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 26 November 2012</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 27 November 2012</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -128,7 +128,7 @@
    available in the WHATWG <a href="http://xhr.spec.whatwg.org/">XMLHttpRequest Living Standard</a>, under a license that permits reuse of the specification text.</p>
 
   <p>The W3C <a href="http://www.w3.org/2008/webapps/">Web Applications Working
-  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 26 November 2012 Editor's Draft.</p>
+  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 27 November 2012 Editor's Draft.</p>
   
   <p>Publication as an Editor's Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
@@ -489,6 +489,11 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
   <a href="#source-origin">source origin</a> are not exposed when
   <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a> resources.
 
+  <p>When the <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a>
+  is a <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>, the
+  <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has an associated
+  <dfn id="concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</dfn>.
+
   <dl class="domintro">
     <dt><code><var title="">client</var> = new <a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">XMLHttpRequest</a>()</code>
     <dd>Returns a new <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object.
@@ -508,6 +513,14 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
 
     <li><p>If <var title="">options</var>'s <code title="">anon</code> member is
     true, set <var title="">xhr</var>'s <a href="#anonymous-flag">anonymous flag</a>.
+
+    <li><p>If the
+    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>, set
+    <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a> to the
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
+    associated with the global object of <var title="">xhr</var>'s interface
+    object.
 
     <li><p>Return <var title="">xhr</var>.
   </ol>
@@ -745,31 +758,23 @@ must be done in a case-insensitive manner. Initially it must be empty.
     <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>, run these steps:
 
     <ol>
-     <li>
-      <p>Let <var title="">document</var> be the
-      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
-      associated with the global object for which the
-      <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> interface object was created from which
-      this <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object was created.
-
-      <p class="XXX">Should this move to the constructor phase?
-
-     <li><p>If <var title="">document</var> is not
-     <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#fully-active">fully active</a>,
+     <li><p>If <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a>
+     is not <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#fully-active">fully active</a>,
      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
      "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception and
      terminate the overall set of steps.
 
      <li><p>Set <var title="">base</var> to the
      <a class="external" href="http://dev.w3.org/html5/spec/urls.html#document-base-url">document base URL</a> of
-     <var title="">document</var>.
+     <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a>.
 
      <li><p>Set <a href="#source-origin">source origin</a> to a globally unique identifier,
      if the <a href="#anonymous-flag">anonymous flag</a> is set, and the
-     <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> of <var title="">document</var>
-     otherwise.
+     <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> of
+     <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a> otherwise.
 
-     <li><p>Set <a href="#referrer-source">referrer source</a> to <var title="">document</var>.
+     <li><p>Set <a href="#referrer-source">referrer source</a> to
+     <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a>.
     </ol>
 
    <li>
