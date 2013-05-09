@@ -773,7 +773,7 @@ must be done in a case-insensitive manner. Initially it must be empty.
      <a class="external" href="http://dev.w3.org/html5/spec/urls.html#document-base-url">document base URL</a> of
      <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a>.
 
-     <li><p>Set <a href="#source-origin">source origin</a> to a globally unique identifier,
+     <li><p>Set <a href="#source-origin">source origin</a> to a globally unique identifier
      if the <a href="#anonymous-flag">anonymous flag</a> is set, and the
      <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> of
      <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a> otherwise.
@@ -2321,11 +2321,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
     executed, resources referenced will not be loaded and no associated XSLT
     will be applied.</p> <!-- XXX more formally?! -->
 
-    <!-- XXX what about document's encoding? -->
-
-   <li><p>Set <var title="">document</var>'s
-   <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> to the
-   <a href="#source-origin">source origin</a>.
+   <!-- XXX what about document's encoding? -->
 
    <li><p>Set <var title="">document</var>'s
    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-content-type" title="concept-document-content-type">content type</a>
@@ -2334,6 +2330,10 @@ Content-Type: text/plain; charset=utf-8</code></pre>
    <li><p>Set <var title="">document</var>'s
    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-url" title="concept-document-url">URL</a> to
    <a href="#request-url">request URL</a>.
+
+   <li><p>Set <var title="">document</var>'s
+   <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> to the
+   <a href="#source-origin">source origin</a>.
 
    <li><p>Return <var title="">document</var>.
   </ol>
