@@ -690,8 +690,7 @@ discarding any further data received from the network for them.
   <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> state.
 
   <p>The <dfn id="error-flag">error flag</dfn> indicates some type of
-  network error or request abortion. It is initially unset and is used
-  during the <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a> state.
+  network error or fetch termination. It is initially unset.
 
 <h3 id="request"><span class="secno">4.6 </span>Request</h3>
 
@@ -871,9 +870,11 @@ must be done in a case-insensitive manner. Initially it must be empty.
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception and
     terminate these steps.
 
-   <li><p><a href="#terminate-abort()" title="terminate abort()">Terminate the <code>abort()</code> algorithm</a>.</li>
+    <li>
+     <p>Set the <a href="#error-flag">error flag</a>.
 
-   <li><p><a href="#terminate-send()" title="terminate send()">Terminate the <code>send()</code> algorithm</a>.</li>
+     <p class="note">This is meaningless unless the 
+     <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> algorithm is running.
 
    <li><p>The user agent should cancel any network
    activity for which the object is responsible.</li>
@@ -1212,18 +1213,8 @@ X-Test: one, two</code></pre>
    </dd>
   </dl>
 
-  <p>The
-  <dfn id="dom-xmlhttprequest-send" title="dom-XMLHttpRequest-send"><code>send(<var>data</var>)</code></dfn>
-  method must run these steps (unless otherwise noted). This algorithm can
-  be <dfn id="terminate-send()" title="terminate send()">terminated</dfn> by invoking the
-  <code title="dom-XMLHttpRequest-open"><a href="#dom-xmlhttprequest-open">open()</a></code> or
-  <code title="dom-XMLHttpRequest-abort"><a href="#dom-xmlhttprequest-abort">abort()</a></code> method. When it is
-  <a href="#terminate-send()" title="terminate send()">terminated</a> the user agent
-  must terminate the algorithm after finishing the step it is on.</p>
-
-  <p class="note">The <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code>
-  algorithm can only be terminated if the <a href="#synchronous-flag">synchronous flag</a> is
-  unset and only after the method call has returned.</p>
+<p>The <dfn id="dom-xmlhttprequest-send" title="dom-XMLHttpRequest-send"><code>send(<var>data</var>)</code></dfn> 
+method must run these steps (unless otherwise noted):
 
   <ol>
    <li><p>If the state is not
@@ -1614,6 +1605,9 @@ X-Test: one, two</code></pre>
   <p>The <dfn id="same-origin-request-event-rules">same-origin request event rules</dfn> are as follows:</p>
 
   <dl class="switch">
+   <dt>If the <a href="#error-flag">error flag</a> is set
+   <dd><p>Terminate these steps.
+
    <dt>If the response has an HTTP status code of 301, 302, 303, 307, or 308</dt>
    <dd>
     <p>If the redirect violates infinite loop precautions this is a
@@ -1690,6 +1684,9 @@ X-Test: one, two</code></pre>
   <p>The <dfn id="cross-origin-request-event-rules">cross-origin request event rules</dfn> are as follows:</p>
 
   <dl class="switch">
+   <dt>If the <a href="#error-flag">error flag</a> is set
+   <dd><p>Terminate these steps.
+
    <dt>If the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a>
    is <i>preflight complete</i> and the <a href="#synchronous-flag">synchronous flag</a> is
    unset</dt>
@@ -1910,21 +1907,11 @@ X-Test: one, two</code></pre>
    <dd>Cancels any network activity.
   </dl>
 
-  <p>The
-  <dfn id="dom-xmlhttprequest-abort" title="dom-XMLHttpRequest-abort"><code>abort()</code></dfn>
-  method must run these steps (unless otherwise noted). This algorithm can
-  be <dfn id="terminate-abort()" title="terminate abort()">terminated</dfn> by invoking the
-  <code title="dom-XMLHttpRequest-open"><a href="#dom-xmlhttprequest-open">open()</a></code> method. When it is
-  <a href="#terminate-abort()" title="terminate abort()">terminated</a> the user agent
-  must terminate the algorithm after finishing the step it is on.
-
-  <p class="note">The <code title="dom-XMLHttpRequest-abort"><a href="#dom-xmlhttprequest-abort">abort()</a></code>
-  algorithm can only be terminated by invoking
-  <code title="dom-XMLHttpRequest-open"><a href="#dom-xmlhttprequest-open">open()</a></code> from an event
-  handler.</p>
+<p>The <dfn id="dom-xmlhttprequest-abort" title="dom-XMLHttpRequest-abort"><code>abort()</code></dfn> method must run 
+these steps (unless otherwise noted):
 
   <ol>
-   <li><p><a href="#terminate-send()" title="terminate send()">Terminate the <code>send()</code> algorithm</a>.</li>
+   <li><p>Set the <a href="#error-flag">error flag</a>.
 
    <li><p>The user agent should cancel any network
    activity for which the object is responsible.</li>
@@ -1934,10 +1921,6 @@ X-Test: one, two</code></pre>
    object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of
    the <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-queue" title="task queue">task queues</a>,
    then remove them.
-
-   <li><p>Set the <a href="#error-flag">error flag</a>.
-
-   <li><p>Unset the <a href="#synchronous-flag">synchronous flag</a>.
 
    <li>
     <p>If the state is <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a>,
@@ -2332,7 +2315,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
    <a href="#request-url">request URL</a>.
 
    <li><p>Set <var title="">document</var>'s
-   <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> to the
+   <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> to
    <a href="#source-origin">source origin</a>.
 
    <li><p>Return <var title="">document</var>.
@@ -2924,6 +2907,7 @@ that is <em>not</em> <code>GET</code>, determine the response as follows:
   David Levin,
   Dean Jackson,
   Denis Sureau,
+  Dominik R&ouml;ttsches,
   Doug Schepers,
   Douglas Livingstone,
   Elliotte Harold,
