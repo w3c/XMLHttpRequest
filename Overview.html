@@ -48,7 +48,7 @@
 
    <h1 class="head" id="xmlhttprequest-ls">XMLHttpRequest</h1>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 9 May 2013</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 10 May 2013</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -99,7 +99,7 @@
 <p class="now3c copyright"><a rel=license href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" alt=CC0></a>
 To the extent possible under law, the editor has waived all copyright and
 related or neighboring rights to this work. In addition, as of
-9 May 2013, the editor has made this specification available
+10 May 2013, the editor has made this specification available
 under the
 <a rel=license
 href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0">Open Web Foundation Agreement Version 1.0</a>,
@@ -141,7 +141,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
    available in the WHATWG <a href="http://xhr.spec.whatwg.org/">XMLHttpRequest Living Standard</a>, under a license that permits reuse of the specification text.</p>
 
   <p>The W3C <a href="http://www.w3.org/2008/webapps/">Web Applications Working
-  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 9 May 2013 Editor's Draft.</p>
+  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 10 May 2013 Editor's Draft.</p>
   
   <p>Publication as an Editor's Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
@@ -990,14 +990,10 @@ method must run these steps (unless otherwise indicated):
    steps.</li>
 
    <li>
-    <p>If <var>header</var> is in the <a href="#author-request-headers">author request headers</a>
-    list, combine <var title="">value</var> with the value of the header
-    matching <var>header</var> in the <a href="#author-request-headers">author request headers</a>
-    list (for combine see section 4.2, RFC 2616).
-    <a href="#refsHTTP">[HTTP]</a>
-    <!-- XXX "combine" should probably be replaced with
-         'append ", ", followed by value' -->
-
+    <p>If <var title="">header</var> is in the <a href="#author-request-headers">author request headers</a> list, append
+    "<code>,</code>", followed by U+0020, followed by <var title="">value</var>, to the
+    value of the header matching <var title="">header</var>.
+ 
     <p class="note">The XMLHttpRequest standard intentionally constraints the
     use of HTTP here in line with contemporary implementations.
   </ol>
