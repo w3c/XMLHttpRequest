@@ -999,14 +999,10 @@ method must run these steps (unless otherwise indicated):
    steps.</p></li>
 
    <li>
-    <p>If <var>header</var> is in the <span>author request headers</span>
-    list, combine <var title>value</var> with the value of the header
-    matching <var>header</var> in the <span>author request headers</span>
-    list (for combine see section 4.2, RFC 2616).
-    <span data-anolis-ref>HTTP</span>
-    <!-- XXX "combine" should probably be replaced with
-         'append ", ", followed by value' -->
-
+    <p>If <var title>header</var> is in the <span>author request headers</span> list, append
+    "<code>,</code>", followed by U+0020, followed by <var title>value</var>, to the
+    value of the header matching <var title>header</var>.
+ 
     <p class=note>The XMLHttpRequest standard intentionally constraints the
     use of HTTP here in line with contemporary implementations.
   </ol>
