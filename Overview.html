@@ -2722,23 +2722,9 @@ this section.
  "<code title="">;base64</code>" flag is present.
 </ul>
 
-<p>When a
-<a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
-<a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetched</a> using the HTTP method
-that is <em>not</em> <code>GET</code>, determine the response as follows:
-
-<ul>
- <li><p>Ignore any request headers.
-
- <li><p>Set the HTTP status code to 501.
-
- <li><p>Set the HTTP status text to "<code title="">Not Implemented</code>".
-
- <li><p>Include no response headers.
-
- <li><p>Set the <a href="#response-entity-body">response entity body</a> to null.
-</ul>
-
+<p>Otherwise, including when the
+<a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> cannot be
+parsed, this is a network error.
 
 <h2 class="no-num" id="references">References</h2>
 <div id="anolis-references"><dl><dt id="refsCOOKIES">[COOKIES]
