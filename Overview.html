@@ -450,7 +450,7 @@ enum <dfn id="xmlhttprequestresponsetype">XMLHttpRequestResponseType</dfn> {
 };
 
 dictionary <dfn id="xmlhttprequestoptions">XMLHttpRequestOptions</dfn> {
-  boolean anon = false;
+  boolean anonymous = false;
 };
 
 [<a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">Constructor</a>(optional <a href="#xmlhttprequestoptions">XMLHttpRequestOptions</a> <var title="">options</var>)]
@@ -514,7 +514,7 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
     <dt><code><var title="">client</var> = new <a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">XMLHttpRequest</a>()</code>
     <dd>Returns a new <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object.
 
-    <dt><code><var title="">client</var> = new <a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">XMLHttpRequest</a>({anon:true})</code>
+    <dt><code><var title="">client</var> = new <a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">XMLHttpRequest</a>({anonymous:true})</code>
     <dd>Returns a new <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object that has its
     <a href="#anonymous-flag">anonymous flag</a> set.
   </dl>
@@ -527,7 +527,7 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
     <li><p>Let <var title="">xhr</var> be a new <code><a href="#xmlhttprequest">XMLHttpRequest</a></code>
     object.
 
-    <li><p>If <var title="">options</var>'s <code title="">anon</code> member is
+    <li><p>If <var title="">options</var>'s <code title="">anonymous</code> member is
     true, set <var title="">xhr</var>'s <a href="#anonymous-flag">anonymous flag</a>.
 
     <li><p>If the
@@ -2815,6 +2815,7 @@ parsed, this is a network error.
   Dominik R&ouml;ttsches,
   Doug Schepers,
   Douglas Livingstone,
+  Elliott Sprehn,
   Elliotte Harold,
   Eric Lawrence,
   Eric Uhrhane,
