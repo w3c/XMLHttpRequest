@@ -48,7 +48,7 @@
 
    <h1 class="head" id="xmlhttprequest-ls">XMLHttpRequest</h1>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 10 May 2013</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 16 May 2013</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -100,7 +100,7 @@
 <p class="now3c copyright"><a rel=license href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" alt=CC0></a>
 To the extent possible under law, the editor has waived all copyright and
 related or neighboring rights to this work. In addition, as of
-10 May 2013, the editor has made this specification available
+16 May 2013, the editor has made this specification available
 under the
 <a rel=license
 href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0">Open Web Foundation Agreement Version 1.0</a>,
@@ -142,7 +142,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
    available in the WHATWG <a href="http://xhr.spec.whatwg.org/">XMLHttpRequest Living Standard</a>, under a license that permits reuse of the specification text.</p>
 
   <p>The W3C <a href="http://www.w3.org/2008/webapps/">Web Applications Working
-  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 10 May 2013 Editor's Draft.</p>
+  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 16 May 2013 Editor's Draft.</p>
   
   <p>Publication as an Editor's Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
@@ -880,9 +880,15 @@ method must run these steps (unless otherwise indicated):
    <li><p>Set <a href="#response-entity-body">response entity body</a> to null.
   </ul>
 
- <li><p>Change the state to <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>.
+ <li>
+  <p>If the state is not <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>, run these
+  substeps:
 
- <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+  <ol>
+   <li><p>Change the state to <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>.
+
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.
+  </ol>
 </ol>
 
   <h4 id="the-setrequestheader()-method"><span class="secno">4.6.2 </span>The <code title="">setRequestHeader()</code> method</h4>
@@ -2585,46 +2591,45 @@ algorithm:</p>
     <tr>
      <td><dfn id="event-xhr-readystatechange" title="event-xhr-readystatechange"><code>readystatechange</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#event">Event</a></code></td>
-     <td>The <code title="dom-XMLHttpRequest-readyState"><a href="#dom-xmlhttprequest-readystate">readyState</a></code>
-     attribute changes at some seemingly arbitrary times for historical
-     reasons.</td>
+     <td>The <code title="dom-XMLHttpRequest-readyState"><a href="#dom-xmlhttprequest-readystate">readyState</a></code> attribute changes
+     value, except when it changes to <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a>.
     </tr>
     <tr>
      <td><dfn id="event-xhr-loadstart" title="event-xhr-loadstart"><code>loadstart</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
-     <td>When the request starts.</td>
+     <td>The request starts.</td>
     </tr>
     <tr>
      <td><dfn id="event-xhr-progress" title="event-xhr-progress"><code>progress</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
-     <td>While sending and loading data.</td>
+     <td>Transmitting data.</td>
     </tr>
     <tr>
      <td><dfn id="event-xhr-abort" title="event-xhr-abort"><code>abort</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
-     <td>When the request has been aborted. For instance, by invoking the
+     <td>The request has been aborted. For instance, by invoking the
      <code title="dom-XMLHttpRequest-abort"><a href="#dom-xmlhttprequest-abort">abort()</a></code> method.</td>
     </tr>
     <tr>
      <td><dfn id="event-xhr-error" title="event-xhr-error"><code>error</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
-     <td>When the request has failed.</td>
+     <td>The request has failed.</td>
     </tr>
     <tr>
      <td><dfn id="event-xhr-load" title="event-xhr-load"><code>load</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
-     <td>When the request has successfully completed.</td>
+     <td>The request has successfully completed.</td>
     </tr>
     <tr>
      <td><dfn id="event-xhr-timeout" title="event-xhr-timeout"><code>timeout</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
-     <td>When the author specified timeout has passed before the request
-     could complete.</td>
+     <td>The author specified timeout has passed before the request
+     completed.</td>
     </tr>
     <tr>
      <td><dfn id="event-xhr-loadend" title="event-xhr-loadend"><code>loadend</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
-     <td>When the request has completed (either in success or failure).</td>
+     <td>The request has completed (either in success or failure).</td>
     </tr>
    </tbody>
   </table>
