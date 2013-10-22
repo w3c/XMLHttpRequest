@@ -1940,6 +1940,13 @@ these steps (unless otherwise noted):
 
   <h3 id="response">Response</h3>
 
+  <p>A <dfn title=concept-response-header>response header</dfn> is a HTTP response header
+  transmitted before the <span>response entity body</span>.
+  <span data-anolis-ref>HTTP</span>
+
+  <p class=note>This excludes trailer fields ("trailers").
+
+ 
   <h4>The <code title>status</code> attribute</h4>
 
   <dl class=domintro>
@@ -2008,24 +2015,22 @@ these steps (unless otherwise noted):
    <li><p>If <var>header</var> is a case-insensitive match for
    <code>Set-Cookie</code> or <code>Set-Cookie2</code>, return null.</p></li>
 
-   <li><p>If <var>header</var> is a case-insensitive match for multiple HTTP
-   response headers, return the values of these headers as a single
-   concatenated string separated from each other by a
+   <li><p>If <var>header</var> is a case-insensitive match for multiple
+   <span title=concept-response-header>response headers</span>, return the values of these
+   headers as a single concatenated string separated from each other by a    
    U+002C COMMA U+0020 SPACE character pair.
 
-   <li><p>If <var>header</var> is a case-insensitive match for a single HTTP
-   response header, return the value of that header.
+   <li><p>If <var>header</var> is a case-insensitive match for a single
+   <span title=concept-response-header>response header</span>, return the value of that header.    
 
    <li><p>Return null.</p></li>
   </ol>
 
-
   <p class=note>The Cross-Origin Resource Sharing specification filters
-  the headers that are exposed by
-  <code title="dom-XMLHttpRequest-getResponseHeader">getResponseHeader()</code>
-  for non <span data-anolis-spec=html title="same origin">same-origin</span>
-  requests. <span data-anolis-ref>CORS</span>
-
+  <span title=concept-response-header>response headers</span> exposed by
+  <code title="dom-XMLHttpRequest-getAllResponseHeaders">getAllResponseHeaders()</code>
+  for <span data-anolis-spec=cors title="cross-origin request">cross-origin requests</span>.
+  <span data-anolis-ref>CORS</span>
 
   <div class="example">
 
@@ -2067,7 +2072,7 @@ client.onreadystatechange = function() {
 
    <li><p>If the <span>error flag</span> is set, return the empty string.
 
-   <li><p>Return all the HTTP headers, excluding headers that are a
+   <li><p>Return all <span title=concept-response-header>response headers</span>, excluding headers that are a
    case-insensitive match for <code>Set-Cookie</code> or
    <code>Set-Cookie2</code>, as a single string, with each header line
    separated by a U+000D CR U+000A LF pair, excluding the status line, and
@@ -2075,13 +2080,11 @@ client.onreadystatechange = function() {
    U+003A COLON U+0020 SPACE pair.</p></li>
   </ol>
 
-
   <p class=note>The Cross-Origin Resource Sharing specification filters
-  the headers that are exposed by
+  <span title=concept-response-header>response headers</span> exposed by
   <code title="dom-XMLHttpRequest-getAllResponseHeaders">getAllResponseHeaders()</code>
-  for non <span data-anolis-spec=html title="same origin">same-origin</span>
-  requests. <span data-anolis-ref>CORS</span>
-
+  for <span data-anolis-spec=cors title="cross-origin request">cross-origin requests</span>.
+  <span data-anolis-ref>CORS</span> 
 
   <div class="example">
    <p>For the following script:</p>
