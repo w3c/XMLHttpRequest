@@ -362,7 +362,7 @@ not appear in all uppercase letters in this specification.
    <dd><p>A <span>conforming user agent</span> must
    support at least the subset of the functionality defined in HTML that
    this specification relies upon, such as the basics of the
-   <code class="external"><a href="http://dev.w3.org/html5/spec/browsers.html#window">Window</a></code> object and serializing a <code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a></code>
+   <code class="external"><a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#window">Window</a></code> object and serializing a <code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a></code>
    object. <a href="#refsHTML">[HTML]</a>
 
    <dt>HTTP</dt>
@@ -428,13 +428,13 @@ not appear in all uppercase letters in this specification.
   <pre class="idl">[NoInterfaceObject]
 interface <dfn id="xmlhttprequesteventtarget">XMLHttpRequestEventTarget</dfn> : <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#eventtarget">EventTarget</a> {
   // <a href="#event-handlers">event handlers</a>
-  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadstart" title="handler-xhr-onloadstart">onloadstart</a>;
-  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onprogress" title="handler-xhr-onprogress">onprogress</a>;
-  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onabort" title="handler-xhr-onabort">onabort</a>;
-  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onerror" title="handler-xhr-onerror">onerror</a>;
-  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onload" title="handler-xhr-onload">onload</a>;
-  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-ontimeout" title="handler-xhr-ontimeout">ontimeout</a>;
-  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadend" title="handler-xhr-onloadend">onloadend</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadstart" title="handler-xhr-onloadstart">onloadstart</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onprogress" title="handler-xhr-onprogress">onprogress</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onabort" title="handler-xhr-onabort">onabort</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onerror" title="handler-xhr-onerror">onerror</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onload" title="handler-xhr-onload">onload</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-ontimeout" title="handler-xhr-ontimeout">ontimeout</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadend" title="handler-xhr-onloadend">onloadend</a>;
 };
 
 interface <dfn id="xmlhttprequestupload">XMLHttpRequestUpload</dfn> : <a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a> {
@@ -457,7 +457,7 @@ dictionary <dfn id="xmlhttprequestoptions">XMLHttpRequestOptions</dfn> {
 [<a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">Constructor</a>(optional <a href="#xmlhttprequestoptions">XMLHttpRequestOptions</a> <var title="">options</var>)]
 interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a> {
   // <a href="#event-handlers">event handler</a>
-  attribute <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onreadystatechange" title="handler-xhr-onreadystatechange">onreadystatechange</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onreadystatechange" title="handler-xhr-onreadystatechange">onreadystatechange</a>;
 
   // <a href="#states">states</a>
   const unsigned short <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> = 0;
@@ -491,10 +491,18 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
 <p>Each <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has a unique, associated
 <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
 
+<p>If the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>, implementations must act as if
+<code title="">Document</code> and <code title="">Document?</code> in the above IDL were not
+exposed. I.e. <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> is not overloaded with it
+and <code title="dom-XMLHttpRequest-responseXML"><a href="#dom-xmlhttprequest-responsexml">responseXML</a></code> always returns null (as
+required by its definition, too).
+
+
 <h3 id="task-sources"><span class="secno">4.1 </span>Task sources</h3>
 
 <p>Each <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has its own
-<a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-source">task source</a>. Namely, the
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-source">task source</a>. Namely, the
 <dfn id="xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</dfn>.
 
 
@@ -504,10 +512,10 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
   <dfn id="anonymous-flag">anonymous flag</dfn>. If the <a href="#anonymous-flag">anonymous flag</a> is set,
   <a href="#user-credentials">user credentials</a> and the
   <a href="#source-origin">source origin</a> are not exposed when
-  <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a> resources.
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a> resources.
 
-  <p>When the <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a>
-  is a <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>, the
+  <p>When the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a>
+  is a <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>, the
   <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has an associated
   <dfn id="concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</dfn>.
 
@@ -532,8 +540,8 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
     true, set <var title="">xhr</var>'s <a href="#anonymous-flag">anonymous flag</a>.
 
     <li><p>If the
-    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>, set
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>, set <var title="">xhr</var>'s
     <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a> to the
     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
     associated with the global object of <var title="">xhr</var>'s interface
@@ -579,9 +587,9 @@ one of the following is true:
 
 <p>If an <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object is garbage collected while its
 connection is still open, the user agent must cancel any instance of the
-<a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch">fetch</a> algorithm opened by this object,
-discarding any <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-task" title="concept-task">tasks</a>
-<a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task" title="queue a task">queued</a> for them, and
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch">fetch</a> algorithm opened by this object,
+discarding any <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a>
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task" title="queue a task">queued</a> for them, and
 discarding any further data received from the network for them.
 
 
@@ -590,16 +598,16 @@ discarding any further data received from the network for them.
 
 
   <p>The following are the
-  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handlers">event handlers</a> (and their corresponding
-  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handler-event-type" title="event handler event type">event handler event types</a>)
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers">event handlers</a> (and their corresponding
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type" title="event handler event type">event handler event types</a>)
   that must be supported on objects implementing an interface that inherits
   from <code><a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a></code> as attributes:</p>
 
   <table>
    <thead>
     <tr>
-     <th><a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handlers" title="event handlers">event handler</a>
-     <th><a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handler-event-type">event handler event type</a>
+     <th><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" title="event handlers">event handler</a>
+     <th><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type">event handler event type</a>
    <tbody>
     <tr>
      <td><dfn id="handler-xhr-onloadstart" title="handler-xhr-onloadstart"><code>onloadstart</code></dfn>
@@ -626,17 +634,17 @@ discarding any further data received from the network for them.
 
 
   <p>The following is the
-  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handlers" title="event handlers">event handler</a>
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" title="event handlers">event handler</a>
   (and its corresponding
-  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handler-event-type">event handler event type</a>) that must be
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type">event handler event type</a>) that must be
   supported as attribute solely by the
   <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object:</p>
 
   <table>
    <thead>
     <tr>
-     <th><a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handlers" title="event handlers">event handler</a>
-     <th><a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#event-handler-event-type">event handler event type</a>
+     <th><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" title="event handlers">event handler</a>
+     <th><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type">event handler event type</a>
    <tbody>
     <tr>
      <td><dfn id="handler-xhr-onreadystatechange" title="handler-xhr-onreadystatechange"><code>onreadystatechange</code></dfn>
@@ -739,8 +747,8 @@ must be done in a case-insensitive manner. Initially it must be empty.
 
     <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>"
     exception if <var title="">async</var> is false, the
-    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>, and either the
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>, and either the
     <a href="#anonymous-flag">anonymous flag</a> is set, the
     <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code> attribute is not
     zero, the
@@ -758,21 +766,21 @@ method must run these steps (unless otherwise indicated):
  <li><p>Let <var title="">base</var> be null.
 
  <li>
-  <p>If the <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>, run these steps:
+  <p>If the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>, run these steps:
 
   <ol>
    <li><p>If <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a> is not 
-   <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#fully-active">fully active</a>, 
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#fully-active">fully active</a>, 
    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an 
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>Set <var title="">base</var> to the 
-   <a class="external" href="http://dev.w3.org/html5/spec/urls.html#document-base-url">document base URL</a> of
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#document-base-url">document base URL</a> of
    <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a>.
 
    <li><p>Set <a href="#source-origin">source origin</a> to a globally unique identifier if the 
-   <a href="#anonymous-flag">anonymous flag</a> is set, and the <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> 
+   <a href="#anonymous-flag">anonymous flag</a> is set, and the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">origin</a> 
    of <a href="#concept-xmlhttprequest-document" title="concept-XMLHttpRequest-document">document</a> otherwise.
 
    <li><p>Set <a href="#referrer-source">referrer source</a> to 
@@ -780,19 +788,19 @@ method must run these steps (unless otherwise indicated):
   </ol>
 
  <li>
-  <p>If the <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-  <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#worker-environment">worker environment</a>, run these steps:
+  <p>If the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>, run these steps:
 
   <ol>
    <li><p>Set <var title="">base</var> to the 
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#script's-base-url">script's base URL</a>.
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#script's-base-url">script's base URL</a>.
 
    <li><p>Set <a href="#source-origin">source origin</a> to the 
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-script" title="concept-script">script</a>'s
-   <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a>.
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-script" title="concept-script">script</a>'s
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">origin</a>.
 
    <li><p>Set <a href="#referrer-source">referrer source</a> to the 
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#script's-referrer-source">script's referrer source</a>.
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#script's-referrer-source">script's referrer source</a>.
   </ol>
 
  <li><p>If <var>method</var> does not match the <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-5.1.1">Method</a> 
@@ -844,8 +852,8 @@ method must run these steps (unless otherwise indicated):
   </ol>
 
  <li><p>If <var>async</var> is false, the
- <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
- <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>, and either the
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>, and either the
  <a href="#anonymous-flag">anonymous flag</a> is set, the
  <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code> attribute value is not zero, the
  <code title="dom-XMLHttpRequest-withCredentials"><a href="#dom-xmlhttprequest-withcredentials">withCredentials</a></code> attribute value is 
@@ -864,9 +872,9 @@ method must run these steps (unless otherwise indicated):
  responsible.
  <!-- we can hardly require it... -->
 
- <li><p>If there are any <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-task" title="concept-task">tasks</a> from 
+ <li><p>If there are any <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a> from 
  the object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of the 
- <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-queue" title="task queue">task queues</a>, then remove them.
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" title="task queue">task queues</a>, then remove them.
 
  <li>
   <p>Set variables associated with the object as follows:</p>
@@ -920,7 +928,7 @@ method must run these steps (unless otherwise indicated):
   <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> method section.</p>
 
 
-  <p class="note">For non <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a> requests using the HTTP
+  <p class="note">For non <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a> requests using the HTTP
   <code>GET</code> method a preflight request is made when headers other
   than <code>Accept</code> and <code>Accept-Language</code> are set.</p>
 
@@ -1027,7 +1035,7 @@ X-Test: one, two</code></pre>
    <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-timeout" title="dom-XMLHttpRequest-timeout">timeout</a></code>
    <dd>
     <p>Can be set to a time in milliseconds. When set to a non-zero value
-    will cause <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a> to
+    will cause <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a> to
     terminate after the given time has passed. When the time has passed, if
     the <a href="#synchronous-flag">synchronous flag</a> is unset, a
     <code title="event-xhr-timeout"><a href="#event-xhr-timeout">timeout</a></code> event will then be
@@ -1038,8 +1046,8 @@ X-Test: one, two</code></pre>
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if
     the <a href="#synchronous-flag">synchronous flag</a> is set and the
-    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>.
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>.
    </dd>
   </dl>
 
@@ -1052,8 +1060,8 @@ X-Test: one, two</code></pre>
 
   <ol>
    <li><p>If the
-   <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a> and the
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
@@ -1063,9 +1071,9 @@ X-Test: one, two</code></pre>
 
   <p class="note">This implies that the
   <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code> attribute can be
-  set while <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a> is in
+  set while <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a> is in
   progress. If that occurs it will still be measured relative to the start
-  of <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a>.
+  of <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a>.
 
 
   <h4 id="the-withcredentials-attribute"><span class="secno">4.6.4 </span>The <code title="">withCredentials</code> attribute</h4>
@@ -1086,8 +1094,8 @@ X-Test: one, two</code></pre>
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if
     either the <a href="#synchronous-flag">synchronous flag</a> is set and the
-    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a> or if the
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a> or if the
     <a href="#anonymous-flag">anonymous flag</a> is set.</p>
    </dd>
   </dl>
@@ -1116,8 +1124,8 @@ X-Test: one, two</code></pre>
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
 
    <li><p>If the
-   <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a> and the
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
@@ -1130,8 +1138,8 @@ X-Test: one, two</code></pre>
   <p class="note">The
   <code title="dom-XMLHttpRequest-withCredentials"><a href="#dom-xmlhttprequest-withcredentials">withCredentials</a></code>
   attribute has no effect when
-  <a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetching</a>
-  <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin" title="same origin">same-origin</a>
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a>
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" title="same origin">same-origin</a>
   resources.</p>
 
 
@@ -1263,7 +1271,7 @@ method must run these steps (unless otherwise noted):
      <dd>
       <p>Let the <a href="#request-entity-body">request entity body</a> be the result of running
       the
-      <a class="external" href="http://dev.w3.org/html5/spec/constraints.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>
+      <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/constraints.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>
       with <var>data</var> as <var>form data set</var> and with
       <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a> as the
       explicit character encoding.
@@ -1274,16 +1282,16 @@ method must run these steps (unless otherwise noted):
       "<code title="">multipart/form-data;</code>",
       a U+0020 SPACE character,
       "<code title="">boundary=</code>", and the
-      <a class="external" href="http://dev.w3.org/html5/spec/constraints.html#multipart/form-data-boundary-string"><code>multipart/form-data</code> boundary string</a>
+      <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/constraints.html#multipart/form-data-boundary-string"><code>multipart/form-data</code> boundary string</a>
       generated by the
-      <a class="external" href="http://dev.w3.org/html5/spec/constraints.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>.
+      <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/constraints.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>.
      </dd>
 
     </dl>
 
     <p>If a <code>Content-Type</code> header is in
     <a href="#author-request-headers">author request headers</a> and its value is a
-    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#valid-mime-type">valid MIME type</a> that has a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#valid-mime-type">valid MIME type</a> that has a
     <code>charset</code> parameter whose value is not a case-insensitive
     match for <var title="">encoding</var>, and <var title="">encoding</var>
     is not null, set all the <code>charset</code> parameters of that
@@ -1299,7 +1307,7 @@ method must run these steps (unless otherwise noted):
    </li>
 
    <li><p>If the <a href="#synchronous-flag">synchronous flag</a> is set, release the
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#storage-mutex">storage mutex</a>.</li>
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#storage-mutex">storage mutex</a>.</li>
 
    <li><p>Unset the <a href="#error-flag">error flag</a>,
    <a href="#upload-complete-flag">upload complete flag</a> and <a href="#upload-events-flag">upload events flag</a>.
@@ -1331,15 +1339,15 @@ method must run these steps (unless otherwise noted):
    <li>
     <dl class="switch">
      <dt>If the <a href="#source-origin">source origin</a> and the <a href="#request-url">request URL</a>
-     are <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a></dt>
+     are <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a></dt>
      <dt>If the <a href="#request-url">request URL</a>'s
-     <code class="external" title="url-scheme"><a href="http://dev.w3.org/html5/spec/urls.html#url-scheme">&lt;scheme&gt;</a></code> is
+     <code class="external" title="url-scheme"><a href="http://www.w3.org/html/wg/drafts/html/master/urls.html#url-scheme">&lt;scheme&gt;</a></code> is
      "<code title="">data</code>"
 
      <dd>
       <p>These are the <dfn id="same-origin-request-steps">same-origin request steps</dfn>.</p>
 
-      <p><a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch">Fetch</a> the
+      <p><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch">Fetch</a> the
       <a href="#request-url">request URL</a> from <i title="">origin</i>
       <a href="#source-origin">source origin</a>, using
       <a href="#referrer-source">referrer source</a> as
@@ -1378,7 +1386,7 @@ method must run these steps (unless otherwise noted):
 
         <p>While processing the request, as data becomes available and when
         the user interferes with the request,
-        <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task" title="queue a task">queue tasks</a>
+        <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task" title="queue a task">queue tasks</a>
         to update the <a href="#response-entity-body">response entity body</a> and follow the
         <a href="#same-origin-request-event-rules">same-origin request event rules</a>.</p>
        </dd>
@@ -1478,7 +1486,7 @@ method must run these steps (unless otherwise noted):
 
   <p>If authentication fails,
   <a href="#source-origin">source origin</a> and the
-  <a href="#request-url">request URL</a> are <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a>,
+  <a href="#request-url">request URL</a> are <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a>,
   <code title="http-authorization">Authorization</code> is not in the list
   of <a href="#author-request-headers">author request headers</a>,
   <a href="#request-url">request URL</a>'s
@@ -1495,7 +1503,7 @@ method must run these steps (unless otherwise noted):
   <p class="note">Unfortunately end users are prompted because of legacy
   content constraints. However, when possible this behavior is prohibited,
   as it is bad UI. E.g. that is why the
-  <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a> restriction is made above.
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a> restriction is made above.
 
   <hr>
 
@@ -1576,8 +1584,8 @@ method must run these steps (unless otherwise noted):
      <code>Location</code> header.</li>
 
      <li><p>If the <a href="#source-origin">source origin</a> and the
-     <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> of <a href="#request-url">request URL</a>
-     are <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#same-origin">same origin</a> transparently follow
+     <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">origin</a> of <a href="#request-url">request URL</a>
+     are <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a> transparently follow
      the redirect while observing the
      <a href="#same-origin-request-event-rules">same-origin request event rules</a>.
 
@@ -1720,9 +1728,9 @@ method must run these steps (unless otherwise noted):
    activity for which the object is responsible.</li>
 
    <li><p>If there are any
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-task" title="concept-task">tasks</a> from the
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a> from the
    object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of
-   the <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-queue" title="task queue">task queues</a>,
+   the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" title="task queue">task queues</a>,
    then remove them.
 
    <li><p>Set the the <a href="#error-flag">error flag</a>.
@@ -1813,7 +1821,7 @@ method must run these steps (unless otherwise noted):
   <hr>
 
   <p>When it is said to <dfn id="make-progress-notifications">make progress notifications</dfn>, while the
-  download is progressing, <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task">queue a task</a> to
+  download is progressing, <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task">queue a task</a> to
   <a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
   about every 50ms or for every byte received, whichever is <em>least</em>
   frequent.</p>
@@ -1826,7 +1834,7 @@ method must run these steps (unless otherwise noted):
   <ul>
    <li><p>While the request entity body is being transmitted and the
    <a href="#upload-complete-flag">upload complete flag</a> is unset,
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task">queue a task</a> to
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task">queue a task</a> to
    <a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code> on
    the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object about every 50ms or for
    every byte transmitted, whichever is <em>least</em> frequent.</li>
@@ -1836,7 +1844,7 @@ method must run these steps (unless otherwise noted):
     (irrespective of whether the server has started transmitting a response
     or the status code of such a response) and the
     <a href="#upload-complete-flag">upload complete flag</a> is still unset,
-    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#queue-a-task">queue a task</a> to run these substeps:
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task">queue a task</a> to run these substeps:
 
     <ol>
      <li><p>Set the <a href="#upload-complete-flag">upload complete flag</a>.
@@ -1871,9 +1879,9 @@ these steps (unless otherwise noted):
    activity for which the object is responsible.</li>
 
    <li><p>If there are any
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#concept-task" title="concept-task">tasks</a> from the
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a> from the
    object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of
-   the <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#task-queue" title="task queue">task queues</a>,
+   the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" title="task queue">task queues</a>,
    then remove them.
 
    <li>
@@ -2188,8 +2196,8 @@ Content-Type: text/plain; charset=utf-8</code></pre>
    <li><p>If the <a href="#response-entity-body">response entity body</a> is null, return null.</li>
 
    <li><p>If the
-   <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#worker-environment">worker environment</a>, return null.
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>, return null.
 
    <li><p>If <a href="#final-mime-type">final MIME type</a> is not null,
    <code>text/html</code>, <code>text/xml</code>,
@@ -2259,7 +2267,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
    <a href="#request-url">request URL</a>.
 
    <li><p>Set <var title="">document</var>'s
-   <a class="external" href="http://dev.w3.org/html5/spec/browsers.html#origin">origin</a> to
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">origin</a> to
    <a href="#source-origin">source origin</a>.
 
    <li><p>Return <var title="">document</var>.
@@ -2380,8 +2388,8 @@ algorithm:</p>
     "<code title="">json</code>", and
     "<code title="">text</code>".</p>
     <p>When set: setting to "<code title="">document</code>" is ignored if the
-    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#worker-environment">worker environment</a>
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception if the
     state is <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
@@ -2389,8 +2397,8 @@ algorithm:</p>
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if the
     <a href="#synchronous-flag">synchronous flag</a> is set and the
-    <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-    <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a>.
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>.
   </dl>
 
 
@@ -2411,15 +2419,15 @@ algorithm:</p>
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>If the
-   <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#document-environment">document environment</a> and the
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
 
    <li><p>If the
-   <a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
-   <a class="external" href="http://dev.w3.org/html5/spec/webappapis.html#worker-environment">worker environment</a> and the given
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a> and the given
    value is "<code title="">document</code>", terminate these steps.
 
    <li><p>Set the
@@ -2645,12 +2653,18 @@ algorithm:</p>
 entries. Each entry has a name, a value, a type, and optionally a filename
 (if type is "file").
 
-<pre class="idl">[<a href="#dom-formdata" title="dom-FormData">Constructor</a>(optional <a class="external" href="http://dev.w3.org/html5/spec/the-form-element.html#htmlformelement">HTMLFormElement</a> <var>form</var>)]
+<pre class="idl">[<a href="#dom-formdata" title="dom-FormData">Constructor</a>(optional <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/the-form-element.html#htmlformelement">HTMLFormElement</a> <var>form</var>)]
 interface <dfn id="formdata">FormData</dfn> {
   void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>(DOMString <var>name</var>, <a class="external" href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a> <var title="">value</var>, optional DOMString <var title="">filename</var>);
   void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>(DOMString <var>name</var>, DOMString <var>value</var>);
 };</pre>
 
+<p>If the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>, <code><a href="#formdata">FormData</a></code> must be
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#exposed-to-javascript">exposed to JavaScript</a> as if the constructor part of the
+IDL reads <code title="">[Constructor]</code> (i.e. has no arguments).
+<!-- maybe move this into IDL at some point -->
+ 
 <dl class="domintro">
  <dt><code><var title="">fd</var> = new <a href="#dom-formdata" title="dom-FormData">FormData</a>([<var title="">form</var>])</code>
  <dd><p>Returns a new <code><a href="#formdata">FormData</a></code> object, optionally initialized
@@ -2669,7 +2683,7 @@ interface <dfn id="formdata">FormData</dfn> {
 
    <li><p>If <var>form</var> is given, set <var title="">fd</var>'s entries to
    the result of
-   <a class="external" href="http://dev.w3.org/html5/spec/constraints.html#constructing-form-data-set">constructing the form data set</a> for
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/constraints.html#constructing-form-data-set">constructing the form data set</a> for
    <var>form</var>.
 
    <li><p>Return <var title="">fd</var>.
@@ -2703,15 +2717,15 @@ it to the end of the collection the <code><a href="#formdata">FormData</a></code
 <h2 id="data:-urls-and-http"><span class="secno">6 </span><code>data:</code> URLs and HTTP</h2>
 
 <p class="note">To ensure
-<a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URLs</a>
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URLs</a>
 can function in APIs designed around HTTP, such as
 <code><a href="#xmlhttprequest">XMLHttpRequest</a></code>, this section details how they work.
 Specifications defining similar URL schemes ought to take inspiration from
 this section.
 
 <p>When a
-<a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
-<a class="external" href="http://dev.w3.org/html5/spec/urls.html#fetch" title="fetch">fetched</a> using the HTTP method
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetched</a> using the HTTP method
 <code>GET</code>, determine the response as follows:
 
 <ul>
@@ -2732,7 +2746,7 @@ this section.
 </ul>
 
 <p>Otherwise, including when the
-<a class="external" href="http://dev.w3.org/html5/spec/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> cannot be
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> cannot be
 parsed, this is a network error.
 
 <h2 class="no-num" id="references">References</h2>
