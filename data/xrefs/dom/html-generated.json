@@ -362,6 +362,7 @@
     "event-media-play": "the-video-element.html#event-media-play",
     "eventhandler": "webappapis.html#eventhandler",
     "eventsource": "comms.html#eventsource",
+    "exposed to javascript": "infrastructure.html#exposed-to-javascript",
     "fetch": "urls.html#fetch",
     "fieldset": "forms.html#the-fieldset-element",
     "figcaption": "grouping-content.html#the-figcaption-element",
@@ -570,5 +571,5 @@
     "xml fragment serialization algorithm": "the-xhtml-syntax.html#xml-fragment-serialization-algorithm",
     "xml parser": "the-xhtml-syntax.html#xml-parser"
   },
-  "url": "http://dev.w3.org/html5/spec/"
+  "url": "http://www.w3.org/html/wg/drafts/html/master/"
 }
