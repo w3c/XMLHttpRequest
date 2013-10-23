@@ -512,7 +512,7 @@ required by its definition, too).
   <dfn id="anonymous-flag">anonymous flag</dfn>. If the <a href="#anonymous-flag">anonymous flag</a> is set,
   <a href="#user-credentials">user credentials</a> and the
   <a href="#source-origin">source origin</a> are not exposed when
-  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a> resources.
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a> resources.
 
   <p>When the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a>
   is a <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>, the
@@ -587,7 +587,7 @@ one of the following is true:
 
 <p>If an <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object is garbage collected while its
 connection is still open, the user agent must cancel any instance of the
-<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch">fetch</a> algorithm opened by this object,
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch">fetch</a> algorithm opened by this object,
 discarding any <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a>
 <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task" title="queue a task">queued</a> for them, and
 discarding any further data received from the network for them.
@@ -726,6 +726,21 @@ must be done in a case-insensitive manner. Initially it must be empty.
 <a href="#upload-complete-flag">upload complete flag</a>, and
 <a href="#upload-events-flag">upload events flag</a> must be initially unset.
 
+<hr>
+
+<p>To <dfn id="cancel-the-request">cancel the request</dfn> run these steps:
+
+<ol>
+ <li><p>Set the <a href="#error-flag">error flag</a>.
+
+ <li><p>Cancel any instance of the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch">fetch</a> algorithm
+ opened by this object.
+
+ <li><p>If there are any <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a> from
+ the object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of the
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" title="task queue">task queues</a>, then remove them.
+</ol>
+
 
   <h4 id="the-open()-method"><span class="secno">4.6.1 </span>The <code title="">open()</code> method</h4>
 
@@ -863,18 +878,9 @@ method must run these steps (unless otherwise indicated):
  "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
 
  <li>
-  <p>Set the <a href="#error-flag">error flag</a>.
+  <p><a href="#cancel-the-request">Cancel the request</a>.
 
-  <p class="note">This is meaningless unless the 
-  <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> algorithm is running.
-
- <li><p>The user agent should cancel any network activity for which the object is 
- responsible.
- <!-- we can hardly require it... -->
-
- <li><p>If there are any <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a> from 
- the object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of the 
- <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" title="task queue">task queues</a>, then remove them.
+  <p class="note">After all, a request can be ongoing at this point. 
 
  <li>
   <p>Set variables associated with the object as follows:</p>
@@ -1035,7 +1041,7 @@ X-Test: one, two</code></pre>
    <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-timeout" title="dom-XMLHttpRequest-timeout">timeout</a></code>
    <dd>
     <p>Can be set to a time in milliseconds. When set to a non-zero value
-    will cause <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a> to
+    will cause <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a> to
     terminate after the given time has passed. When the time has passed, if
     the <a href="#synchronous-flag">synchronous flag</a> is unset, a
     <code title="event-xhr-timeout"><a href="#event-xhr-timeout">timeout</a></code> event will then be
@@ -1071,9 +1077,9 @@ X-Test: one, two</code></pre>
 
   <p class="note">This implies that the
   <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code> attribute can be
-  set while <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a> is in
+  set while <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a> is in
   progress. If that occurs it will still be measured relative to the start
-  of <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a>.
+  of <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a>.
 
 
   <h4 id="the-withcredentials-attribute"><span class="secno">4.6.4 </span>The <code title="">withCredentials</code> attribute</h4>
@@ -1138,7 +1144,7 @@ X-Test: one, two</code></pre>
   <p class="note">The
   <code title="dom-XMLHttpRequest-withCredentials"><a href="#dom-xmlhttprequest-withcredentials">withCredentials</a></code>
   attribute has no effect when
-  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetching</a>
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a>
   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" title="same origin">same-origin</a>
   resources.</p>
 
@@ -1346,7 +1352,7 @@ method must run these steps (unless otherwise noted):
      <dd>
       <p>These are the <dfn id="same-origin-request-steps">same-origin request steps</dfn>.</p>
 
-      <p><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch">Fetch</a> the
+      <p><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch">Fetch</a> the
       <a href="#request-url">request URL</a> from <i title="">origin</i>
       <a href="#source-origin">source origin</a>, using
       <a href="#referrer-source">referrer source</a> as
@@ -1723,16 +1729,7 @@ method must run these steps (unless otherwise noted):
   steps:</p>
 
   <ol>
-   <li><p>The user agent should cancel any network
-   activity for which the object is responsible.</li>
-
-   <li><p>If there are any
-   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a> from the
-   object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of
-   the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" title="task queue">task queues</a>,
-   then remove them.
-
-   <li><p>Set the the <a href="#error-flag">error flag</a>.
+   <li><p><a href="#cancel-the-request">Cancel the request</a>. 
 
    <li><p>Change the state to <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.</li>
 
@@ -1872,16 +1869,7 @@ method must run these steps (unless otherwise noted):
 these steps (unless otherwise noted):
 
   <ol>
-   <li><p>Set the <a href="#error-flag">error flag</a>.
-
-   <li><p>The user agent should cancel any network
-   activity for which the object is responsible.</li>
-
-   <li><p>If there are any
-   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a> from the
-   object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of
-   the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" title="task queue">task queues</a>,
-   then remove them.
+   <li><p><a href="#cancel-the-request">Cancel the request</a>. 
 
    <li>
     <p>If the state is <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a>,
@@ -2724,7 +2712,7 @@ this section.
 
 <p>When a
 <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
-<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/urls.html#fetch" title="fetch">fetched</a> using the HTTP method
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetched</a> using the HTTP method
 <code>GET</code>, determine the response as follows:
 
 <ul>
