@@ -349,7 +349,7 @@
   },
   "WEBIDL" :
   {
-    "href" : "http://www.w3.org/TR/WebIDL/",
+    "href" : "http://dev.w3.org/2006/webapi/WebIDL/",
     "title" : "Web IDL",
     "authors" : ["Cameron McCormack"],
     "publisher" : "W3C"
