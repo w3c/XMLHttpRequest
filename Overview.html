@@ -748,7 +748,7 @@ must be done in a case-insensitive manner. Initially it must be empty.
     <p>Sets the <a href="#request-method">request method</a>, <a href="#request-url">request URL</a>, and
     <a href="#synchronous-flag">synchronous flag</a>.</p>
 
-    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
+    <p>Throws a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code> if
     either <var title="">method</var> is not a valid HTTP method or
     <var title="">url</var> cannot be parsed.
 
@@ -815,8 +815,7 @@ method must run these steps:
   </ol>
 
  <li><p>If <var>method</var> does not match the <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-5.1.1">Method</a> 
- token production, <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
- "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
+ token production, <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
 
  <li>
   <p>If <var>method</var> is a case-insensitive match for <code>CONNECT</code>, 
@@ -843,8 +842,7 @@ method must run these steps:
  with <var title="">base</var>.
 
  <li><p>If <var title="">parsed URL</var> is failure, 
- <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a 
- "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
 
  <li>
   <p>If <var title="">parsed URL</var>'s <a class="external" href="http://url.spec.whatwg.org/#relative-flag">relative flag</a> is 
@@ -922,7 +920,7 @@ method must run these steps:
     <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> or if the
     <a href="#send-flag"><code>send()</code> flag</a> is set.</p>
 
-    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
+    <p>Throws a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code> if
     <var title="">header</var> is not a valid HTTP header field name or if
     <var title="">value</var> is not a valid HTTP header field value.</p>
    </dd>
@@ -956,14 +954,12 @@ method must run these steps:
 
    <li><p>If <var>header</var> does not match the
    <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-4.2">field-name</a> production,
-   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
-   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
 
    <li>
     <p>If <var>value</var> does not match the
     <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-4.2">field-value</a> production,
-    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
-    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
 
     <p class="note">An empty string represents an empty header field value.
 
@@ -2308,7 +2304,7 @@ algorithm:</p>
     <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
     <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.
 
-    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
+    <p>Throws a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code> if
     <var title="">mime</var> is not a valid media type.</p>
    </dd>
   </dl>
@@ -2326,8 +2322,7 @@ algorithm:</p>
 
    <li><p>If parsing <var title="">mime</var> analogously to the value of
    the <code>Content-Type</code> header fails,
-   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
-   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
 
    <li><p>If <var title="">mime</var> is successfully parsed, set
    <a href="#override-mime-type">override MIME type</a> to its MIME type,
