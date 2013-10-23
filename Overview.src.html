@@ -2626,8 +2626,8 @@ algorithm:</p>
 
 <pre class="idl">[<span title="dom-FormData">Constructor</span>(optional <span data-anolis-spec=html>HTMLFormElement</span> <var>form</var>)]
 interface <dfn>FormData</dfn> {
-  void <span title="dom-FormData-append">append</span>(DOMString <var>name</var>, <span data-anolis-spec=fileapi>Blob</span> <var title>value</var>, optional DOMString <var title>filename</var>);
-  void <span title="dom-FormData-append">append</span>(DOMString <var>name</var>, DOMString <var>value</var>);
+  void <span title="dom-FormData-append">append</span>([EnsureUTF16] DOMString <var>name</var>, <span data-anolis-spec=fileapi>Blob</span> <var>value</var>, optional [EnsureUTF16] DOMString <var>filename</var>);
+  void <span title="dom-FormData-append">append</span>([EnsureUTF16] DOMString <var>name</var>, [EnsureUTF16] DOMString <var>value</var>); 
 };</pre>
 
 <p>If the <span data-anolis-spec=html>JavaScript global environment</span> is a
