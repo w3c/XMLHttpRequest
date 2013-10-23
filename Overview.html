@@ -48,7 +48,7 @@
 
    <h1 class="head" id="xmlhttprequest-ls">XMLHttpRequest</h1>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 22 October 2013</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 23 October 2013</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -100,7 +100,7 @@
 <p class="now3c copyright"><a rel=license href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" alt=CC0></a>
 To the extent possible under law, the editor has waived all copyright and
 related or neighboring rights to this work. In addition, as of
-22 October 2013, the editor has made this specification available
+23 October 2013, the editor has made this specification available
 under the
 <a rel=license
 href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0">Open Web Foundation Agreement Version 1.0</a>,
@@ -142,7 +142,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
    available in the WHATWG <a href="http://xhr.spec.whatwg.org/">XMLHttpRequest Living Standard</a>, under a license that permits reuse of the specification text.</p>
 
   <p>The W3C <a href="http://www.w3.org/2008/webapps/">Web Applications Working
-  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 22 October 2013 Editor's Draft.</p>
+  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 23 October 2013 Editor's Draft.</p>
   
   <p>Publication as an Editor's Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
@@ -2230,17 +2230,17 @@ Content-Type: text/plain; charset=utf-8</code></pre>
      <li><p>If <var>charset</var> is null, set <var>charset</var> to
      <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
-     <li><p><a class="external" href="http://encoding.spec.whatwg.org/#decode">Decode</a> byte stream
-     <a href="#response-entity-body">response entity body</a> using fallback encoding
-     <var>charset</var> and then let <var title="">document</var> be a
+     <li><p>Let <var title="">document</var> be a 
      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a> that
-     represents the result of that, parsed following the rules set
-     forth in the HTML specification for an HTML parser with scripting
-     disabled. <a href="#refsHTML">[HTML]</a>
+     represents the result parsing <a href="#response-entity-body">response entity body</a> following the rules set
+     forth in the HTML specification for an HTML parser with scripting disabled and
+     <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#a-known-definite-encoding">a known definite encoding</a> <var>charset</var>.
+     <a href="#refsHTML">[HTML]</a>
 
      <li><p>Set <var title="">document</var>'s
      <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-encoding" title="concept-document-encoding">encoding</a>
      to <var>charset</var>.
+     <!-- This might be redundant with HTML. --> 
     </ol>
 
    <li>
