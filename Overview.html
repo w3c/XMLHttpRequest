@@ -1251,7 +1251,7 @@ method must run these steps (unless otherwise noted):
       throws.</p>
 
       <p class="XXX">Should we only encode as utf-8? What happens in the face
-      of an <a class="external" href="http://encoding.spec.whatwg.org/#encoder-error">encoder error</a>?
+      of an <a class="external" href="http://encoding.spec.whatwg.org/#error">error</a>?
 
       <p class="note">In particular, if the document cannot be serialized an
       "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception is
@@ -1878,7 +1878,7 @@ these steps (unless otherwise noted):
     <a href="#send-flag"><code>send()</code> flag</a> being unset, or
     <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a> go to the next step.</p>
 
-    <p>Otherwise run these substeps:</p>
+    <p>Otherwise, run these substeps:</p>
 
     <ol>
      <li><p>Change the state to <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.</li>
@@ -2267,8 +2267,8 @@ algorithm:</p>
  <a class="external" href="http://encoding.spec.whatwg.org/#utf-8-decode">utf-8 decode</a> on byte stream
  <a href="#response-entity-body">response entity body</a>.
 
- <li><p>Return the result of invoking the <code title="">parse</code> function
- of the <code title="">JSON</code> object defined in ECMAScript, with
+ <li><p>Return the result of invoking the initial value of the <code title="">parse</code>
+ property of the <code title="">JSON</code> object defined in JavaScript, with
  <var title="">JSON text</var> as its only argument, or null if that function
  throws an exception. <a href="#refsECMASCRIPT">[ECMASCRIPT]</a>
 </ol>
