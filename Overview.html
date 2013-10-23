@@ -2617,8 +2617,8 @@ algorithm:</p>
 
 <pre class="idl">[<a href="#dom-formdata" title="dom-FormData">Constructor</a>(optional <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/the-form-element.html#htmlformelement">HTMLFormElement</a> <var>form</var>)]
 interface <dfn id="formdata">FormData</dfn> {
-  void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>(DOMString <var>name</var>, <a class="external" href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a> <var title="">value</var>, optional DOMString <var title="">filename</var>);
-  void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>(DOMString <var>name</var>, DOMString <var>value</var>);
+  void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>([EnsureUTF16] DOMString <var>name</var>, <a class="external" href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a> <var>value</var>, optional [EnsureUTF16] DOMString <var>filename</var>);
+  void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>([EnsureUTF16] DOMString <var>name</var>, [EnsureUTF16] DOMString <var>value</var>); 
 };</pre>
 
 <p>If the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
