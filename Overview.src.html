@@ -1260,7 +1260,7 @@ method must run these steps (unless otherwise noted):
       throws.</p>
 
       <p class=XXX>Should we only encode as utf-8? What happens in the face
-      of an <span data-anolis-spec=encoding>encoder error</span>?
+      of an <span data-anolis-spec=encoding>error</span>?
 
       <p class=note>In particular, if the document cannot be serialized an
       "<code data-anolis-spec=dom>InvalidStateError</code>" exception is
@@ -1887,7 +1887,7 @@ these steps (unless otherwise noted):
     <span><code>send()</code> flag</span> being unset, or
     <span title="dom-XMLHttpRequest-DONE">DONE</span> go to the next step.</p>
 
-    <p>Otherwise run these substeps:</p>
+    <p>Otherwise, run these substeps:</p>
 
     <ol>
      <li><p>Change the state to <span title="dom-XMLHttpRequest-DONE">DONE</span>.</p></li>
@@ -2276,8 +2276,8 @@ algorithm:</p>
  <span data-anolis-spec=encoding>utf-8 decode</span> on byte stream
  <span>response entity body</span>.
 
- <li><p>Return the result of invoking the <code title>parse</code> function
- of the <code title>JSON</code> object defined in ECMAScript, with
+ <li><p>Return the result of invoking the initial value of the <code title>parse</code>
+ property of the <code title>JSON</code> object defined in JavaScript, with
  <var title>JSON text</var> as its only argument, or null if that function
  throws an exception. <span data-anolis-ref>ECMASCRIPT</span>
 </ol>
