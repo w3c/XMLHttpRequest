@@ -5,6 +5,7 @@
     "arraybuffer response entity body": "arraybuffer-response-entity-body",
     "author request headers": "author-request-headers",
     "blob response entity body": "blob-response-entity-body",
+    "cancel the request": "cancel-the-request",
     "concept-response-header": "concept-response-header",
     "concept-xmlhttprequest-document": "concept-xmlhttprequest-document",
     "cross-origin request event rules": "cross-origin-request-event-rules",

@@ -364,7 +364,7 @@
     "eventhandler": "webappapis.html#eventhandler",
     "eventsource": "comms.html#eventsource",
     "exposed to javascript": "infrastructure.html#exposed-to-javascript",
-    "fetch": "urls.html#fetch",
+    "fetch": "infrastructure.html#fetch",
     "fieldset": "forms.html#the-fieldset-element",
     "figcaption": "grouping-content.html#the-figcaption-element",
     "figure": "grouping-content.html#the-figure-element",
