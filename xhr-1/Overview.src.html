@@ -55,7 +55,7 @@
     <dd class=dontpublish><a href="http://wiki.whatwg.org/wiki/IRC">IRC: #whatwg on Freenode</a>
 
     <dt class=dontpublish>Version History:
-    <dd class=dontpublish><a href="http://dvcs.w3.org/hg/xhr/shortlog">http://dvcs.w3.org/hg/xhr/xhr-1/shortlog</a>
+    <dd class=dontpublish><a href="http://dvcs.w3.org/hg/xhr/shortlog">http://dvcs.w3.org/hg/xhr/shortlog</a>
 
     <dt class=publish>Latest Version:</dt>
     <dd class=publish><a href="[LATEST]">[LATEST]</a></dd>
@@ -285,7 +285,27 @@ It moved to the W3C in 2006. Extensions (e.g. progress events and
 cross-origin requests) to <code>XMLHttpRequest</code> were developed in a
 separate draft (XMLHttpRequest Level 2) until end of 2011, at which point
 the two drafts were merged and <code>XMLHttpRequest</code> became a single
-entity again from a standards perspective.
+entity again from a standards perspective. Since 2012, the development work 
+required for getting the spec finalized has taken place both in the WHATWG and 
+in the W3C Web Applications working group.</p>
+
+<p>XMLHttpRequest Level 1, the first stable Recommendation track 
+specification for the <code>XMLHttpRequest</code> feature, standardizes all 
+parts of <code>XMLHttpRequest</code> that are compatibly supported across 
+major implementations. Implementors should be able to rely on this 
+specification and the 
+<a href="http://w3c-test.org/web-platform-tests/master/XMLHttpRequest/">related test suite</a> 
+in order to create interoperable implementations.</p>
+
+<p>Some features included in the 
+<a href="http://xhr.spec.whatwg.org/">WHATWG specification</a> are left out 
+because they are not yet widely implemented or used. These features are:</p>
+<ul>
+ <li><span data-anolis-spec=html title=fetch>Fetching</span> 
+ <span data-anolis-spec=html title=data-protocol><code>data:</code> URLs</span>.</li>
+ <li>Using <span title="dom-XMLHttpRequest-responseType">responseType</span> "<code>json</code>".</li>
+ <li>The <span>anonymous flag</span> and passing an <code>XMLHttpRequestOptions</code> dictionary to the constructor.</li>
+</ul>
 
 <p>Historical discussion can be found in the following mailing list
 archives:
