@@ -1,7 +1,6 @@
 {
   "definitions": {
     "abort error": "abort-error",
-    "anonymous flag": "anonymous-flag",
     "arraybuffer response entity body": "arraybuffer-response-entity-body",
     "author request headers": "author-request-headers",
     "blob response entity body": "blob-response-entity-body",
@@ -88,7 +87,6 @@
     "xmlhttprequest": "xmlhttprequest",
     "xmlhttprequest task source": "xmlhttprequest-task-source",
     "xmlhttprequesteventtarget": "xmlhttprequesteventtarget",
-    "xmlhttprequestoptions": "xmlhttprequestoptions",
     "xmlhttprequestresponsetype": "xmlhttprequestresponsetype",
     "xmlhttprequestupload": "xmlhttprequestupload"
   },
