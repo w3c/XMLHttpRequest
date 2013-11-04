@@ -57,6 +57,7 @@
     "handler-xhr-onprogress": "handler-xhr-onprogress",
     "handler-xhr-onreadystatechange": "handler-xhr-onreadystatechange",
     "handler-xhr-ontimeout": "handler-xhr-ontimeout",
+    "json response entity body": "json-response-entity-body",
     "make progress notifications": "make-progress-notifications",
     "make upload progress notifications": "make-upload-progress-notifications",
     "network error": "network-error",

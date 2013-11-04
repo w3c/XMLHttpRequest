@@ -99,7 +99,7 @@
 
 <div class=w3conly><!--copyright--></div>
 
-  
+
 
   <hr class="top">
 
@@ -129,7 +129,7 @@
 
   <p>The W3C <a href="http://www.w3.org/2008/webapps/">Web Applications Working
   Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the [DATE: 8 October 2012] Editor's Draft.</p>
-  
+
   <p>Publication as an Editor's Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
   obsoleted by other documents at any time. It is inappropriate to cite this
@@ -177,7 +177,7 @@
 
   <p>The W3C <a href="http://www.w3.org/2008/webapps/">Web Applications Working
   Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the [DATE: 8 October 2012] Working Draft.</p>
-  
+
   <p>Publication as a Working Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
   obsoleted by other documents at any time. It is inappropriate to cite this
@@ -211,7 +211,7 @@
 
   <p><em>This section is non-normative.</em></p>
 
-  <p>The <code>XMLHttpRequest</code> object is an API for 
+  <p>The <code>XMLHttpRequest</code> object is an API for
   <span data-anolis-spec=html title=fetch>fetching</span> resources.
   <!-- XXX elaborate on options -->
 
@@ -285,25 +285,24 @@ It moved to the W3C in 2006. Extensions (e.g. progress events and
 cross-origin requests) to <code>XMLHttpRequest</code> were developed in a
 separate draft (XMLHttpRequest Level 2) until end of 2011, at which point
 the two drafts were merged and <code>XMLHttpRequest</code> became a single
-entity again from a standards perspective. Since 2012, the development work 
-required for getting the spec finalized has taken place both in the WHATWG and 
+entity again from a standards perspective. Since 2012, the development work
+required for getting the spec finalized has taken place both in the WHATWG and
 in the W3C Web Applications working group.</p>
 
-<p>XMLHttpRequest Level 1, the first stable Recommendation track 
-specification for the <code>XMLHttpRequest</code> feature, standardizes all 
-parts of <code>XMLHttpRequest</code> that are compatibly supported across 
-major implementations. Implementors should be able to rely on this 
-specification and the 
-<a href="http://w3c-test.org/web-platform-tests/master/XMLHttpRequest/">related test suite</a> 
+<p>XMLHttpRequest Level 1, the first stable Recommendation track
+specification for the <code>XMLHttpRequest</code> feature, standardizes all
+parts of <code>XMLHttpRequest</code> that are compatibly supported across
+major implementations. Implementors should be able to rely on this
+specification and the
+<a href="http://w3c-test.org/web-platform-tests/master/XMLHttpRequest/">related test suite</a>
 in order to create interoperable implementations.</p>
 
-<p>Some features included in the 
-<a href="http://xhr.spec.whatwg.org/">WHATWG specification</a> are left out 
+<p>Some features included in the
+<a href="http://xhr.spec.whatwg.org/">WHATWG specification</a> are left out
 because they are not yet widely implemented or used. These features are:</p>
 <ul>
- <li><span data-anolis-spec=html title=fetch>Fetching</span> 
+ <li><span data-anolis-spec=html title=fetch>Fetching</span>
  <span data-anolis-spec=html title=data-protocol><code>data:</code> URLs</span>.</li>
- <li>Using <span title="dom-XMLHttpRequest-responseType">responseType</span> "<code>json</code>".</li>
  <li>The <span>anonymous flag</span> and passing an <code>XMLHttpRequestOptions</code> dictionary to the constructor.</li>
 </ul>
 
@@ -356,7 +355,7 @@ not appear in all uppercase letters in this specification.
    <span data-anolis-ref>DOMPS</span>
 
    <dt>Encoding Standard
-   <dd><p>A <span>conforming user agent</span> must 
+   <dd><p>A <span>conforming user agent</span> must
    support at least the subset of the functionality defined in Encoding Standard that
    this specification relies upon, such as the <code data-anolis-spec=encoding title=utf-8>utf-8</code> <code data-anolis-spec=encoding title=encoding>encoding</code>.
    <span data-anolis-ref>ENCODING</span>
@@ -455,6 +454,7 @@ enum <dfn>XMLHttpRequestResponseType</dfn> {
   "arraybuffer",
   "blob",
   "document",
+  "json",
   "text"
 };
 
@@ -758,7 +758,7 @@ must be done in a case-insensitive manner. Initially it must be empty.
     attribute is not the empty string.
   </dl>
 
-<p>The 
+<p>The
 <dfn id="dom-xmlhttprequest-open" title="dom-XMLHttpRequest-open"><code>open(<var title>method</var>, <var title>url</var>, <var title>async</var>, <var title>username</var>, <var title>password</var>)</code></dfn>
 method must run these steps:
 
@@ -770,19 +770,19 @@ method must run these steps:
   <span data-anolis-spec=html>document environment</span>, run these steps:
 
   <ol>
-   <li><p>If <span title=concept-XMLHttpRequest-document>document</span> is not 
-   <span data-anolis-spec=html>fully active</span>, 
-   <span data-anolis-spec=dom title=concept-throw>throw</span> an 
+   <li><p>If <span title=concept-XMLHttpRequest-document>document</span> is not
+   <span data-anolis-spec=html>fully active</span>,
+   <span data-anolis-spec=dom title=concept-throw>throw</span> an
    "<code data-anolis-spec=dom>InvalidStateError</code>" exception.
 
-   <li><p>Set <var title>base</var> to the 
+   <li><p>Set <var title>base</var> to the
    <span data-anolis-spec=html>document base URL</span> of
    <span title=concept-XMLHttpRequest-document>document</span>.
 
-   <li><p>Set <span>source origin</span> to the <span data-anolis-spec=html>origin</span> 
+   <li><p>Set <span>source origin</span> to the <span data-anolis-spec=html>origin</span>
    of <span title=concept-XMLHttpRequest-document>document</span>.
 
-   <li><p>Set <span>referrer source</span> to 
+   <li><p>Set <span>referrer source</span> to
    <span title=concept-XMLHttpRequest-document>document</span>.
   </ol>
 
@@ -791,59 +791,59 @@ method must run these steps:
   <span data-anolis-spec=html>worker environment</span>, run these steps:
 
   <ol>
-   <li><p>Set <var title>base</var> to the 
+   <li><p>Set <var title>base</var> to the
    <span data-anolis-spec=html>script's base URL</span>.
 
-   <li><p>Set <span>source origin</span> to the 
+   <li><p>Set <span>source origin</span> to the
    <span data-anolis-spec=html title=concept-script>script</span>'s
    <span data-anolis-spec=html>origin</span>.
 
-   <li><p>Set <span>referrer source</span> to the 
+   <li><p>Set <span>referrer source</span> to the
    <span data-anolis-spec=html>script's referrer source</span>.
   </ol>
 
- <li><p>If <var>method</var> does not match the <span data-anolis-spec=http>Method</span> 
+ <li><p>If <var>method</var> does not match the <span data-anolis-spec=http>Method</span>
  token production, <span data-anolis-spec=dom title=concept-throw>throw</span> a JavaScript <code data-anolis-spec=webidl>TypeError</code>.
 
  <li>
-  <p>If <var>method</var> is a case-insensitive match for <code>CONNECT</code>, 
-  <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, 
-  <code>POST</code>, <code>PUT</code>, <code>TRACE</code>, or <code>TRACK</code>, subtract 
+  <p>If <var>method</var> is a case-insensitive match for <code>CONNECT</code>,
+  <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
+  <code>POST</code>, <code>PUT</code>, <code>TRACE</code>, or <code>TRACK</code>, subtract
   0x20 from each byte in the range 0x61 (ASCII a) to 0x7A (ASCII z).
- 
-  <p class=note>If it does not match any of the above, it is passed 
+
+  <p class=note>If it does not match any of the above, it is passed
   through <em>literally</em>, including in the final request.
-  <!-- WebKit (and supposedly Gecko) also uppercase: COPY, INDEX, LOCK, 
+  <!-- WebKit (and supposedly Gecko) also uppercase: COPY, INDEX, LOCK,
   M-POST, MKCOL, MOVE, PROPFIND, PROPPATCH, and UNLOCK. -->
 
  <li>
-  <p>If <var>method</var> is a case-sensitive match for <code>CONNECT</code>, 
-  <code>TRACE</code>, or <code>TRACK</code>, 
-  <span data-anolis-spec=dom title=concept-throw>throw</span> a 
+  <p>If <var>method</var> is a case-sensitive match for <code>CONNECT</code>,
+  <code>TRACE</code>, or <code>TRACK</code>,
+  <span data-anolis-spec=dom title=concept-throw>throw</span> a
   "<code data-anolis-spec=dom>SecurityError</code>" exception.
 
-  <p class=note>Allowing these methods would pose a security risk. 
+  <p class=note>Allowing these methods would pose a security risk.
   <span data-anolis-ref>HTTPVERBSEC</span>
 
- <li><p>Let <var title>parsed URL</var> be the result of 
- <span data-anolis-spec=url title=concept-url-parser>parsing</span> <var title>url</var> 
+ <li><p>Let <var title>parsed URL</var> be the result of
+ <span data-anolis-spec=url title=concept-url-parser>parsing</span> <var title>url</var>
  with <var title>base</var>.
 
- <li><p>If <var title>parsed URL</var> is failure, 
+ <li><p>If <var title>parsed URL</var> is failure,
  <span data-anolis-spec=dom title=concept-throw>throw</span> a JavaScript <code data-anolis-spec=webidl>TypeError</code>.
 
  <li>
-  <p>If <var title>parsed URL</var>'s <span data-anolis-spec=url>relative flag</span> is 
+  <p>If <var title>parsed URL</var>'s <span data-anolis-spec=url>relative flag</span> is
   set, run these substeps:
 
   <ol>
-   <li><p>If the <var title>username</var> argument is not null, set 
-   <var title>parsed URL</var>'s 
-   <span data-anolis-spec=url title=concept-url-username>username</span> to 
+   <li><p>If the <var title>username</var> argument is not null, set
+   <var title>parsed URL</var>'s
+   <span data-anolis-spec=url title=concept-url-username>username</span> to
    <var>username</var>.
 
-   <li><p>If the <var title>password</var> argument is not null, set 
-   <var title>parsed URL</var>'s 
+   <li><p>If the <var title>password</var> argument is not null, set
+   <var title>parsed URL</var>'s
    <span data-anolis-spec=url title=concept-url-password>password</span> to
    <var>password</var>.
   </ol>
@@ -852,16 +852,16 @@ method must run these steps:
  <span data-anolis-spec=html>JavaScript global environment</span> is a
  <span data-anolis-spec=html>document environment</span>, and either the
  <code title=dom-XMLHttpRequest-timeout>timeout</code> attribute value is not zero, the
- <code title=dom-XMLHttpRequest-withCredentials>withCredentials</code> attribute value is 
- true, or the <code title=dom-XMLHttpRequest-responseType>responseType</code> attribute 
- value is not the empty string, 
+ <code title=dom-XMLHttpRequest-withCredentials>withCredentials</code> attribute value is
+ true, or the <code title=dom-XMLHttpRequest-responseType>responseType</code> attribute
+ value is not the empty string,
  <span data-anolis-spec=dom title=concept-throw>throw</span> an
  "<code data-anolis-spec=dom>InvalidAccessError</code>" exception.
 
  <li>
   <p><span>Terminate the request</span>.
 
-  <p class=note>After all, a request can be ongoing at this point. 
+  <p class=note>After all, a request can be ongoing at this point.
 
  <li>
   <p>Set variables associated with the object as follows:</p>
@@ -876,6 +876,7 @@ method must run these steps:
    <li><p>Set <span>arraybuffer response entity body</span> to null.
    <li><p>Set <span>blob response entity body</span> to null.
    <li><p>Set <span>document response entity body</span> to null.
+   <li><p>Set <span>JSON response entity body</span> to null.
    <li><p>Set <span>text response entity body</span> to null.
   </ul>
 
@@ -997,7 +998,7 @@ method must run these steps:
     <p>If <var title>header</var> is in the <span>author request headers</span> list, append
     "<code>,</code>", followed by U+0020, followed by <var title>value</var>, to the
     value of the header matching <var title>header</var>.
- 
+
     <p class=note>The XMLHttpRequest standard intentionally constraints the
     use of HTTP here in line with contemporary implementations.
   </ol>
@@ -1026,7 +1027,7 @@ X-Test: one, two</code></pre>
     <p>Can be set to a time in milliseconds. When set to a non-zero value
     will cause <span title=fetch data-anolis-spec=html>fetching</span> to
     terminate after the given time has passed. When the time has passed, the request has
-    not yet completed, and the <span>synchronous flag</span> is unset, a 
+    not yet completed, and the <span>synchronous flag</span> is unset, a
     <code title=event-xhr-timeout>timeout</code> event will then be
     <span title=concept-event-dispatch data-anolis-spec=dom>dispatched</span>,
     or a "<code data-anolis-spec=dom>TimeoutError</code>" exception will be
@@ -1162,7 +1163,7 @@ X-Test: one, two</code></pre>
    </dd>
   </dl>
 
-<p>The <dfn title="dom-XMLHttpRequest-send"><code>send(<var>data</var>)</code></dfn> 
+<p>The <dfn title="dom-XMLHttpRequest-send"><code>send(<var>data</var>)</code></dfn>
 method must run these steps:
 
   <ol>
@@ -1213,8 +1214,8 @@ method must run these steps:
       <var>mime type</var>.
 
       <p>Let the <span>request entity body</span> be <var title>data</var>,
-      <span data-anolis-spec=domps title=concept-serialize>serialized</span>, 
-      <span data-anolis-spec=webidl title="convert a DOMString to a sequence of Unicode characters">converted to Unicode</span>, 
+      <span data-anolis-spec=domps title=concept-serialize>serialized</span>,
+      <span data-anolis-spec=webidl title="convert a DOMString to a sequence of Unicode characters">converted to Unicode</span>,
       and <span data-anolis-spec=encoding title="utf-8 encode">utf-8 encoded</span>.
       Re-throw any exception
       <span data-anolis-spec=domps title=concept-serialize>serializing</span> throws.
@@ -1230,7 +1231,7 @@ method must run these steps:
       <p>Let <var>mime type</var> be "<code>text/plain;charset=UTF-8</code>".</p>
 
       <p>Let the <span>request entity body</span> be <var title>data</var>,
-      <span data-anolis-spec=encoding title="utf-8 encode">utf-8 encoded</span>. 
+      <span data-anolis-spec=encoding title="utf-8 encode">utf-8 encoded</span>.
 
      <dt id="dom-XMLHttpRequest-send-FormData"><code>FormData</code>
      <dd>
@@ -1305,7 +1306,7 @@ method must run these steps:
     <dl class=switch>
      <dt>If the <span>source origin</span> and the <span>request URL</span>
      are <span data-anolis-spec=html>same origin</span></dt>
-     
+
      <dd>
       <p>These are the <dfn>same-origin request steps</dfn>.</p>
 
@@ -1820,7 +1821,7 @@ method must run these steps:
    <dd>Cancels any network activity.
   </dl>
 
-<p>The <dfn title="dom-XMLHttpRequest-abort"><code>abort()</code></dfn> method must run 
+<p>The <dfn title="dom-XMLHttpRequest-abort"><code>abort()</code></dfn> method must run
 these steps:
 
   <ol>
@@ -1859,10 +1860,10 @@ these steps:
       </ol>
      </li>
      <li><p><span data-anolis-spec=progress-events title=concept-event-fire-progress>Fire a progress event</span> named <code title=event-xhr-progress>progress</code>.
- 
+
      <li><p><span data-anolis-spec=progress-events title=concept-event-fire-progress>Fire a progress event</span> named <code title="event-xhr-abort">abort</code>.
 
-     <li><p><span data-anolis-spec=progress-events title=concept-event-fire-progress>Fire a progress event</span> named <code title="event-xhr-loadend">loadend</code>. 
+     <li><p><span data-anolis-spec=progress-events title=concept-event-fire-progress>Fire a progress event</span> named <code title="event-xhr-loadend">loadend</code>.
     </ol>
    </li>
 
@@ -1883,7 +1884,7 @@ these steps:
 
   <p class=note>This excludes trailer fields ("trailers").
 
- 
+
   <h4>The <code title>status</code> attribute</h4>
 
   <dl class=domintro>
@@ -1954,11 +1955,11 @@ these steps:
 
    <li><p>If <var>header</var> is a case-insensitive match for multiple
    <span title=concept-response-header>response headers</span>, return the values of these
-   headers as a single concatenated string separated from each other by a    
+   headers as a single concatenated string separated from each other by a
    U+002C COMMA U+0020 SPACE character pair.
 
    <li><p>If <var>header</var> is a case-insensitive match for a single
-   <span title=concept-response-header>response header</span>, return the value of that header.    
+   <span title=concept-response-header>response header</span>, return the value of that header.
 
    <li><p>Return null.</p></li>
   </ol>
@@ -2021,7 +2022,7 @@ client.onreadystatechange = function() {
   <span title=concept-response-header>response headers</span> exposed by
   <code title="dom-XMLHttpRequest-getAllResponseHeaders">getAllResponseHeaders()</code>
   for <span data-anolis-spec=cors title="cross-origin request">cross-origin requests</span>.
-  <span data-anolis-ref>CORS</span> 
+  <span data-anolis-ref>CORS</span>
 
   <div class="example">
    <p>For the following script:</p>
@@ -2168,7 +2169,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
      <li><p>If <var>charset</var> is null, set <var>charset</var> to
      <span data-anolis-spec=encoding>utf-8</span>.
 
-     <li><p>Let <var title>document</var> be a 
+     <li><p>Let <var title>document</var> be a
      <span data-anolis-spec=dom title=concept-document>document</span> that
      represents the result parsing <span>response entity body</span> following the rules set
      forth in the HTML specification for an HTML parser with scripting disabled and
@@ -2178,7 +2179,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
      <li><p>Set <var title>document</var>'s
      <span data-anolis-spec=dom title=concept-document-encoding>encoding</span>
      to <var>charset</var>.
-     <!-- This might be redundant with HTML. --> 
+     <!-- This might be redundant with HTML. -->
     </ol>
 
    <li>
@@ -2211,9 +2212,26 @@ Content-Type: text/plain; charset=utf-8</code></pre>
    <li><p>Return <var title>document</var>.
   </ol>
 
+<p>The <dfn>JSON response entity body</dfn> is either a JavaScript value
+representing the <span>response entity body</span>. If the
+<span>JSON response entity body</span> is null, let it be return value of the following
+algorithm:</p>
+
+<ol>
+ <li><p>Let <var title>JSON text</var> be the result of running
+ <span data-anolis-spec=encoding>utf-8 decode</span> on byte stream
+ <span>response entity body</span>.
+
+ <li><p>Return the result of invoking the initial value of the <code title>parse</code>
+ property of the <code title>JSON</code> object defined in JavaScript, with
+ <var title>JSON text</var> as its only argument, or null if that function
+ throws an exception. <span data-anolis-ref>ECMASCRIPT</span>
+</ol>
+
+
   <p>The <dfn id="text-response-entity-body">text response entity body</dfn> is either a
   string representing the <span>response entity body</span> or null. If the
-  <span>text response entity body</span> is null, let it be the return value of the 
+  <span>text response entity body</span> is null, let it be the return value of the
   following algorithm:</p>
 
   <ol>
@@ -2304,7 +2322,8 @@ Content-Type: text/plain; charset=utf-8</code></pre>
     the empty string (default),
     "<code title>arraybuffer</code>",
     "<code title>blob</code>",
-    "<code title>document</code>", and
+    "<code title>document</code>",
+    "<code title>json</code>", and
     "<code title>text</code>".</p>
     <p>When set: setting to "<code title>document</code>" is ignored if the
     <span data-anolis-spec=html>JavaScript global environment</span> is a
@@ -2410,6 +2429,12 @@ Content-Type: text/plain; charset=utf-8</code></pre>
        "<code title>document</code>"</dt>
        <dd><p>Return the
        <span>document response entity body</span>.</p></dd>
+
+       <dt>If
+       <code title="dom-XMLHttpRequest-responseType">responseType</code> is
+       "<code title>json</code>"</dt>
+       <dd><p>Return the
+       <span>JSON response entity body</span>.</p></dd>
       </dl>
      </li>
     </ol>
@@ -2565,7 +2590,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
 <pre class="idl">[<span title="dom-FormData">Constructor</span>(optional <span data-anolis-spec=html>HTMLFormElement</span> <var>form</var>)]
 interface <dfn>FormData</dfn> {
   void <span title="dom-FormData-append">append</span>([EnsureUTF16] DOMString <var>name</var>, <span data-anolis-spec=fileapi>Blob</span> <var>value</var>, optional [EnsureUTF16] DOMString <var>filename</var>);
-  void <span title="dom-FormData-append">append</span>([EnsureUTF16] DOMString <var>name</var>, [EnsureUTF16] DOMString <var>value</var>); 
+  void <span title="dom-FormData-append">append</span>([EnsureUTF16] DOMString <var>name</var>, [EnsureUTF16] DOMString <var>value</var>);
 };</pre>
 
 <p>If the <span data-anolis-spec=html>JavaScript global environment</span> is a
@@ -2595,7 +2620,7 @@ value of <span title=concept-FormData-entry>entry</span>'s
 
  <dt><code><var title>fd</var> . <span title=dom-FormData-append>append</span>(<var title>name</var>, <var title>value</var> [, <var title>filename</var>])</code>
  <dd><p>Appends a new <span title=concept-FormData-entry>entry</span> to the
- <code>FormData</code> object. 
+ <code>FormData</code> object.
 </dl>
 
   <p>The
@@ -2626,7 +2651,7 @@ method must run these steps:
  <li><p>If <var>value</var> is a <code data-anolis-spec=fileapi>Blob</code>, set
  <var>value</var> to a new <code data-anolis-spec=fileapi>File</code> object whose
  <code data-anolis-spec=fileapi title=dom-File-name>name</code> attribute value is
- "<code title>blob</code>". 
+ "<code title>blob</code>".
 
  <li><p>If <var>value</var> is a <code data-anolis-spec=fileapi>File</code> and
  <var title>filename</var> is given, set <var>value</var>'s
@@ -2634,11 +2659,11 @@ method must run these steps:
  <var title>filename</var>.
 
  <li><p>Set <var title>entry</var>'s <span title=concept-FormData-entry-value>value</span>
- to <var>value</var>. 
+ to <var>value</var>.
 
  <li><p>Append <var title>entry</var> to <code>FormData</code> object's list of
  <span title=concept-FormData-entry>entries</span>.
-</ol> 
+</ol>
 
 <h2 class=no-num>References</h2>
 <div id=anolis-references></div>
