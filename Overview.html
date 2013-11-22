@@ -45,7 +45,7 @@
    <a href="http://xhr.spec.whatwg.org/">XMLHttpRequest Living Standard</a>
    </h2>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 20 November 2013</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 22 November 2013</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -95,7 +95,7 @@
 <p class="now3c copyright"><a rel=license href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" alt=CC0></a>
 To the extent possible under law, the editor has waived all copyright and
 related or neighboring rights to this work. In addition, as of
-20 November 2013, the editor has made this specification available
+22 November 2013, the editor has made this specification available
 under the
 <a rel=license
 href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0">Open Web Foundation Agreement Version 1.0</a>,
@@ -137,7 +137,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
   with <samp>[XHR]</samp> at the start of the subject line.</p>
 
   <p>The W3C <a href="http://www.w3.org/2008/webapps/">Web Applications Working
-  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 20 November 2013 Editor's Draft.</p>
+  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 22 November 2013 Editor's Draft.</p>
 
   <p>Publication as an Editor's Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
@@ -463,7 +463,8 @@ interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttpreque
   readonly attribute unsigned short <a href="#dom-xmlhttprequest-readystate" title="dom-XMLHttpRequest-readyState">readyState</a>;
 
   // <a href="#request">request</a>
-  void <a href="#dom-xmlhttprequest-open" title="dom-XMLHttpRequest-open">open</a>(ByteString <var>method</var>, [EnsureUTF16] DOMString <var title="">url</var>, optional boolean <var>async</var> = true, optional [EnsureUTF16] DOMString? <var>username</var> = null, optional [EnsureUTF16] DOMString? <var>password</var> = null);
+  void <a href="#dom-xmlhttprequest-open" title="dom-XMLHttpRequest-open">open</a>(ByteString <var>method</var>, [EnsureUTF16] DOMString <var title="">url</var>);
+  void <a href="#dom-xmlhttprequest-open" title="dom-XMLHttpRequest-open">open</a>(ByteString <var>method</var>, [EnsureUTF16] DOMString <var title="">url</var>, boolean <var>async</var>, optional [EnsureUTF16] DOMString? <var>username</var> = null, optional [EnsureUTF16] DOMString? <var>password</var> = null);
   void <a href="#dom-xmlhttprequest-setrequestheader" title="dom-XMLHttpRequest-setRequestHeader">setRequestHeader</a>(ByteString <var>header</var>, ByteString <var>value</var>);
            attribute unsigned long <a href="#dom-xmlhttprequest-timeout" title="dom-XMLHttpRequest-timeout">timeout</a>;
            attribute boolean <a href="#dom-xmlhttprequest-withcredentials" title="dom-XMLHttpRequest-withCredentials">withCredentials</a>;
@@ -838,6 +839,14 @@ method must run these steps:
 
  <li><p>If <var title="">parsed URL</var> is failure,
  <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
+
+ <li>
+  <p>If the <var>async</var> argument is omitted, set <var>async</var> to true, and set
+  <var title="">username</var> and <var title="">password</var> to null.
+
+  <p class="note">Due to unfortunate legacy constraints, passing
+  <code title="">undefined</code> for the <var>async</var> argument is treated differently
+  from <var>async</var> being omitted.
 
  <li>
   <p>If <var title="">parsed URL</var>'s <a class="external" href="http://url.spec.whatwg.org/#relative-flag">relative flag</a> is
