@@ -2178,10 +2178,8 @@ Content-Type: text/plain; charset=utf-8</code></pre>
      <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#a-known-definite-encoding">a known definite encoding</a> <var>charset</var>.
      <a href="#refsHTML">[HTML]</a>
 
-     <li><p>Set <var title="">document</var>'s
-     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-encoding" title="concept-document-encoding">encoding</a>
-     to <var>charset</var>.
-     <!-- This might be redundant with HTML. -->
+     <li><p>Flag <var title="">document</var> as an
+     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#html-document">HTML document</a>.
     </ol>
 
    <li>
@@ -2197,7 +2195,13 @@ Content-Type: text/plain; charset=utf-8</code></pre>
     executed, resources referenced will not be loaded and no associated XSLT
     will be applied.</p> <!-- XXX more formally?! -->
 
-   <!-- XXX what about document's encoding? -->
+   <li><p>If <var>charset</var> is null, set <var>charset</var> to
+   <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
+   <!-- can only happen in the XML case -->
+
+   <li><p>Set <var title="">document</var>'s
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-encoding" title="concept-document-encoding">encoding</a> to
+   <var>charset</var>.
 
    <li><p>Set <var title="">document</var>'s
    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-content-type" title="concept-document-content-type">content type</a>
