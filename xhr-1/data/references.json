@@ -117,7 +117,7 @@
     "href" : "http://www.w3.org/TR/dom/",
     "oldhref" : "http://www.w3.org/TR/domcore/",
     "title" : "DOM",
-    "authors" : ["Anne van Kesteren", "Aryeh Gregor", "Ms2ger"],
+    "authors" : ["Anne van Kesteren", "Aryeh Gregor", "Ms2ger", "Alex Russell", "Robin Berjon"],
     "publisher" : "W3C"
   },
   "DOMPS" :
@@ -262,7 +262,7 @@
   "PROGRESSEVENTS" : {
     "href" : "http://www.w3.org/TR/progress-events/",
     "title" : "Progress Events",
-    "authors" : ["Anne van Kesteren", "Charles McCathieNevile"],
+    "authors" : ["Anne van Kesteren", "Charles McCathieNevile", "Jungkee Song"],
     "publisher" : "W3C"
   },
   "PSL" : {
