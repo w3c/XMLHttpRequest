@@ -34,18 +34,18 @@
   <div class="head">
 
 <!--begin-logo-->
-<p><a href="http://www.w3.org/"><img src="https://www.w3.org/Icons/w3c_home" height="48" alt="W3C" width="72"></a></p>
+<p><a href="http://www.w3.org/"><img alt="W3C" height="48" src="https://www.w3.org/Icons/w3c_home" width="72"></a></p>
 <!--end-logo-->
 
 
-   <h1 id="xmlhttprequest-ls" class="head">XMLHttpRequest</h1>
+   <h1 class="head" id="xmlhttprequest-ls">XMLHttpRequest</h1>
 
    <h2 class="dontpublish no-num no-toc" id="subtitle">Snapshot specification
    for the
    <a href="http://xhr.spec.whatwg.org/">XMLHttpRequest Living Standard</a>
    </h2>
 
-   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 30 March 2014</h2>
+   <h2 class="no-num no-toc" id="w3c-doctype">Editor's Draft 19 May 2014</h2>
 
    <dl>
     <dt>This Version:</dt>
@@ -95,7 +95,7 @@
 <p class="now3c copyright"><a rel=license href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" alt=CC0></a>
 To the extent possible under law, the editor has waived all copyright and
 related or neighboring rights to this work. In addition, as of
-30 March 2014, the editor has made this specification available
+19 May 2014, the editor has made this specification available
 under the
 <a rel=license
 href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0">Open Web Foundation Agreement Version 1.0</a>,
@@ -137,7 +137,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
   with <samp>[XHR]</samp> at the start of the subject line.</p>
 
   <p>The W3C <a href="http://www.w3.org/2008/webapps/">Web Applications Working
-  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 30 March 2014 Editor's Draft.</p>
+  Group</a> is the W3C working group responsible for this specification's progress along the W3C Recommendation track. This specification is the 19 May 2014 Editor's Draft.</p>
 
   <p>Publication as an Editor's Draft does not imply endorsement by the W3C
   Membership. This is a draft document and may be updated, replaced or
@@ -167,14 +167,14 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
   
 <!--begin-toc-->
 <ol class="toc">
- <li><a href="#introduction" class="no-test"><span class="secno">1 </span>Introduction</a>
+ <li><a class="no-test" href="#introduction"><span class="secno">1 </span>Introduction</a>
   <ol class="toc">
-   <li><a href="#specification-history" class="no-test"><span class="secno">1.1 </span>Specification history</a></ol></li>
- <li><a href="#conformance" class="no-test"><span class="secno">2 </span>Conformance</a>
+   <li><a class="no-test" href="#specification-history"><span class="secno">1.1 </span>Specification history</a></ol></li>
+ <li><a class="no-test" href="#conformance"><span class="secno">2 </span>Conformance</a>
   <ol class="toc">
-   <li><a href="#dependencies" class="no-test"><span class="secno">2.1 </span>Dependencies</a></li>
-   <li><a href="#extensibility" class="no-test"><span class="secno">2.2 </span>Extensibility</a></ol></li>
- <li><a href="#terminology" class="no-test"><span class="secno">3 </span>Terminology</a></li>
+   <li><a class="no-test" href="#dependencies"><span class="secno">2.1 </span>Dependencies</a></li>
+   <li><a class="no-test" href="#extensibility"><span class="secno">2.2 </span>Extensibility</a></ol></li>
+ <li><a class="no-test" href="#terminology"><span class="secno">3 </span>Terminology</a></li>
  <li><a href="#interface-xmlhttprequest"><span class="secno">4 </span>Interface <code title="">XMLHttpRequest</code></a>
   <ol class="toc">
    <li><a href="#task-sources"><span class="secno">4.1 </span>Task sources</a></li>
@@ -207,8 +207,8 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
    <li><a href="#events"><span class="secno">4.8 </span>Events summary</a></ol></li>
  <li><a href="#interface-formdata"><span class="secno">5 </span>Interface <code title="">FormData</code></a></li>
  <li><a href="#data:-urls-and-http"><span class="secno">6 </span><code>data:</code> URLs and HTTP</a></li>
- <li><a href="#references" class="no-num">References</a></li>
- <li><a href="#acknowledgments" class="no-num">Acknowledgments</a></ol>
+ <li><a class="no-num" href="#references">References</a></li>
+ <li><a class="no-num" href="#acknowledgments">Acknowledgments</a></ol>
 <!--end-toc-->
 
 
@@ -218,7 +218,7 @@ http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
   <p><em>This section is non-normative.</em></p>
 
   <p>The <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object is an API for
-  <a title="fetch" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" class="external">fetching</a> resources.
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a> resources.
   <!-- XXX elaborate on options -->
 
   <p>The name of the object is <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> for compatibility
@@ -337,14 +337,14 @@ not appear in all uppercase letters in this specification.
 
    <dt>DOM Parsing and Serialization
    <dd><p>A <span>conforming user agent</span> must support at least the
-   <a title="concept-serialize" href="http://html5.org/specs/dom-parsing.html#concept-serialize" class="external">serialize</a>
+   <a class="external" href="http://html5.org/specs/dom-parsing.html#concept-serialize" title="concept-serialize">serialize</a>
    concept from DOM Parsing and Serialization.
    <a href="#refsDOMPS">[DOMPS]</a>
 
    <dt>Encoding Standard
    <dd><p>A <span>conforming user agent</span> must
    support at least the subset of the functionality defined in Encoding Standard that
-   this specification relies upon, such as the <code title="utf-8" class="external"><a href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a></code> <code title="encoding" class="external"><a href="http://encoding.spec.whatwg.org/#encoding">encoding</a></code>.
+   this specification relies upon, such as the <code class="external" title="utf-8"><a href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a></code> <code class="external" title="encoding"><a href="http://encoding.spec.whatwg.org/#encoding">encoding</a></code>.
    <a href="#refsENCODING">[ENCODING]</a>
 
    <dt>File API</dt>
@@ -422,15 +422,15 @@ not appear in all uppercase letters in this specification.
   <h2 id="interface-xmlhttprequest"><span class="secno">4 </span>Interface <code title="">XMLHttpRequest</code></h2>
 
   <pre class="idl">[NoInterfaceObject]
-interface <dfn id="xmlhttprequesteventtarget">XMLHttpRequestEventTarget</dfn> : <a href="http://dev.w3.org/2006/webapi/DOM4Core/#eventtarget" class="external">EventTarget</a> {
+interface <dfn id="xmlhttprequesteventtarget">XMLHttpRequestEventTarget</dfn> : <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#eventtarget">EventTarget</a> {
   // <a href="#event-handlers">event handlers</a>
-  attribute <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler" class="external">EventHandler</a> <a title="handler-xhr-onloadstart" href="#handler-xhr-onloadstart">onloadstart</a>;
-  attribute <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler" class="external">EventHandler</a> <a title="handler-xhr-onprogress" href="#handler-xhr-onprogress">onprogress</a>;
-  attribute <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler" class="external">EventHandler</a> <a title="handler-xhr-onabort" href="#handler-xhr-onabort">onabort</a>;
-  attribute <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler" class="external">EventHandler</a> <a title="handler-xhr-onerror" href="#handler-xhr-onerror">onerror</a>;
-  attribute <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler" class="external">EventHandler</a> <a title="handler-xhr-onload" href="#handler-xhr-onload">onload</a>;
-  attribute <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler" class="external">EventHandler</a> <a title="handler-xhr-ontimeout" href="#handler-xhr-ontimeout">ontimeout</a>;
-  attribute <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler" class="external">EventHandler</a> <a title="handler-xhr-onloadend" href="#handler-xhr-onloadend">onloadend</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadstart" title="handler-xhr-onloadstart">onloadstart</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onprogress" title="handler-xhr-onprogress">onprogress</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onabort" title="handler-xhr-onabort">onabort</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onerror" title="handler-xhr-onerror">onerror</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onload" title="handler-xhr-onload">onload</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-ontimeout" title="handler-xhr-ontimeout">ontimeout</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onloadend" title="handler-xhr-onloadend">onloadend</a>;
 };
 
 interface <dfn id="xmlhttprequestupload">XMLHttpRequestUpload</dfn> : <a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a> {
@@ -446,46 +446,46 @@ enum <dfn id="xmlhttprequestresponsetype">XMLHttpRequestResponseType</dfn> {
   "text"
 };
 
-[<a title="dom-XMLHttpRequest" href="#dom-xmlhttprequest">Constructor</a>]
+[<a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">Constructor</a>]
 interface <dfn id="xmlhttprequest">XMLHttpRequest</dfn> : <a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a> {
   // <a href="#event-handlers">event handler</a>
-  attribute <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler" class="external">EventHandler</a> <a title="handler-xhr-onreadystatechange" href="#handler-xhr-onreadystatechange">onreadystatechange</a>;
+  attribute <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#eventhandler">EventHandler</a> <a href="#handler-xhr-onreadystatechange" title="handler-xhr-onreadystatechange">onreadystatechange</a>;
 
   // <a href="#states">states</a>
-  const unsigned short <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a> = 0;
-  const unsigned short <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a> = 1;
-  const unsigned short <a title="dom-XMLHttpRequest-HEADERS_RECEIVED" href="#dom-xmlhttprequest-headers_received">HEADERS_RECEIVED</a> = 2;
-  const unsigned short <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a> = 3;
-  const unsigned short <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a> = 4;
-  readonly attribute unsigned short <a title="dom-XMLHttpRequest-readyState" href="#dom-xmlhttprequest-readystate">readyState</a>;
+  const unsigned short <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> = 0;
+  const unsigned short <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> = 1;
+  const unsigned short <a href="#dom-xmlhttprequest-headers_received" title="dom-XMLHttpRequest-HEADERS_RECEIVED">HEADERS_RECEIVED</a> = 2;
+  const unsigned short <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> = 3;
+  const unsigned short <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a> = 4;
+  readonly attribute unsigned short <a href="#dom-xmlhttprequest-readystate" title="dom-XMLHttpRequest-readyState">readyState</a>;
 
   // <a href="#request">request</a>
-  void <a title="dom-XMLHttpRequest-open" href="#dom-xmlhttprequest-open">open</a>(ByteString <var>method</var>, [EnsureUTF16] DOMString <var title="">url</var>);
-  void <a title="dom-XMLHttpRequest-open" href="#dom-xmlhttprequest-open">open</a>(ByteString <var>method</var>, [EnsureUTF16] DOMString <var title="">url</var>, boolean <var>async</var>, optional [EnsureUTF16] DOMString? <var>username</var> = null, optional [EnsureUTF16] DOMString? <var>password</var> = null);
-  void <a title="dom-XMLHttpRequest-setRequestHeader" href="#dom-xmlhttprequest-setrequestheader">setRequestHeader</a>(ByteString <var>header</var>, ByteString <var>value</var>);
-           attribute unsigned long <a title="dom-XMLHttpRequest-timeout" href="#dom-xmlhttprequest-timeout">timeout</a>;
-           attribute boolean <a title="dom-XMLHttpRequest-withCredentials" href="#dom-xmlhttprequest-withcredentials">withCredentials</a>;
-  readonly attribute <a href="#xmlhttprequestupload">XMLHttpRequestUpload</a> <a title="dom-XMLHttpRequest-upload" href="#dom-xmlhttprequest-upload">upload</a>;
-  void <a title="dom-XMLHttpRequest-send" href="#dom-xmlhttprequest-send">send</a>(optional (<a href="http://www.khronos.org/registry/typedarray/specs/latest/#ARRAYBUFFERVIEW" class="external">ArrayBufferView</a> or <a href="http://dev.w3.org/2006/webapi/FileAPI/#blob" class="external">Blob</a> or <a href="http://dev.w3.org/2006/webapi/DOM4Core/#document" class="external">Document</a> or [EnsureUTF16] DOMString or <a href="#formdata">FormData</a>)? <var>data</var> = null);
-  void <a title="dom-XMLHttpRequest-abort" href="#dom-xmlhttprequest-abort">abort</a>();
+  void <a href="#dom-xmlhttprequest-open" title="dom-XMLHttpRequest-open">open</a>(ByteString <var>method</var>, [EnsureUTF16] DOMString <var title="">url</var>);
+  void <a href="#dom-xmlhttprequest-open" title="dom-XMLHttpRequest-open">open</a>(ByteString <var>method</var>, [EnsureUTF16] DOMString <var title="">url</var>, boolean <var>async</var>, optional [EnsureUTF16] DOMString? <var>username</var> = null, optional [EnsureUTF16] DOMString? <var>password</var> = null);
+  void <a href="#dom-xmlhttprequest-setrequestheader" title="dom-XMLHttpRequest-setRequestHeader">setRequestHeader</a>(ByteString <var>header</var>, ByteString <var>value</var>);
+           attribute unsigned long <a href="#dom-xmlhttprequest-timeout" title="dom-XMLHttpRequest-timeout">timeout</a>;
+           attribute boolean <a href="#dom-xmlhttprequest-withcredentials" title="dom-XMLHttpRequest-withCredentials">withCredentials</a>;
+  readonly attribute <a href="#xmlhttprequestupload">XMLHttpRequestUpload</a> <a href="#dom-xmlhttprequest-upload" title="dom-XMLHttpRequest-upload">upload</a>;
+  void <a href="#dom-xmlhttprequest-send" title="dom-XMLHttpRequest-send">send</a>(optional (<a class="external" href="http://www.khronos.org/registry/typedarray/specs/latest/#ARRAYBUFFERVIEW">ArrayBufferView</a> or <a class="external" href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a> or <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a> or [EnsureUTF16] DOMString or <a href="#formdata">FormData</a>)? <var>data</var> = null);
+  void <a href="#dom-xmlhttprequest-abort" title="dom-XMLHttpRequest-abort">abort</a>();
 
   // <a href="#response">response</a>
-  readonly attribute unsigned short <a title="dom-XMLHttpRequest-status" href="#dom-xmlhttprequest-status">status</a>;
-  readonly attribute ByteString <a title="dom-XMLHttpRequest-statusText" href="#dom-xmlhttprequest-statustext">statusText</a>;
-  ByteString? <a title="dom-XMLHttpRequest-getResponseHeader" href="#dom-xmlhttprequest-getresponseheader">getResponseHeader</a>(ByteString <var>header</var>);
-  ByteString <a title="dom-XMLHttpRequest-getAllResponseHeaders" href="#dom-xmlhttprequest-getallresponseheaders">getAllResponseHeaders</a>();
-  void <a title="dom-XMLHttpRequest-overrideMimeType" href="#dom-xmlhttprequest-overridemimetype">overrideMimeType</a>(DOMString <var>mime</var>);
-           attribute <a href="#xmlhttprequestresponsetype">XMLHttpRequestResponseType</a> <a title="dom-XMLHttpRequest-responseType" href="#dom-xmlhttprequest-responsetype">responseType</a>;
-  readonly attribute any <a title="dom-XMLHttpRequest-response" href="#dom-xmlhttprequest-response">response</a>;
-  readonly attribute DOMString <a title="dom-XMLHttpRequest-responseText" href="#dom-xmlhttprequest-responsetext">responseText</a>;
-  readonly attribute <a href="http://dev.w3.org/2006/webapi/DOM4Core/#document" class="external">Document</a>? <a title="dom-XMLHttpRequest-responseXML" href="#dom-xmlhttprequest-responsexml">responseXML</a>;
+  readonly attribute unsigned short <a href="#dom-xmlhttprequest-status" title="dom-XMLHttpRequest-status">status</a>;
+  readonly attribute ByteString <a href="#dom-xmlhttprequest-statustext" title="dom-XMLHttpRequest-statusText">statusText</a>;
+  ByteString? <a href="#dom-xmlhttprequest-getresponseheader" title="dom-XMLHttpRequest-getResponseHeader">getResponseHeader</a>(ByteString <var>header</var>);
+  ByteString <a href="#dom-xmlhttprequest-getallresponseheaders" title="dom-XMLHttpRequest-getAllResponseHeaders">getAllResponseHeaders</a>();
+  void <a href="#dom-xmlhttprequest-overridemimetype" title="dom-XMLHttpRequest-overrideMimeType">overrideMimeType</a>(DOMString <var>mime</var>);
+           attribute <a href="#xmlhttprequestresponsetype">XMLHttpRequestResponseType</a> <a href="#dom-xmlhttprequest-responsetype" title="dom-XMLHttpRequest-responseType">responseType</a>;
+  readonly attribute any <a href="#dom-xmlhttprequest-response" title="dom-XMLHttpRequest-response">response</a>;
+  readonly attribute DOMString <a href="#dom-xmlhttprequest-responsetext" title="dom-XMLHttpRequest-responseText">responseText</a>;
+  readonly attribute <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#document">Document</a>? <a href="#dom-xmlhttprequest-responsexml" title="dom-XMLHttpRequest-responseXML">responseXML</a>;
 };</pre>
 
 <p>Each <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has a unique, associated
 <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
 
-<p>If the <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-<a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment" class="external">worker environment</a>, implementations must act as if
+<p>If the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>, implementations must act as if
 <code title="">Document</code> and <code title="">Document?</code> in the above IDL were not
 exposed. I.e. <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> is not overloaded with it
 and <code title="dom-XMLHttpRequest-responseXML"><a href="#dom-xmlhttprequest-responsexml">responseXML</a></code> always returns null (as
@@ -495,23 +495,23 @@ required by its definition, too).
 <h3 id="task-sources"><span class="secno">4.1 </span>Task sources</h3>
 
 <p>Each <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has its own
-<a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-source" class="external">task source</a>. Namely, the
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-source">task source</a>. Namely, the
 <dfn id="xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</dfn>.
 
 
   <h3 id="constructor"><span class="secno">4.2 </span>Constructor</h3>
 
   <p>The <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object has an associated
-  <dfn title="concept-XMLHttpRequest-settings-object" id="concept-xmlhttprequest-settings-object">settings object</dfn>.
+  <dfn id="concept-xmlhttprequest-settings-object" title="concept-XMLHttpRequest-settings-object">settings object</dfn>.
 
   <dl class="domintro">
-    <dt><code><var title="">client</var> = new <a title="dom-XMLHttpRequest" href="#dom-xmlhttprequest">XMLHttpRequest</a>()</code>
+    <dt><code><var title="">client</var> = new <a href="#dom-xmlhttprequest" title="dom-XMLHttpRequest">XMLHttpRequest</a>()</code>
     <dd>Returns a new <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object.
 
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest" id="dom-xmlhttprequest"><code>XMLHttpRequest()</code></dfn>
+  <dfn id="dom-xmlhttprequest" title="dom-XMLHttpRequest"><code>XMLHttpRequest()</code></dfn>
   constructor must run these steps:
 
   <ol>
@@ -519,8 +519,8 @@ required by its definition, too).
     object.
 
     <li><p>Set <var title="">xhr</var>'s
-    <a title="concept-XMLHttpRequest-settings-object" href="#concept-xmlhttprequest-settings-object">settings object</a> to the
-    <a title="relevant settings object for a global object" href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#relevant-settings-object-for-a-global-object" class="external">relevant settings object</a>
+    <a href="#concept-xmlhttprequest-settings-object" title="concept-XMLHttpRequest-settings-object">settings object</a> to the
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#relevant-settings-object-for-a-global-object" title="relevant settings object for a global object">relevant settings object</a>
     for the global object of <var title="">xhr</var>'s interface object.
 
     <li><p>Return <var title="">xhr</var>.
@@ -532,15 +532,15 @@ required by its definition, too).
 <!-- Based on EventSource and WebSocket. Not sure what I am doing. -->
 
 <p>An <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object must not be garbage collected if
-its state is <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a> and the
+its state is <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> and the
 <a href="#send-flag"><code>send()</code> flag</a> is set, its state is
-<a title="dom-XMLHttpRequest-HEADERS_RECEIVED" href="#dom-xmlhttprequest-headers_received">HEADERS_RECEIVED</a>, or
-its state is <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a>, and
+<a href="#dom-xmlhttprequest-headers_received" title="dom-XMLHttpRequest-HEADERS_RECEIVED">HEADERS_RECEIVED</a>, or
+its state is <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a>, and
 one of the following is true:
 
 <ul>
  <li><p>It has one or more
- <a title="concept-event-listener" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-listener" class="external">event listeners</a>
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-listener" title="concept-event-listener">event listeners</a>
  registered whose <b>type</b> is
  <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>,
  <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>,
@@ -551,7 +551,7 @@ one of the following is true:
  <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>.
  <li><p>The <a href="#upload-complete-flag">upload complete flag</a> is unset and the associated
  <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object has one or more
- <a title="concept-event-listener" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-listener" class="external">event listeners</a>
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-listener" title="concept-event-listener">event listeners</a>
  registered whose <b>type</b> is
  <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>,
  <code title="event-xhr-abort"><a href="#event-xhr-abort">abort</a></code>,
@@ -570,56 +570,56 @@ connection is still open, the user agent must <a href="#terminate-the-request">t
 
 
   <p>The following are the
-  <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" class="external">event handlers</a> (and their corresponding
-  <a title="event handler event type" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type" class="external">event handler event types</a>)
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers">event handlers</a> (and their corresponding
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type" title="event handler event type">event handler event types</a>)
   that must be supported on objects implementing an interface that inherits
   from <code><a href="#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a></code> as attributes:</p>
 
   <table>
    <thead>
     <tr>
-     <th><a title="event handlers" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" class="external">event handler</a>
-     <th><a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type" class="external">event handler event type</a>
+     <th><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" title="event handlers">event handler</a>
+     <th><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type">event handler event type</a>
    <tbody>
     <tr>
-     <td><dfn title="handler-xhr-onloadstart" id="handler-xhr-onloadstart"><code>onloadstart</code></dfn>
+     <td><dfn id="handler-xhr-onloadstart" title="handler-xhr-onloadstart"><code>onloadstart</code></dfn>
      <td><code title="event-xhr-loadstart"><a href="#event-xhr-loadstart">loadstart</a></code>
     <tr>
-     <td><dfn title="handler-xhr-onprogress" id="handler-xhr-onprogress"><code>onprogress</code></dfn>
+     <td><dfn id="handler-xhr-onprogress" title="handler-xhr-onprogress"><code>onprogress</code></dfn>
      <td><code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
     <tr>
-     <td><dfn title="handler-xhr-onabort" id="handler-xhr-onabort"><code>onabort</code></dfn>
+     <td><dfn id="handler-xhr-onabort" title="handler-xhr-onabort"><code>onabort</code></dfn>
      <td><code title="event-xhr-abort"><a href="#event-xhr-abort">abort</a></code>
     <tr>
-     <td><dfn title="handler-xhr-onerror" id="handler-xhr-onerror"><code>onerror</code></dfn>
+     <td><dfn id="handler-xhr-onerror" title="handler-xhr-onerror"><code>onerror</code></dfn>
      <td><code title="event-xhr-error"><a href="#event-xhr-error">error</a></code>
     <tr>
-     <td><dfn title="handler-xhr-onload" id="handler-xhr-onload"><code>onload</code></dfn>
+     <td><dfn id="handler-xhr-onload" title="handler-xhr-onload"><code>onload</code></dfn>
      <td><code title="event-xhr-load"><a href="#event-xhr-load">load</a></code>
     <tr>
-     <td><dfn title="handler-xhr-ontimeout" id="handler-xhr-ontimeout"><code>ontimeout</code></dfn>
+     <td><dfn id="handler-xhr-ontimeout" title="handler-xhr-ontimeout"><code>ontimeout</code></dfn>
      <td><code title="event-xhr-timeout"><a href="#event-xhr-timeout">timeout</a></code>
     <tr>
-     <td><dfn title="handler-xhr-onloadend" id="handler-xhr-onloadend"><code>onloadend</code></dfn>
+     <td><dfn id="handler-xhr-onloadend" title="handler-xhr-onloadend"><code>onloadend</code></dfn>
      <td><code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>
   </table>
 
 
   <p>The following is the
-  <a title="event handlers" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" class="external">event handler</a>
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" title="event handlers">event handler</a>
   (and its corresponding
-  <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type" class="external">event handler event type</a>) that must be
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type">event handler event type</a>) that must be
   supported as attribute solely by the
   <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object:</p>
 
   <table>
    <thead>
     <tr>
-     <th><a title="event handlers" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" class="external">event handler</a>
-     <th><a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type" class="external">event handler event type</a>
+     <th><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handlers" title="event handlers">event handler</a>
+     <th><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#event-handler-event-type">event handler event type</a>
    <tbody>
     <tr>
-     <td><dfn title="handler-xhr-onreadystatechange" id="handler-xhr-onreadystatechange"><code>onreadystatechange</code></dfn>
+     <td><dfn id="handler-xhr-onreadystatechange" title="handler-xhr-onreadystatechange"><code>onreadystatechange</code></dfn>
      <td><code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code></td>
   </table>
 
@@ -627,21 +627,21 @@ connection is still open, the user agent must <a href="#terminate-the-request">t
   <h3 id="states"><span class="secno">4.5 </span>States</h3>
 
   <dl class="domintro">
-    <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-readyState" href="#dom-xmlhttprequest-readystate">readyState</a></code>
+    <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-readystate" title="dom-XMLHttpRequest-readyState">readyState</a></code>
     <dd><p>Returns the current state.
   </dl>
 
   <p>The <code><a href="#xmlhttprequest">XMLHttpRequest</a></code> object can be in several states. The
-  <dfn title="dom-XMLHttpRequest-readyState" id="dom-xmlhttprequest-readystate"><code>readyState</code></dfn>
+  <dfn id="dom-xmlhttprequest-readystate" title="dom-XMLHttpRequest-readyState"><code>readyState</code></dfn>
   attribute must return the current state, which must be one of the
   following values:</p>
 
   <dl>
-   <dt><dfn title="dom-XMLHttpRequest-UNSENT" id="dom-xmlhttprequest-unsent"><code>UNSENT</code></dfn>
+   <dt><dfn id="dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT"><code>UNSENT</code></dfn>
    (numeric value 0)</dt>
    <dd><p>The object has been constructed.</dd>
 
-   <dt><dfn title="dom-XMLHttpRequest-OPENED" id="dom-xmlhttprequest-opened"><code>OPENED</code></dfn>
+   <dt><dfn id="dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED"><code>OPENED</code></dfn>
    (numeric value 1)</dt>
    <dd><p>The <code title="dom-XMLHttpRequest-open"><a href="#dom-xmlhttprequest-open">open()</a></code> method has been successfully invoked.
    During this state request headers can be set using
@@ -649,17 +649,17 @@ connection is still open, the user agent must <a href="#terminate-the-request">t
    and the request can be made using the
    <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> method.</dd>
 
-   <dt><dfn title="dom-XMLHttpRequest-HEADERS_RECEIVED" id="dom-xmlhttprequest-headers_received"><code>HEADERS_RECEIVED</code></dfn>
+   <dt><dfn id="dom-xmlhttprequest-headers_received" title="dom-XMLHttpRequest-HEADERS_RECEIVED"><code>HEADERS_RECEIVED</code></dfn>
    (numeric value 2)</dt>
    <dd><p>All redirects (if any) have been followed and all HTTP headers of
    the final response have been received. Several response members of the
    object are now available.</dd>
 
-   <dt><dfn title="dom-XMLHttpRequest-LOADING" id="dom-xmlhttprequest-loading"><code>LOADING</code></dfn>
+   <dt><dfn id="dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING"><code>LOADING</code></dfn>
    (numeric value 3)</dt>
    <dd><p>The <a href="#response-entity-body">response entity body</a> is being received.</dd>
 
-   <dt><dfn title="dom-XMLHttpRequest-DONE" id="dom-xmlhttprequest-done"><code>DONE</code></dfn>
+   <dt><dfn id="dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE"><code>DONE</code></dfn>
    (numeric value 4)</dt>
    <dd><p>The data transfer has been completed or something went wrong
    during the transfer (e.g. infinite redirects).</dd>
@@ -668,7 +668,7 @@ connection is still open, the user agent must <a href="#terminate-the-request">t
   <p>The <dfn id="send-flag"><code>send()</code> flag</dfn> indicates
   that the <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> method has
   been invoked. It is initially unset and is used during the
-  <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a> state.
+  <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> state.
 
   <p>The <dfn id="error-flag">error flag</dfn> indicates some type of
   network error or fetch termination. It is initially unset.
@@ -705,12 +705,12 @@ must be done in a case-insensitive manner. Initially it must be empty.
 <ol>
  <li><p>Set the <a href="#error-flag">error flag</a>.
 
- <li><p>Cancel any instance of the <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" class="external">fetch</a> algorithm
+ <li><p>Cancel any instance of the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch">fetch</a> algorithm
  opened by this object.
 
- <li><p>If there are any <a title="concept-task" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" class="external">tasks</a> from
+ <li><p>If there are any <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#concept-task" title="concept-task">tasks</a> from
  the object's <a href="#xmlhttprequest-task-source"><code>XMLHttpRequest</code> task source</a> in one of the
- <a title="task queue" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" class="external">task queues</a>, then remove them.
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#task-queue" title="task queue">task queues</a>, then remove them.
 </ol>
 
 
@@ -718,13 +718,13 @@ must be done in a case-insensitive manner. Initially it must be empty.
 
   <dl class="domintro">
    <dt><dd></dd>
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-open" href="#dom-xmlhttprequest-open">open</a>(<var title="">method</var>, <var title="">url</var> [, <var title="">async</var> = true [, <var title="">username</var> = null [, <var title="">password</var> = null]]])</code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-open" title="dom-XMLHttpRequest-open">open</a>(<var title="">method</var>, <var title="">url</var> [, <var title="">async</var> = true [, <var title="">username</var> = null [, <var title="">password</var> = null]]])</code>
 
    <dd>
     <p>Sets the <a href="#request-method">request method</a>, <a href="#request-url">request URL</a>, and
     <a href="#synchronous-flag">synchronous flag</a>.</p>
 
-    <p>Throws a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code> if
+    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
     either <var title="">method</var> is not a valid HTTP method or
     <var title="">url</var> cannot be parsed.
 
@@ -734,8 +734,8 @@ must be done in a case-insensitive manner. Initially it must be empty.
 
     <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>"
     exception if <var title="">async</var> is false, the
-    <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-    <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment" class="external">document environment</a>, and either the
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>, and either the
     <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code> attribute is not
     zero, the
     <code title="dom-XMLHttpRequest-withCredentials"><a href="#dom-xmlhttprequest-withcredentials">withCredentials</a></code>
@@ -745,36 +745,37 @@ must be done in a case-insensitive manner. Initially it must be empty.
   </dl>
 
 <p>The
-<dfn title="dom-XMLHttpRequest-open" id="dom-xmlhttprequest-open"><code>open(<var title="">method</var>, <var title="">url</var>, <var title="">async</var>, <var title="">username</var>, <var title="">password</var>)</code></dfn>
+<dfn id="dom-xmlhttprequest-open" title="dom-XMLHttpRequest-open"><code>open(<var title="">method</var>, <var title="">url</var>, <var title="">async</var>, <var title="">username</var>, <var title="">password</var>)</code></dfn>
 method must run these steps:
 
 <ol>
- <li><p>If <a title="concept-XMLHttpRequest-settings-object" href="#concept-xmlhttprequest-settings-object">settings object</a>'s
- <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#responsible-document" class="external">responsible document</a> is not
- <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#fully-active" class="external">fully active</a>,
- <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+ <li><p>If <a href="#concept-xmlhttprequest-settings-object" title="concept-XMLHttpRequest-settings-object">settings object</a>'s
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#responsible-document">responsible document</a> is not
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#fully-active">fully active</a>,
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
  "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
  <li><p>Set <var title="">base</var> to
- <a title="concept-XMLHttpRequest-settings-object" href="#concept-xmlhttprequest-settings-object">settings object</a>'s
- <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#api-base-url" class="external">API base URL</a>.
+ <a href="#concept-xmlhttprequest-settings-object" title="concept-XMLHttpRequest-settings-object">settings object</a>'s
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#api-base-url">API base URL</a>.
 
  <li><p>Set <a href="#source-origin">source origin</a> to
- <a title="concept-XMLHttpRequest-settings-object" href="#concept-xmlhttprequest-settings-object">settings object</a>'s
- <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin" class="external">origin</a>.
+ <a href="#concept-xmlhttprequest-settings-object" title="concept-XMLHttpRequest-settings-object">settings object</a>'s
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">origin</a>.
 
  <li><p>Set <a href="#referrer-source">referrer source</a> to the
- <a title="concept-XMLHttpRequest-settings-object" href="#concept-xmlhttprequest-settings-object">settings object</a>'s
- <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#api-referrer-source" class="external">API referrer source</a>'s
- <a title="concept-document-url" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-url" class="external">URL</a> if
- <a title="concept-XMLHttpRequest-settings-object" href="#concept-xmlhttprequest-settings-object">settings object</a>'s
- <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#api-referrer-source" class="external">API referrer source</a> is a
- <a title="concept-document" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" class="external">document</a>, and
- <a title="concept-XMLHttpRequest-settings-object" href="#concept-xmlhttprequest-settings-object">settings object</a>'s
- <a href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#api-referrer-source" class="external">API referrer source</a> otherwise.
+ <a href="#concept-xmlhttprequest-settings-object" title="concept-XMLHttpRequest-settings-object">settings object</a>'s
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#api-referrer-source">API referrer source</a>'s
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-url" title="concept-document-url">URL</a> if
+ <a href="#concept-xmlhttprequest-settings-object" title="concept-XMLHttpRequest-settings-object">settings object</a>'s
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#api-referrer-source">API referrer source</a> is a
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>, and
+ <a href="#concept-xmlhttprequest-settings-object" title="concept-XMLHttpRequest-settings-object">settings object</a>'s
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#api-referrer-source">API referrer source</a> otherwise.
 
- <li><p>If <var>method</var> does not match the <a href="http://tools.ietf.org/html/rfc2616/#section-5.1.1" class="external">Method</a>
- token production, <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
+ <li><p>If <var>method</var> does not match the <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-5.1.1">Method</a>
+ token production, <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+ "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
 
  <li>
   <p>If <var>method</var> is a case-insensitive match for <code>CONNECT</code>,
@@ -790,18 +791,19 @@ method must run these steps:
  <li>
   <p>If <var>method</var> is a case-sensitive match for <code>CONNECT</code>,
   <code>TRACE</code>, or <code>TRACK</code>,
-  <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> a
+  <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#securityerror">SecurityError</a></code>" exception.
 
   <p class="note">Allowing these methods would pose a security risk.
   <a href="#refsHTTPVERBSEC">[HTTPVERBSEC]</a>
 
  <li><p>Let <var title="">parsed URL</var> be the result of
- <a title="concept-url-parser" href="http://url.spec.whatwg.org/#concept-url-parser" class="external">parsing</a> <var title="">url</var>
+ <a class="external" href="http://url.spec.whatwg.org/#concept-url-parser" title="concept-url-parser">parsing</a> <var title="">url</var>
  with <var title="">base</var>.
 
  <li><p>If <var title="">parsed URL</var> is failure,
- <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+ "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
 
  <li>
   <p>If the <var>async</var> argument is omitted, set <var>async</var> to true, and set
@@ -812,29 +814,29 @@ method must run these steps:
   from <var>async</var> being omitted.
 
  <li>
-  <p>If <var title="">parsed URL</var>'s <a href="http://url.spec.whatwg.org/#relative-flag" class="external">relative flag</a> is
+  <p>If <var title="">parsed URL</var>'s <a class="external" href="http://url.spec.whatwg.org/#relative-flag">relative flag</a> is
   set, run these substeps:
 
   <ol>
    <li><p>If the <var title="">username</var> argument is not null, set
    <var title="">parsed URL</var>'s
-   <a title="concept-url-username" href="http://url.spec.whatwg.org/#concept-url-username" class="external">username</a> to
+   <a class="external" href="http://url.spec.whatwg.org/#concept-url-username" title="concept-url-username">username</a> to
    <var>username</var>.
 
    <li><p>If the <var title="">password</var> argument is not null, set
    <var title="">parsed URL</var>'s
-   <a title="concept-url-password" href="http://url.spec.whatwg.org/#concept-url-password" class="external">password</a> to
+   <a class="external" href="http://url.spec.whatwg.org/#concept-url-password" title="concept-url-password">password</a> to
    <var>password</var>.
   </ol>
 
  <li><p>If <var>async</var> is false, the
- <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
- <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment" class="external">document environment</a>, and either the
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+ <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>, and either the
  <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code> attribute value is not zero, the
  <code title="dom-XMLHttpRequest-withCredentials"><a href="#dom-xmlhttprequest-withcredentials">withCredentials</a></code> attribute value is
  true, or the <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> attribute
  value is not the empty string,
- <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+ <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
  "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
 
  <li>
@@ -860,20 +862,20 @@ method must run these steps:
   </ul>
 
  <li>
-  <p>If the state is not <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>, run these
+  <p>If the state is not <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>, run these
   substeps:
 
   <ol>
-   <li><p>Change the state to <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>.
+   <li><p>Change the state to <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>.
 
-   <li><p><a title="concept-event-fire" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" class="external">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.
   </ol>
 </ol>
 
   <h4 id="the-setrequestheader()-method"><span class="secno">4.6.2 </span>The <code title="">setRequestHeader()</code> method</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-setRequestHeader" href="#dom-xmlhttprequest-setrequestheader">setRequestHeader</a>(<var title="">header</var>, <var title="">value</var>)</code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-setrequestheader" title="dom-XMLHttpRequest-setRequestHeader">setRequestHeader</a>(<var title="">header</var>, <var title="">value</var>)</code>
 
    <dd>
     <p>Appends an header to the list of
@@ -883,10 +885,10 @@ method must run these steps:
 
     <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>"
     exception if the state is not
-    <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a> or if the
+    <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> or if the
     <a href="#send-flag"><code>send()</code> flag</a> is set.</p>
 
-    <p>Throws a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code> if
+    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
     <var title="">header</var> is not a valid HTTP header field name or if
     <var title="">value</var> is not a valid HTTP header field value.</p>
    </dd>
@@ -899,33 +901,35 @@ method must run these steps:
   <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code> method section.</p>
 
 
-  <p class="note">For non <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" class="external">same origin</a> requests using the HTTP
+  <p class="note">For non <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a> requests using the HTTP
   <code>GET</code> method a preflight request is made when headers other
   than <code>Accept</code> and <code>Accept-Language</code> are set.</p>
 
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-setRequestHeader" id="dom-xmlhttprequest-setrequestheader"><code>setRequestHeader(<var title="">header</var>, <var title="">value</var>)</code></dfn>
+  <dfn id="dom-xmlhttprequest-setrequestheader" title="dom-XMLHttpRequest-setRequestHeader"><code>setRequestHeader(<var title="">header</var>, <var title="">value</var>)</code></dfn>
   method must run these steps:</p>
 
   <ol>
    <li><p>If the state is not
-   <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>,
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>If the <a href="#send-flag"><code>send()</code> flag</a> is set,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>If <var>header</var> does not match the
-   <a href="http://tools.ietf.org/html/rfc2616/#section-4.2" class="external">field-name</a> production,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
+   <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-4.2">field-name</a> production,
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
 
    <li>
     <p>If <var>value</var> does not match the
-    <a href="http://tools.ietf.org/html/rfc2616/#section-4.2" class="external">field-value</a> production,
-    <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
+    <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-4.2">field-value</a> production,
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
 
     <p class="note">An empty string represents an empty header field value.
 
@@ -1001,27 +1005,27 @@ X-Test: one, two</code></pre>
   <h4 id="the-timeout-attribute"><span class="secno">4.6.3 </span>The <code title="">timeout</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-timeout" href="#dom-xmlhttprequest-timeout">timeout</a></code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-timeout" title="dom-XMLHttpRequest-timeout">timeout</a></code>
    <dd>
     <p>Can be set to a time in milliseconds. When set to a non-zero value
-    will cause <a title="fetch" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" class="external">fetching</a> to
+    will cause <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a> to
     terminate after the given time has passed. When the time has passed, the request has
     not yet completed, and the <a href="#synchronous-flag">synchronous flag</a> is unset, a
     <code title="event-xhr-timeout"><a href="#event-xhr-timeout">timeout</a></code> event will then be
-    <a title="concept-event-dispatch" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-dispatch" class="external">dispatched</a>,
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-dispatch" title="concept-event-dispatch">dispatched</a>,
     or a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#timeouterror">TimeoutError</a></code>" exception will be
-    <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">thrown</a> otherwise
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">thrown</a> otherwise
     (for the <code title="dom-XMLHttpRequest"><a href="#dom-xmlhttprequest">send()</a></code> method).
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if
     the <a href="#synchronous-flag">synchronous flag</a> is set and the
-    <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-    <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment" class="external">document environment</a>.
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>.
    </dd>
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-timeout" id="dom-xmlhttprequest-timeout"><code>timeout</code></dfn>
+  <dfn id="dom-xmlhttprequest-timeout" title="dom-XMLHttpRequest-timeout"><code>timeout</code></dfn>
   attribute must return its value. Initially its value must be zero.</p>
 
   <p>Setting the <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code>
@@ -1029,10 +1033,10 @@ X-Test: one, two</code></pre>
 
   <ol>
    <li><p>If the
-   <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-   <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment" class="external">document environment</a> and the
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
 
    <li><p>Set its value to the new value.
@@ -1040,15 +1044,15 @@ X-Test: one, two</code></pre>
 
   <p class="note">This implies that the
   <code title="dom-XMLHttpRequest-timeout"><a href="#dom-xmlhttprequest-timeout">timeout</a></code> attribute can be
-  set while <a title="fetch" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" class="external">fetching</a> is in
+  set while <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a> is in
   progress. If that occurs it will still be measured relative to the start
-  of <a title="fetch" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" class="external">fetching</a>.
+  of <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a>.
 
 
   <h4 id="the-withcredentials-attribute"><span class="secno">4.6.4 </span>The <code title="">withCredentials</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-withCredentials" href="#dom-xmlhttprequest-withcredentials">withCredentials</a></code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-withcredentials" title="dom-XMLHttpRequest-withCredentials">withCredentials</a></code>
    <dd>
     <p>True when <a href="#user-credentials">user credentials</a> are to be included in a
     cross-origin request. False when they are to be excluded in a
@@ -1057,19 +1061,19 @@ X-Test: one, two</code></pre>
 
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception if the
-    state is not <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a> or
-    <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>, or if
+    state is not <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> or
+    <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>, or if
     the <a href="#send-flag"><code>send()</code> flag</a> is set.</p>
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if
     the <a href="#synchronous-flag">synchronous flag</a> is set and the
-    <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-    <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment" class="external">document environment</a>.</p>
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>.</p>
    </dd>
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-withCredentials" id="dom-xmlhttprequest-withcredentials"><code>withCredentials</code></dfn>
+  <dfn id="dom-xmlhttprequest-withcredentials" title="dom-XMLHttpRequest-withCredentials"><code>withCredentials</code></dfn>
   attribute must return its value. Initially its value must be false.
 
   <p>Setting the
@@ -1078,21 +1082,21 @@ X-Test: one, two</code></pre>
 
   <ol>
    <li><p>If the state is not
-   <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a> or
-   <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> or
+   <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>,
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>If the <a href="#send-flag"><code>send()</code> flag</a> is set,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
 
    <li><p>If the
-   <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-   <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment" class="external">document environment</a> and the
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
 
    <li><p>Set the
@@ -1103,22 +1107,22 @@ X-Test: one, two</code></pre>
   <p class="note">The
   <code title="dom-XMLHttpRequest-withCredentials"><a href="#dom-xmlhttprequest-withcredentials">withCredentials</a></code>
   attribute has no effect when
-  <a title="fetch" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" class="external">fetching</a>
-  <a title="same origin" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" class="external">same-origin</a>
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetching</a>
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" title="same origin">same-origin</a>
   resources.</p>
 
 
   <h4 id="the-upload-attribute"><span class="secno">4.6.5 </span>The <code title="">upload</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-upload" href="#dom-xmlhttprequest-upload">upload</a></code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-upload" title="dom-XMLHttpRequest-upload">upload</a></code>
    <dd><p>Returns the associated <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code>
    object. It can be used to gather transmission information when data is
    transferred to a server.
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-upload" id="dom-xmlhttprequest-upload"><code>upload</code></dfn>
+  <dfn id="dom-xmlhttprequest-upload" title="dom-XMLHttpRequest-upload"><code>upload</code></dfn>
   attribute must return the associated
   <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.</p>
 
@@ -1129,7 +1133,7 @@ X-Test: one, two</code></pre>
   <h4 id="the-send()-method"><span class="secno">4.6.6 </span>The <code title="">send()</code> method</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-send" href="#dom-xmlhttprequest-send">send</a>([<var title="">data</var> = null])</code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-send" title="dom-XMLHttpRequest-send">send</a>([<var title="">data</var> = null])</code>
    <dd>
     <p>Initiates the request. The optional argument provides the
     <a href="#request-entity-body">request entity body</a>. The argument is ignored if
@@ -1138,22 +1142,22 @@ X-Test: one, two</code></pre>
 
     <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>"
     exception if the state is not
-    <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a> or if the
+    <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> or if the
     <a href="#send-flag"><code>send()</code> flag</a> is set.</p>
    </dd>
   </dl>
 
-<p>The <dfn title="dom-XMLHttpRequest-send" id="dom-xmlhttprequest-send"><code>send(<var>data</var>)</code></dfn>
+<p>The <dfn id="dom-xmlhttprequest-send" title="dom-XMLHttpRequest-send"><code>send(<var>data</var>)</code></dfn>
 method must run these steps:
 
   <ol>
    <li><p>If the state is not
-   <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>,
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>If the <a href="#send-flag"><code>send()</code> flag</a> is set,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>If the <a href="#request-method">request method</a> is <code>GET</code> or
@@ -1175,7 +1179,7 @@ method must run these steps:
      <dt id="dom-XMLHttpRequest-send-Blob"><code class="external"><a href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a></code>
      <dd>
       <p>If the object's
-      <code title="dom-Blob-type" class="external"><a href="http://dev.w3.org/2006/webapi/FileAPI/#dfn-type">type</a></code>
+      <code class="external" title="dom-Blob-type"><a href="http://dev.w3.org/2006/webapi/FileAPI/#dfn-type">type</a></code>
       attribute is not the empty string let <var>mime type</var> be its
       value.</p>
 
@@ -1184,24 +1188,24 @@ method must run these steps:
      </dd>
 
 
-     <dt id="dom-XMLHttpRequest-send-document"><a title="concept-document" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" class="external">document</a>
+     <dt id="dom-XMLHttpRequest-send-document"><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
      <dd>
       <p>Let <var>encoding</var> be "<code title="">UTF-8</code>".
 
-      <p>If <var title="">data</var> is an <a href="http://dev.w3.org/2006/webapi/DOM4Core/#html-document" class="external">HTML document</a>, let
+      <p>If <var title="">data</var> is an <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#html-document">HTML document</a>, let
       <var>mime type</var> be "<code>text/html</code>", or let <var>mime type</var> be
       "<code>application/xml</code>" otherwise. Then append "<code>;charset=UTF-8</code>" to
       <var>mime type</var>.
 
       <p>Let the <a href="#request-entity-body">request entity body</a> be <var title="">data</var>,
-      <a title="concept-serialize" href="http://html5.org/specs/dom-parsing.html#concept-serialize" class="external">serialized</a>,
-      <a title="convert a DOMString to a sequence of Unicode characters" href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-obtain-unicode" class="external">converted to Unicode</a>,
-      and <a title="utf-8 encode" href="http://encoding.spec.whatwg.org/#utf-8-encode" class="external">utf-8 encoded</a>.
+      <a class="external" href="http://html5.org/specs/dom-parsing.html#concept-serialize" title="concept-serialize">serialized</a>,
+      <a class="external" href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-obtain-unicode" title="convert a DOMString to a sequence of Unicode characters">converted to Unicode</a>,
+      and <a class="external" href="http://encoding.spec.whatwg.org/#utf-8-encode" title="utf-8 encode">utf-8 encoded</a>.
       Re-throw any exception
-      <a title="concept-serialize" href="http://html5.org/specs/dom-parsing.html#concept-serialize" class="external">serializing</a> throws.
+      <a class="external" href="http://html5.org/specs/dom-parsing.html#concept-serialize" title="concept-serialize">serializing</a> throws.
 
       <p class="note">If <var title="">data</var> cannot be
-      <a title="concept-serialize" href="http://html5.org/specs/dom-parsing.html#concept-serialize" class="external">serialized</a>, an
+      <a class="external" href="http://html5.org/specs/dom-parsing.html#concept-serialize" title="concept-serialize">serialized</a>, an
       "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception is thrown.
 
      <dt id="dom-XMLHttpRequest-send-a-string">a string
@@ -1211,15 +1215,15 @@ method must run these steps:
       <p>Let <var>mime type</var> be "<code>text/plain;charset=UTF-8</code>".</p>
 
       <p>Let the <a href="#request-entity-body">request entity body</a> be <var title="">data</var>,
-      <a title="utf-8 encode" href="http://encoding.spec.whatwg.org/#utf-8-encode" class="external">utf-8 encoded</a>.
+      <a class="external" href="http://encoding.spec.whatwg.org/#utf-8-encode" title="utf-8 encode">utf-8 encoded</a>.
 
      <dt id="dom-XMLHttpRequest-send-FormData"><code><a href="#formdata">FormData</a></code>
      <dd>
       <p>Let the <a href="#request-entity-body">request entity body</a> be the result of running
       the
-      <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart/form-data-encoding-algorithm" class="external"><code>multipart/form-data</code> encoding algorithm</a>
+      <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>
       with <var>data</var> as <var>form data set</var> and with
-      <a href="http://encoding.spec.whatwg.org/#utf-8" class="external">utf-8</a> as the
+      <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a> as the
       explicit character encoding.
       <!-- need to provide explicit character encoding because otherwise the
            encoding of the document is used -->
@@ -1228,16 +1232,16 @@ method must run these steps:
       "<code title="">multipart/form-data;</code>",
       a U+0020 SPACE character,
       "<code title="">boundary=</code>", and the
-      <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart/form-data-boundary-string" class="external"><code>multipart/form-data</code> boundary string</a>
+      <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart/form-data-boundary-string"><code>multipart/form-data</code> boundary string</a>
       generated by the
-      <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart/form-data-encoding-algorithm" class="external"><code>multipart/form-data</code> encoding algorithm</a>.
+      <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart/form-data-encoding-algorithm"><code>multipart/form-data</code> encoding algorithm</a>.
      </dd>
 
     </dl>
 
     <p>If a <code>Content-Type</code> header is in
     <a href="#author-request-headers">author request headers</a> and its value is a
-    <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#valid-mime-type" class="external">valid MIME type</a> that has a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#valid-mime-type">valid MIME type</a> that has a
     <code>charset</code> parameter whose value is not a case-insensitive
     match for <var title="">encoding</var>, and <var title="">encoding</var>
     is not null, set all the <code>charset</code> parameters of that
@@ -1253,7 +1257,7 @@ method must run these steps:
    </li>
 
    <li><p>If the <a href="#synchronous-flag">synchronous flag</a> is set, release the
-   <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#storage-mutex" class="external">storage mutex</a>.</li>
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#storage-mutex">storage mutex</a>.</li>
 
    <li><p>Unset the <a href="#error-flag">error flag</a>,
    <a href="#upload-complete-flag">upload complete flag</a> and <a href="#upload-events-flag">upload events flag</a>.
@@ -1271,10 +1275,10 @@ method must run these steps:
     <ol>
      <li><p>Set the <a href="#send-flag"><code>send()</code> flag</a>.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-loadstart"><a href="#event-xhr-loadstart">loadstart</a></code>.</li>
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-loadstart"><a href="#event-xhr-loadstart">loadstart</a></code>.</li>
 
      <li><p>If the <a href="#upload-complete-flag">upload complete flag</a> is unset,
-     <a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">fire a progress event</a> named <code title="event-xhr-loadstart"><a href="#event-xhr-loadstart">loadstart</a></code>
+     <a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">fire a progress event</a> named <code title="event-xhr-loadstart"><a href="#event-xhr-loadstart">loadstart</a></code>
      on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.</li>
 
      <li><p>Return the <code title="dom-XMLHttpRequest-send"><a href="#dom-xmlhttprequest-send">send()</a></code>
@@ -1285,15 +1289,15 @@ method must run these steps:
    <li>
     <dl class="switch">
      <dt>If the <a href="#source-origin">source origin</a> and the <a href="#request-url">request URL</a>
-     are <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" class="external">same origin</a></dt>
+     are <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a></dt>
      <dt>If the <a href="#request-url">request URL</a>'s
-     <code title="url-scheme" class="external"><a href="http://www.w3.org/html/wg/drafts/html/master/urls.html#url-scheme">&lt;scheme&gt;</a></code> is
+     <code class="external" title="url-scheme"><a href="http://www.w3.org/html/wg/drafts/html/master/urls.html#url-scheme">&lt;scheme&gt;</a></code> is
      "<code title="">data</code>"
 
      <dd>
       <p>These are the <dfn id="same-origin-request-steps">same-origin request steps</dfn>.</p>
 
-      <p><a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" class="external">Fetch</a> the
+      <p><a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch">Fetch</a> the
       <a href="#request-url">request URL</a> from <i title="">origin</i>
       <a href="#source-origin">source origin</a>, using
       <a href="#referrer-source">referrer source</a> as
@@ -1332,7 +1336,7 @@ method must run these steps:
 
         <p>While processing the request, as data becomes available and when
         the user interferes with the request,
-        <a title="queue a task" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task" class="external">queue tasks</a>
+        <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task" title="queue a task">queue tasks</a>
         to update the <a href="#response-entity-body">response entity body</a> and follow the
         <a href="#same-origin-request-event-rules">same-origin request event rules</a>.</p>
        </dd>
@@ -1346,7 +1350,7 @@ method must run these steps:
 
 
 
-      <p>Make a <a href="http://www.w3.org/TR/cors/#cross-origin-request" class="external">cross-origin request</a>,
+      <p>Make a <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request">cross-origin request</a>,
       passing these as parameters:</p>
 
       <dl>
@@ -1430,13 +1434,13 @@ method must run these steps:
 
   <p>If authentication fails,
   <a href="#source-origin">source origin</a> and the
-  <a href="#request-url">request URL</a> are <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" class="external">same origin</a>,
+  <a href="#request-url">request URL</a> are <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a>,
   <code title="http-authorization">Authorization</code> is not in the list
   of <a href="#author-request-headers">author request headers</a>,
   <a href="#request-url">request URL</a>'s
-  <a title="concept-url-username" href="http://url.spec.whatwg.org/#concept-url-username" class="external">username</a> is
+  <a class="external" href="http://url.spec.whatwg.org/#concept-url-username" title="concept-url-username">username</a> is
   the empty string and <a href="#request-url">request URL</a>'s
-  <a title="concept-url-password" href="http://url.spec.whatwg.org/#concept-url-password" class="external">password</a> is
+  <a class="external" href="http://url.spec.whatwg.org/#concept-url-password" title="concept-url-password">password</a> is
   null, user agents should prompt the end user for their username and
   password.</p>
 
@@ -1447,7 +1451,7 @@ method must run these steps:
   <p class="note">Unfortunately end users are prompted because of legacy
   content constraints. However, when possible this behavior is prohibited,
   as it is bad UI. E.g. that is why the
-  <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" class="external">same origin</a> restriction is made above.
+  <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a> restriction is made above.
 
   <hr>
 
@@ -1524,12 +1528,12 @@ method must run these steps:
 
     <ol>
      <li><p>Set the <a href="#request-url">request URL</a> to the
-     <a href="http://url.spec.whatwg.org/#url" class="external">URL</a> conveyed by the
+     <a class="external" href="http://url.spec.whatwg.org/#url">URL</a> conveyed by the
      <code>Location</code> header.</li>
 
      <li><p>If the <a href="#source-origin">source origin</a> and the
-     <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin" class="external">origin</a> of <a href="#request-url">request URL</a>
-     are <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin" class="external">same origin</a> transparently follow
+     <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">origin</a> of <a href="#request-url">request URL</a>
+     are <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#same-origin">same origin</a> transparently follow
      the redirect while observing the
      <a href="#same-origin-request-event-rules">same-origin request event rules</a>.
 
@@ -1579,7 +1583,7 @@ method must run these steps:
    <dt>Once the whole <a href="#response-entity-body">response entity body</a> has been
    received</dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a> and the state is
-   <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a></dt>
+   <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a></dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set</dt>
    <dd><p><a href="#switch-done">Switch to the DONE state</a>.</dd>
@@ -1594,16 +1598,16 @@ method must run these steps:
    <dt>If the <a href="#error-flag">error flag</a> is set
    <dd><p>Terminate these steps.
 
-   <dt>If the <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a>
    is <i>preflight complete</i> and the <a href="#synchronous-flag">synchronous flag</a> is
    unset</dt>
    <dd><p><a href="#make-upload-progress-notifications">Make upload progress notifications</a>.</dd>
 
-   <dt>If the <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a>
    is <i title="">network error</i></dt>
    <dd><p>This is a <a href="#network-error">network error</a>.</dd>
 
-   <dt>If the <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a>
+   <dt>If the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a>
    is <i title="">abort error</i></dt>
    <dd><p>This is an <a href="#abort-error">abort error</a>.</dd>
 
@@ -1613,7 +1617,7 @@ method must run these steps:
    <dd><p>This is a <a href="#timeout-error">timeout error</a>.</dd>
 
    <dt>Once all HTTP headers have been received, the
-   <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dd>
     <p><a href="#switch-headers-received">Switch to the HEADERS_RECEIVED state</a>.</p>
@@ -1623,22 +1627,22 @@ method must run these steps:
 
    <dt>Once the first byte (or more) of the
    <a href="#response-entity-body">response entity body</a> has been received, the
-   <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is unset</dt>
    <dd><p><a href="#switch-loading">Switch to the LOADING state</a>.</dd>
 
    <dt>Once the whole <a href="#response-entity-body">response entity body</a> has been received
-   and the <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a> is
+   and the <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i></dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the state is
-   <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a></dt>
+   <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a></dt>
    <dt>If there is no <a href="#response-entity-body">response entity body</a>, the
-   <a href="http://www.w3.org/TR/cors/#cross-origin-request-status" class="external">cross-origin request status</a> is
+   <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request-status">cross-origin request status</a> is
    <i>success</i>, and the <a href="#synchronous-flag">synchronous flag</a> is set</dt>
    <dd><p><a href="#switch-done">Switch to the DONE state</a>.</dd>
   </dl>
@@ -1670,14 +1674,14 @@ method must run these steps:
   <ol>
    <li><p><a href="#terminate-the-request">Terminate the request</a>.
 
-   <li><p>Change the state to <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>.</li>
+   <li><p>Change the state to <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.</li>
 
    <li><p>If the <a href="#synchronous-flag">synchronous flag</a> is set,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    <var>exception</var> exception.</li>
 
    <li>
-    <p><a title="concept-event-fire" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" class="external">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</p>
+    <p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</p>
 
     <p class="note">At this point it is clear that the
     <a href="#synchronous-flag">synchronous flag</a> is unset.</p>
@@ -1691,22 +1695,22 @@ method must run these steps:
     <ol>
      <li><p>Set the <a href="#upload-complete-flag">upload complete flag</a>.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named
      <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code> on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named
      <var title="">event</var> on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named
      <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code> on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
     </ol>
    </li>
 
-   <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>.
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>.
 
-   <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <var title="">event</var>.
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <var title="">event</var>.
 
-   <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>.
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>.
   </ol>
 
   <hr>
@@ -1716,9 +1720,9 @@ method must run these steps:
   run these steps:</p>
 
   <ol>
-   <li><p>Change the state to <a title="dom-XMLHttpRequest-HEADERS_RECEIVED" href="#dom-xmlhttprequest-headers_received">HEADERS_RECEIVED</a>.</li>
+   <li><p>Change the state to <a href="#dom-xmlhttprequest-headers_received" title="dom-XMLHttpRequest-HEADERS_RECEIVED">HEADERS_RECEIVED</a>.</li>
 
-   <li><p><a title="concept-event-fire" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" class="external">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
   </ol>
 
   <p>When it is said to
@@ -1726,9 +1730,9 @@ method must run these steps:
   steps:</p>
 
   <ol>
-   <li><p>Change the state to <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a>.</li>
+   <li><p>Change the state to <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a>.</li>
 
-   <li><p><a title="concept-event-fire" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" class="external">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
   </ol>
 
   <p>When it is said to
@@ -1740,15 +1744,15 @@ method must run these steps:
 
    <li><p>Unset the <a href="#synchronous-flag">synchronous flag</a>.
 
-   <li><p>Change the state to <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>.</li>
+   <li><p>Change the state to <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.</li>
 
-   <li><p><a title="concept-event-fire" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" class="external">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
 
-   <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>.
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>.
 
-   <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-load"><a href="#event-xhr-load">load</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-load"><a href="#event-xhr-load">load</a></code>.</li>
 
-   <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>.</li>
+   <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>.</li>
 
   </ol>
 
@@ -1756,8 +1760,8 @@ method must run these steps:
   <hr>
 
   <p>When it is said to <dfn id="make-progress-notifications">make progress notifications</dfn>, while the
-  download is progressing, <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task" class="external">queue a task</a> to
-  <a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
+  download is progressing, <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task">queue a task</a> to
+  <a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
   about every 50ms or for every byte received, whichever is <em>least</em>
   frequent.</p>
 
@@ -1769,8 +1773,8 @@ method must run these steps:
   <ul>
    <li><p>While the request entity body is being transmitted and the
    <a href="#upload-complete-flag">upload complete flag</a> is unset,
-   <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task" class="external">queue a task</a> to
-   <a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code> on
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task">queue a task</a> to
+   <a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code> on
    the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object about every 50ms or for
    every byte transmitted, whichever is <em>least</em> frequent.</li>
 
@@ -1779,18 +1783,18 @@ method must run these steps:
     (irrespective of whether the server has started transmitting a response
     or the status code of such a response) and the
     <a href="#upload-complete-flag">upload complete flag</a> is still unset,
-    <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task" class="external">queue a task</a> to run these substeps:
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#queue-a-task">queue a task</a> to run these substeps:
 
     <ol>
      <li><p>Set the <a href="#upload-complete-flag">upload complete flag</a>.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
      on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-load"><a href="#event-xhr-load">load</a></code>
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-load"><a href="#event-xhr-load">load</a></code>
      on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>
      on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
     </ol>
   </ul>
@@ -1800,30 +1804,30 @@ method must run these steps:
   <h4 id="the-abort()-method"><span class="secno">4.6.8 </span>The <code title="">abort()</code> method</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-abort" href="#dom-xmlhttprequest-abort">abort</a>()</code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-abort" title="dom-XMLHttpRequest-abort">abort</a>()</code>
    <dd>Cancels any network activity.
   </dl>
 
-<p>The <dfn title="dom-XMLHttpRequest-abort" id="dom-xmlhttprequest-abort"><code>abort()</code></dfn> method must run
+<p>The <dfn id="dom-xmlhttprequest-abort" title="dom-XMLHttpRequest-abort"><code>abort()</code></dfn> method must run
 these steps:
 
   <ol>
    <li><p><a href="#terminate-the-request">Terminate the request</a>.
 
    <li>
-    <p>If the state is <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a>,
-    <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a> with the
+    <p>If the state is <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a>,
+    <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a> with the
     <a href="#send-flag"><code>send()</code> flag</a> being unset, or
-    <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a> go to the next step.</p>
+    <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a> go to the next step.</p>
 
     <p>Otherwise, run these substeps:</p>
 
     <ol>
-     <li><p>Change the state to <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>.</li>
+     <li><p>Change the state to <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.</li>
 
      <li><p>Unset the <a href="#send-flag"><code>send()</code> flag</a>.
 
-     <li><p><a title="concept-event-fire" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" class="external">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-event-fire" title="concept-event-fire">Fire an event</a> named <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code>.</li>
 
      <li>
       <p>If the <a href="#upload-complete-flag">upload complete flag</a> is false run these
@@ -1832,26 +1836,26 @@ these steps:
       <ol>
        <li><p>Set the <a href="#upload-complete-flag">upload complete flag</a> to true.</li>
 
-       <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
+       <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>
        on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.
 
-       <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-abort"><a href="#event-xhr-abort">abort</a></code>
+       <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-abort"><a href="#event-xhr-abort">abort</a></code>
        on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.</li>
 
-       <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>
+       <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>
        on the <code><a href="#xmlhttprequestupload">XMLHttpRequestUpload</a></code> object.</li>
       </ol>
      </li>
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>.
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-progress"><a href="#event-xhr-progress">progress</a></code>.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-abort"><a href="#event-xhr-abort">abort</a></code>.
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-abort"><a href="#event-xhr-abort">abort</a></code>.
 
-     <li><p><a title="concept-event-fire-progress" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" class="external">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>.
+     <li><p><a class="external" href="http://dev.w3.org/2006/webapi/progress/#concept-event-fire-progress" title="concept-event-fire-progress">Fire a progress event</a> named <code title="event-xhr-loadend"><a href="#event-xhr-loadend">loadend</a></code>.
     </ol>
    </li>
 
    <li>
-    <p>Change the state to <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a>.</p>
+    <p>Change the state to <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a>.</p>
 
     <p class="note">No <code title="event-xhr-readystatechange"><a href="#event-xhr-readystatechange">readystatechange</a></code> event is dispatched.</p>
    </li>
@@ -1861,7 +1865,7 @@ these steps:
 
   <h3 id="response"><span class="secno">4.7 </span>Response</h3>
 
-  <p>A <dfn title="concept-response-header" id="concept-response-header">response header</dfn> is a HTTP response header
+  <p>A <dfn id="concept-response-header" title="concept-response-header">response header</dfn> is a HTTP response header
   transmitted before the <a href="#response-entity-body">response entity body</a>.
   <a href="#refsHTTP">[HTTP]</a>
 
@@ -1871,19 +1875,19 @@ these steps:
   <h4 id="the-status-attribute"><span class="secno">4.7.1 </span>The <code title="">status</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-status" href="#dom-xmlhttprequest-status">status</a></code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-status" title="dom-XMLHttpRequest-status">status</a></code>
    <dd><p>Returns the HTTP status code.
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-status" id="dom-xmlhttprequest-status"><code>status</code></dfn>
+  <dfn id="dom-xmlhttprequest-status" title="dom-XMLHttpRequest-status"><code>status</code></dfn>
   attribute must return the result of running these
   steps:</p>
 
   <ol>
    <li><p>If the state is
-   <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a> or
-   <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>, return 0.
+   <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> or
+   <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>, return 0.
 
    <li><p>If the <a href="#error-flag">error flag</a> is set, return 0.</li>
 
@@ -1894,18 +1898,18 @@ these steps:
   <h4 id="the-statustext-attribute"><span class="secno">4.7.2 </span>The <code title="">statusText</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-statusText" href="#dom-xmlhttprequest-statustext">statusText</a></code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-statustext" title="dom-XMLHttpRequest-statusText">statusText</a></code>
    <dd><p>Returns the HTTP status text.
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-statusText" id="dom-xmlhttprequest-statustext"><code>statusText</code></dfn>
+  <dfn id="dom-xmlhttprequest-statustext" title="dom-XMLHttpRequest-statusText"><code>statusText</code></dfn>
   attribute must return the result of running these steps:
 
   <ol>
    <li><p>If the state is
-   <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a> or
-   <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>, return the empty string.
+   <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> or
+   <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>, return the empty string.
 
    <li><p>If the <a href="#error-flag">error flag</a> is set, return the empty string.
 
@@ -1916,20 +1920,20 @@ these steps:
   <h4 id="the-getresponseheader()-method"><span class="secno">4.7.3 </span>The <code title="">getResponseHeader()</code> method</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-getResponseHeader" href="#dom-xmlhttprequest-getresponseheader">getResponseHeader</a>(<var title="">header</var>)</code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-getresponseheader" title="dom-XMLHttpRequest-getResponseHeader">getResponseHeader</a>(<var title="">header</var>)</code>
    <dd><p>Returns the header field value from the response of which the
    field name matches <var title="">header</var>, unless the field name is
    <code>Set-Cookie</code> or <code>Set-Cookie2</code>.
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-getResponseHeader" id="dom-xmlhttprequest-getresponseheader"><code>getResponseHeader(<var title="">header</var>)</code></dfn>
+  <dfn id="dom-xmlhttprequest-getresponseheader" title="dom-XMLHttpRequest-getResponseHeader"><code>getResponseHeader(<var title="">header</var>)</code></dfn>
   method must run these steps:
 
   <ol>
    <li><p>If the state is
-   <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a> or
-   <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>, return null.
+   <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> or
+   <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>, return null.
 
    <li><p>If the <a href="#error-flag">error flag</a> is set, return null.
 
@@ -1937,20 +1941,20 @@ these steps:
    <code>Set-Cookie</code> or <code>Set-Cookie2</code>, return null.</li>
 
    <li><p>If <var>header</var> is a case-insensitive match for multiple
-   <a title="concept-response-header" href="#concept-response-header">response headers</a>, return the values of these
+   <a href="#concept-response-header" title="concept-response-header">response headers</a>, return the values of these
    headers as a single concatenated string separated from each other by a
    U+002C COMMA U+0020 SPACE character pair.
 
    <li><p>If <var>header</var> is a case-insensitive match for a single
-   <a title="concept-response-header" href="#concept-response-header">response header</a>, return the value of that header.
+   <a href="#concept-response-header" title="concept-response-header">response header</a>, return the value of that header.
 
    <li><p>Return null.</li>
   </ol>
 
   <p class="note">The Cross-Origin Resource Sharing specification filters
-  <a title="concept-response-header" href="#concept-response-header">response headers</a> exposed by
+  <a href="#concept-response-header" title="concept-response-header">response headers</a> exposed by
   <code title="dom-XMLHttpRequest-getResponseHeader"><a href="#dom-xmlhttprequest-getresponseheader">getResponseHeader()</a></code>
-  for <a title="cross-origin request" href="http://www.w3.org/TR/cors/#cross-origin-request" class="external">cross-origin requests</a>.
+  for <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request" title="cross-origin request">cross-origin requests</a>.
   <a href="#refsCORS">[CORS]</a>
 
   <div class="example">
@@ -1976,24 +1980,24 @@ client.onreadystatechange = function() {
   <h4 id="the-getallresponseheaders()-method"><span class="secno">4.7.4 </span>The <code title="">getAllResponseHeaders()</code> method</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-getAllResponseHeaders" href="#dom-xmlhttprequest-getallresponseheaders">getAllResponseHeaders</a>()</code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-getallresponseheaders" title="dom-XMLHttpRequest-getAllResponseHeaders">getAllResponseHeaders</a>()</code>
    <dd><p>Returns all headers from the response, with the exception of those
    whose field name is <code>Set-Cookie</code> or
    <code>Set-Cookie2</code>.
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-getAllResponseHeaders" id="dom-xmlhttprequest-getallresponseheaders"><code>getAllResponseHeaders()</code></dfn>
+  <dfn id="dom-xmlhttprequest-getallresponseheaders" title="dom-XMLHttpRequest-getAllResponseHeaders"><code>getAllResponseHeaders()</code></dfn>
   method must run these steps:</p>
 
   <ol>
    <li><p>If the state is
-   <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a> or
-   <a title="dom-XMLHttpRequest-OPENED" href="#dom-xmlhttprequest-opened">OPENED</a>, return the empty string.
+   <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a> or
+   <a href="#dom-xmlhttprequest-opened" title="dom-XMLHttpRequest-OPENED">OPENED</a>, return the empty string.
 
    <li><p>If the <a href="#error-flag">error flag</a> is set, return the empty string.
 
-   <li><p>Return all <a title="concept-response-header" href="#concept-response-header">response headers</a>, excluding headers that are a
+   <li><p>Return all <a href="#concept-response-header" title="concept-response-header">response headers</a>, excluding headers that are a
    case-insensitive match for <code>Set-Cookie</code> or
    <code>Set-Cookie2</code>, as a single string, with each header line
    separated by a U+000D CR U+000A LF pair, excluding the status line, and
@@ -2002,9 +2006,9 @@ client.onreadystatechange = function() {
   </ol>
 
   <p class="note">The Cross-Origin Resource Sharing specification filters
-  <a title="concept-response-header" href="#concept-response-header">response headers</a> exposed by
+  <a href="#concept-response-header" title="concept-response-header">response headers</a> exposed by
   <code title="dom-XMLHttpRequest-getAllResponseHeaders"><a href="#dom-xmlhttprequest-getallresponseheaders">getAllResponseHeaders()</a></code>
-  for <a title="cross-origin request" href="http://www.w3.org/TR/cors/#cross-origin-request" class="external">cross-origin requests</a>.
+  for <a class="external" href="http://www.w3.org/TR/cors/#cross-origin-request" title="cross-origin request">cross-origin requests</a>.
   <a href="#refsCORS">[CORS]</a>
 
   <div class="example">
@@ -2037,7 +2041,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
   <p>The <dfn id="response-mime-type">response MIME type</dfn> is the
   MIME type the <code>Content-Type</code> header contains excluding any
   parameters and
-  <a href="http://dev.w3.org/2006/webapi/DOM4Core/#converted-to-ascii-lowercase" class="external">converted to ASCII lowercase</a>, or null if
+  <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#converted-to-ascii-lowercase">converted to ASCII lowercase</a>, or null if
   the response header can not be parsed or was omitted. The
   <dfn id="override-mime-type">override MIME type</dfn> is initially null
   and can get a value if
@@ -2061,12 +2065,12 @@ Content-Type: text/plain; charset=utf-8</code></pre>
   <hr>
 
   <p>The <dfn id="response-entity-body">response entity body</dfn> is the
-  fragment of the <a href="http://tools.ietf.org/html/rfc2616/#section-7.2" class="external">entity body</a> of the
+  fragment of the <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-7.2">entity body</a> of the
   response received so far
-  (<a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a>) or the complete
-  <a href="http://tools.ietf.org/html/rfc2616/#section-7.2" class="external">entity body</a> of the response
-  (<a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>). If the response
-  does not have an <a href="http://tools.ietf.org/html/rfc2616/#section-7.2" class="external">entity body</a>, the
+  (<a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a>) or the complete
+  <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-7.2">entity body</a> of the response
+  (<a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>). If the response
+  does not have an <a class="external" href="http://tools.ietf.org/html/rfc2616/#section-7.2">entity body</a>, the
   <a href="#response-entity-body">response entity body</a> is null.</p>
 
   <p class="note">The <a href="#response-entity-body">response entity body</a> is updated as part
@@ -2109,7 +2113,7 @@ Content-Type: text/plain; charset=utf-8</code></pre>
 
   <p>The
   <dfn id="document-response-entity-body">document response entity body</dfn>
-  is either a <a title="concept-document" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" class="external">document</a>
+  is either a <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
   representing the <a href="#response-entity-body">response entity body</a> or null. If the
   <a href="#document-response-entity-body">document response entity body</a> is null, set it to the return value of the
   following algorithm:</p>
@@ -2118,8 +2122,8 @@ Content-Type: text/plain; charset=utf-8</code></pre>
    <li><p>If the <a href="#response-entity-body">response entity body</a> is null, return null.</li>
 
    <li><p>If the
-   <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-   <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment" class="external">worker environment</a>, return null.
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>, return null.
 
    <li><p>If <a href="#final-mime-type">final MIME type</a> is not null,
    <code>text/html</code>, <code>text/xml</code>,
@@ -2150,22 +2154,22 @@ Content-Type: text/plain; charset=utf-8</code></pre>
      the return value.
 
      <li><p>If <var>charset</var> is null, set <var>charset</var> to
-     <a href="http://encoding.spec.whatwg.org/#utf-8" class="external">utf-8</a>.
+     <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
      <li><p>Let <var title="">document</var> be a
-     <a title="concept-document" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" class="external">document</a> that
+     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a> that
      represents the result parsing <a href="#response-entity-body">response entity body</a> following the rules set
      forth in the HTML Standard for an HTML parser with scripting disabled and
-     <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#a-known-definite-encoding" class="external">a known definite encoding</a> <var>charset</var>.
+     <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#a-known-definite-encoding">a known definite encoding</a> <var>charset</var>.
      <a href="#refsHTML">[HTML]</a>
 
      <li><p>Flag <var title="">document</var> as an
-     <a href="http://dev.w3.org/2006/webapi/DOM4Core/#html-document" class="external">HTML document</a>.
+     <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#html-document">HTML document</a>.
     </ol>
 
    <li>
     <p>Otherwise, let <var title="">document</var> be a
-    <a title="concept-document" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" class="external">document</a>
+    <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document" title="concept-document">document</a>
     that represents the result of parsing the
     <a href="#response-entity-body">response entity body</a> following the rules set forth in the
     XML specifications. If that fails (unsupported character encoding,
@@ -2177,23 +2181,23 @@ Content-Type: text/plain; charset=utf-8</code></pre>
     will be applied.</p> <!-- XXX more formally?! -->
 
    <li><p>If <var>charset</var> is null, set <var>charset</var> to
-   <a href="http://encoding.spec.whatwg.org/#utf-8" class="external">utf-8</a>.
+   <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
    <!-- can only happen in the XML case -->
 
    <li><p>Set <var title="">document</var>'s
-   <a title="concept-document-encoding" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-encoding" class="external">encoding</a> to
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-encoding" title="concept-document-encoding">encoding</a> to
    <var>charset</var>.
 
    <li><p>Set <var title="">document</var>'s
-   <a title="concept-document-content-type" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-content-type" class="external">content type</a>
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-content-type" title="concept-document-content-type">content type</a>
    to <a href="#final-mime-type">final MIME type</a>.
 
    <li><p>Set <var title="">document</var>'s
-   <a title="concept-document-url" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-url" class="external">URL</a> to
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-document-url" title="concept-document-url">URL</a> to
    <a href="#request-url">request URL</a>.
 
    <li><p>Set <var title="">document</var>'s
-   <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin" class="external">origin</a> to
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">origin</a> to
    <a href="#source-origin">source origin</a>.
 
    <li><p>Return <var title="">document</var>.
@@ -2206,7 +2210,7 @@ algorithm:</p>
 
 <ol>
  <li><p>Let <var title="">JSON text</var> be the result of running
- <a href="http://encoding.spec.whatwg.org/#utf-8-decode" class="external">utf-8 decode</a> on byte stream
+ <a class="external" href="http://encoding.spec.whatwg.org/#utf-8-decode">utf-8 decode</a> on byte stream
  <a href="#response-entity-body">response entity body</a>.
 
  <li><p>Return the result of invoking the initial value of the <code title="">parse</code>
@@ -2242,56 +2246,57 @@ algorithm:</p>
     "<code title="">text</code>" simple.
 
    <li><p>If <var>charset</var> is null, set <var>charset</var> to
-   <a href="http://encoding.spec.whatwg.org/#utf-8" class="external">utf-8</a>.
+   <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
    <li><p>Return the result of running
-   <a href="http://encoding.spec.whatwg.org/#decode" class="external">decode</a> on byte stream
+   <a class="external" href="http://encoding.spec.whatwg.org/#decode">decode</a> on byte stream
    <a href="#response-entity-body">response entity body</a> using fallback encoding
    <var>charset</var>.
   </ol>
 
   <p class="note">Authors are strongly encouraged to always encode their
-  resources using <a href="http://encoding.spec.whatwg.org/#utf-8" class="external">utf-8</a>.
+  resources using <a class="external" href="http://encoding.spec.whatwg.org/#utf-8">utf-8</a>.
 
 
 
   <h4 id="the-overridemimetype()-method"><span class="secno">4.7.6 </span>The <code title="">overrideMimeType()</code> method</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-overrideMimeType" href="#dom-xmlhttprequest-overridemimetype">overrideMimeType</a>(<var title="">mime</var>)</code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-overridemimetype" title="dom-XMLHttpRequest-overrideMimeType">overrideMimeType</a>(<var title="">mime</var>)</code>
    <dd>
     <p>Sets the <code>Content-Type</code> header for the response to
     <var title="">mime</var>.</p>
 
     <p>Throws an "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>"
     exception if the state is
-    <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a> or
-    <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>.
+    <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
+    <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.
 
-    <p>Throws a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code> if
+    <p>Throws a "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception if
     <var title="">mime</var> is not a valid media type.</p>
    </dd>
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-overrideMimeType" id="dom-xmlhttprequest-overridemimetype"><code>overrideMimeType(<var title="">mime</var>)</code></dfn>
+  <dfn id="dom-xmlhttprequest-overridemimetype" title="dom-XMLHttpRequest-overrideMimeType"><code>overrideMimeType(<var title="">mime</var>)</code></dfn>
   method must run these steps:
 
   <ol>
    <li><p>If the state is
-   <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a> or
-   <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
+   <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>,
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>If parsing <var title="">mime</var> analogously to the value of
    the <code>Content-Type</code> header fails,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> a JavaScript <code class="external"><a href="http://dev.w3.org/2006/webapi/WebIDL/#dfn-predefined-exception">TypeError</a></code>.
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> a
+   "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#syntaxerror">SyntaxError</a></code>" exception.
 
    <li><p>If <var title="">mime</var> is successfully parsed, set
    <a href="#override-mime-type">override MIME type</a> to its MIME type,
    excluding any parameters, and
-   <a href="http://dev.w3.org/2006/webapi/DOM4Core/#converted-to-ascii-lowercase" class="external">converted to ASCII lowercase</a>.
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#converted-to-ascii-lowercase">converted to ASCII lowercase</a>.
 
    <li><p>If a <code>charset</code> parameter is successfully parsed, set
    <a href="#override-charset">override charset</a> to its value.</li>
@@ -2302,7 +2307,7 @@ algorithm:</p>
   <h4 id="the-responsetype-attribute"><span class="secno">4.7.7 </span>The <code title="">responseType</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-responseType" href="#dom-xmlhttprequest-responsetype">responseType</a></code><code> [ = <var title="">value</var> ]</code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-responsetype" title="dom-XMLHttpRequest-responseType">responseType</a></code><code> [ = <var title="">value</var> ]</code>
    <dd>
     <p>Returns the response type.</p>
     <p>Can be set to change the response type. Values are:
@@ -2313,22 +2318,22 @@ algorithm:</p>
     "<code title="">json</code>", and
     "<code title="">text</code>".</p>
     <p>When set: setting to "<code title="">document</code>" is ignored if the
-    <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-    <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment" class="external">worker environment</a>
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception if the
-    state is <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a> or
-    <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>.
+    state is <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
+    <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>.
     <p>When set: throws an
     "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception if the
     <a href="#synchronous-flag">synchronous flag</a> is set and the
-    <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-    <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment" class="external">document environment</a>.
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+    <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a>.
   </dl>
 
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-responseType" id="dom-xmlhttprequest-responsetype"><code>responseType</code></dfn>
+  <dfn id="dom-xmlhttprequest-responsetype" title="dom-XMLHttpRequest-responseType"><code>responseType</code></dfn>
   attribute must return its value. Initially its value must be the empty
   string.
 
@@ -2338,21 +2343,21 @@ algorithm:</p>
 
   <ol>
    <li><p>If the state is
-   <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a> or
-   <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
+   <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>,
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
    <li><p>If the
-   <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-   <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment" class="external">document environment</a> and the
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#document-environment">document environment</a> and the
    <a href="#synchronous-flag">synchronous flag</a> is set,
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidaccesserror">InvalidAccessError</a></code>" exception.
 
    <li><p>If the
-   <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-   <a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment" class="external">worker environment</a> and the given
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a> and the given
    value is "<code title="">document</code>", terminate these steps.
 
    <li><p>Set the
@@ -2366,12 +2371,12 @@ algorithm:</p>
   <h4 id="the-response-attribute"><span class="secno">4.7.8 </span>The <code title="">response</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-response" href="#dom-xmlhttprequest-response">response</a></code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-response" title="dom-XMLHttpRequest-response">response</a></code>
    <dd><p>Returns the <a href="#response-entity-body">response entity body</a>.
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-response" id="dom-xmlhttprequest-response"><code>response</code></dfn>
+  <dfn id="dom-xmlhttprequest-response" title="dom-XMLHttpRequest-response"><code>response</code></dfn>
   attribute must return the result of running these
   steps:</p>
 
@@ -2381,8 +2386,8 @@ algorithm:</p>
    <dd>
     <ol>
      <li><p>If the state is not
-     <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a> or
-     <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>, return the empty string.</li>
+     <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
+     <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>, return the empty string.</li>
 
      <li><p>If the <a href="#error-flag">error flag</a> is set, return the empty string.</li>
 
@@ -2393,7 +2398,7 @@ algorithm:</p>
    <dd>
     <ol>
      <li><p>If the state is not
-     <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>, return null.</li>
+     <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>, return null.</li>
 
      <li><p>If the <a href="#error-flag">error flag</a> is set, return null.</li>
 
@@ -2433,7 +2438,7 @@ algorithm:</p>
   <h4 id="the-responsetext-attribute"><span class="secno">4.7.9 </span>The <code title="">responseText</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-responseText" href="#dom-xmlhttprequest-responsetext">responseText</a></code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-responsetext" title="dom-XMLHttpRequest-responseText">responseText</a></code>
    <dd>
     <p>Returns the <a href="#text-response-entity-body">text response entity body</a>.
 
@@ -2444,7 +2449,7 @@ algorithm:</p>
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-responseText" id="dom-xmlhttprequest-responsetext"><code>responseText</code></dfn>
+  <dfn id="dom-xmlhttprequest-responsetext" title="dom-XMLHttpRequest-responseText"><code>responseText</code></dfn>
   attribute must return the result of running these
   steps:</p>
 
@@ -2453,13 +2458,13 @@ algorithm:</p>
    <li><p>If
    <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> is not
    the empty string or "<code title="">text</code>",
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.
 
 
    <li><p>If the state is not
-   <a title="dom-XMLHttpRequest-LOADING" href="#dom-xmlhttprequest-loading">LOADING</a> or
-   <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>, return the empty string.</li>
+   <a href="#dom-xmlhttprequest-loading" title="dom-XMLHttpRequest-LOADING">LOADING</a> or
+   <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>, return the empty string.</li>
 
    <li><p>If the <a href="#error-flag">error flag</a> is set, return the empty string.</li>
 
@@ -2470,7 +2475,7 @@ algorithm:</p>
   <h4 id="the-responsexml-attribute"><span class="secno">4.7.10 </span>The <code title="">responseXML</code> attribute</h4>
 
   <dl class="domintro">
-   <dt><code><var title="">client</var> . <a title="dom-XMLHttpRequest-responseXML" href="#dom-xmlhttprequest-responsexml">responseXML</a></code>
+   <dt><code><var title="">client</var> . <a href="#dom-xmlhttprequest-responsexml" title="dom-XMLHttpRequest-responseXML">responseXML</a></code>
    <dd>
     <p>Returns the <a href="#document-response-entity-body">document response entity body</a>.</p>
 
@@ -2481,7 +2486,7 @@ algorithm:</p>
   </dl>
 
   <p>The
-  <dfn title="dom-XMLHttpRequest-responseXML" id="dom-xmlhttprequest-responsexml"><code>responseXML</code></dfn>
+  <dfn id="dom-xmlhttprequest-responsexml" title="dom-XMLHttpRequest-responseXML"><code>responseXML</code></dfn>
   attribute must return the result of running these steps:</p>
 
   <ol>
@@ -2489,12 +2494,12 @@ algorithm:</p>
    <li><p>If
    <code title="dom-XMLHttpRequest-responseType"><a href="#dom-xmlhttprequest-responsetype">responseType</a></code> is not
    the empty string or "<code title="">document</code>",
-   <a title="concept-throw" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" class="external">throw</a> an
+   <a class="external" href="http://dev.w3.org/2006/webapi/DOM4Core/#concept-throw" title="concept-throw">throw</a> an
    "<code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#invalidstateerror">InvalidStateError</a></code>" exception.</li>
 
 
    <li><p>If the state is not
-   <a title="dom-XMLHttpRequest-DONE" href="#dom-xmlhttprequest-done">DONE</a>, return null.
+   <a href="#dom-xmlhttprequest-done" title="dom-XMLHttpRequest-DONE">DONE</a>, return null.
 
    <li><p>If the <a href="#error-flag">error flag</a> is set, return null.
 
@@ -2525,45 +2530,45 @@ algorithm:</p>
    </thead>
    <tbody>
     <tr>
-     <td><dfn title="event-xhr-readystatechange" id="event-xhr-readystatechange"><code>readystatechange</code></dfn></td>
+     <td><dfn id="event-xhr-readystatechange" title="event-xhr-readystatechange"><code>readystatechange</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/DOM4Core/#event">Event</a></code></td>
      <td>The <code title="dom-XMLHttpRequest-readyState"><a href="#dom-xmlhttprequest-readystate">readyState</a></code> attribute changes
-     value, except when it changes to <a title="dom-XMLHttpRequest-UNSENT" href="#dom-xmlhttprequest-unsent">UNSENT</a>.
+     value, except when it changes to <a href="#dom-xmlhttprequest-unsent" title="dom-XMLHttpRequest-UNSENT">UNSENT</a>.
     </tr>
     <tr>
-     <td><dfn title="event-xhr-loadstart" id="event-xhr-loadstart"><code>loadstart</code></dfn></td>
+     <td><dfn id="event-xhr-loadstart" title="event-xhr-loadstart"><code>loadstart</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
      <td>The request starts.</td>
     </tr>
     <tr>
-     <td><dfn title="event-xhr-progress" id="event-xhr-progress"><code>progress</code></dfn></td>
+     <td><dfn id="event-xhr-progress" title="event-xhr-progress"><code>progress</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
      <td>Transmitting data.</td>
     </tr>
     <tr>
-     <td><dfn title="event-xhr-abort" id="event-xhr-abort"><code>abort</code></dfn></td>
+     <td><dfn id="event-xhr-abort" title="event-xhr-abort"><code>abort</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
      <td>The request has been aborted. For instance, by invoking the
      <code title="dom-XMLHttpRequest-abort"><a href="#dom-xmlhttprequest-abort">abort()</a></code> method.</td>
     </tr>
     <tr>
-     <td><dfn title="event-xhr-error" id="event-xhr-error"><code>error</code></dfn></td>
+     <td><dfn id="event-xhr-error" title="event-xhr-error"><code>error</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
      <td>The request has failed.</td>
     </tr>
     <tr>
-     <td><dfn title="event-xhr-load" id="event-xhr-load"><code>load</code></dfn></td>
+     <td><dfn id="event-xhr-load" title="event-xhr-load"><code>load</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
      <td>The request has successfully completed.</td>
     </tr>
     <tr>
-     <td><dfn title="event-xhr-timeout" id="event-xhr-timeout"><code>timeout</code></dfn></td>
+     <td><dfn id="event-xhr-timeout" title="event-xhr-timeout"><code>timeout</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
      <td>The author specified timeout has passed before the request
      completed.</td>
     </tr>
     <tr>
-     <td><dfn title="event-xhr-loadend" id="event-xhr-loadend"><code>loadend</code></dfn></td>
+     <td><dfn id="event-xhr-loadend" title="event-xhr-loadend"><code>loadend</code></dfn></td>
      <td><code class="external"><a href="http://dev.w3.org/2006/webapi/progress/#progressevent">ProgressEvent</a></code></td>
      <td>The request has completed (either in success or failure).</td>
     </tr>
@@ -2574,97 +2579,97 @@ algorithm:</p>
 
 <h2 id="interface-formdata"><span class="secno">5 </span>Interface <code title="">FormData</code></h2>
 
-<pre class="idl">[<a title="dom-FormData" href="#dom-formdata">Constructor</a>(optional <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#htmlformelement" class="external">HTMLFormElement</a> <var>form</var>)]
+<pre class="idl">[<a href="#dom-formdata" title="dom-FormData">Constructor</a>(optional <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/forms.html#htmlformelement">HTMLFormElement</a> <var>form</var>)]
 interface <dfn id="formdata">FormData</dfn> {
-  void <a title="dom-FormData-append" href="#dom-formdata-append">append</a>([EnsureUTF16] DOMString <var>name</var>, <a href="http://dev.w3.org/2006/webapi/FileAPI/#blob" class="external">Blob</a> <var>value</var>, optional [EnsureUTF16] DOMString <var>filename</var>);
-  void <a title="dom-FormData-append" href="#dom-formdata-append">append</a>([EnsureUTF16] DOMString <var>name</var>, [EnsureUTF16] DOMString <var>value</var>);
+  void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>([EnsureUTF16] DOMString <var>name</var>, <a class="external" href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a> <var>value</var>, optional [EnsureUTF16] DOMString <var>filename</var>);
+  void <a href="#dom-formdata-append" title="dom-FormData-append">append</a>([EnsureUTF16] DOMString <var>name</var>, [EnsureUTF16] DOMString <var>value</var>);
 };</pre>
 
-<p>If the <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment" class="external">JavaScript global environment</a> is a
-<a href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment" class="external">worker environment</a>, <code><a href="#formdata">FormData</a></code> must be
-<a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#exposed-to-javascript" class="external">exposed to JavaScript</a> as if the constructor part of the
+<p>If the <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#javascript-global-environment">JavaScript global environment</a> is a
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#worker-environment">worker environment</a>, <code><a href="#formdata">FormData</a></code> must be
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#exposed-to-javascript">exposed to JavaScript</a> as if the constructor part of the
 IDL reads <code title="">[Constructor]</code> (i.e. has no arguments).
 <!-- maybe move this into IDL at some point -->
 
 <p>The <code><a href="#formdata">FormData</a></code> object represents an ordered list of
-<dfn title="concept-FormData-entry" id="concept-formdata-entry">entries</dfn>. Each
-<a title="concept-FormData-entry" href="#concept-formdata-entry">entry</a> consists of a
-<dfn title="concept-FormData-entry-name" id="concept-formdata-entry-name">name</dfn> and a
-<dfn title="concept-FormData-entry-value" id="concept-formdata-entry-value">value</dfn>.
+<dfn id="concept-formdata-entry" title="concept-FormData-entry">entries</dfn>. Each
+<a href="#concept-formdata-entry" title="concept-FormData-entry">entry</a> consists of a
+<dfn id="concept-formdata-entry-name" title="concept-FormData-entry-name">name</dfn> and a
+<dfn id="concept-formdata-entry-value" title="concept-FormData-entry-value">value</dfn>.
 
 <p>For the purposes of interaction with other algorithms, an
-<a title="concept-FormData-entry" href="#concept-formdata-entry">entry</a>'s type is "string" if
-<a title="concept-FormData-entry-value" href="#concept-formdata-entry-value">value</a> is a string and "file" otherwise. If
-an <a title="concept-FormData-entry" href="#concept-formdata-entry">entry</a>'s type is "file", its filename is the
-value of <a title="concept-FormData-entry" href="#concept-formdata-entry">entry</a>'s
-<a title="concept-FormData-entry-value" href="#concept-formdata-entry-value">value</a>'s
-<code title="dom-File-name" class="external"><a href="http://dev.w3.org/2006/webapi/FileAPI/#dfn-name">name</a></code> attribute.
+<a href="#concept-formdata-entry" title="concept-FormData-entry">entry</a>'s type is "string" if
+<a href="#concept-formdata-entry-value" title="concept-FormData-entry-value">value</a> is a string and "file" otherwise. If
+an <a href="#concept-formdata-entry" title="concept-FormData-entry">entry</a>'s type is "file", its filename is the
+value of <a href="#concept-formdata-entry" title="concept-FormData-entry">entry</a>'s
+<a href="#concept-formdata-entry-value" title="concept-FormData-entry-value">value</a>'s
+<code class="external" title="dom-File-name"><a href="http://dev.w3.org/2006/webapi/FileAPI/#dfn-name">name</a></code> attribute.
 
 <dl class="domintro">
- <dt><code><var title="">fd</var> = new <a title="dom-FormData" href="#dom-formdata">FormData</a>([<var title="">form</var>])</code>
+ <dt><code><var title="">fd</var> = new <a href="#dom-formdata" title="dom-FormData">FormData</a>([<var title="">form</var>])</code>
  <dd><p>Returns a new <code><a href="#formdata">FormData</a></code> object, optionally initialized with the
- <a title="concept-FormData-entry" href="#concept-formdata-entry">entries</a> from <var title="">form</var> (if given).
+ <a href="#concept-formdata-entry" title="concept-FormData-entry">entries</a> from <var title="">form</var> (if given).
 
- <dt><code><var title="">fd</var> . <a title="dom-FormData-append" href="#dom-formdata-append">append</a>(<var title="">name</var>, <var title="">value</var> [, <var title="">filename</var>])</code>
- <dd><p>Appends a new <a title="concept-FormData-entry" href="#concept-formdata-entry">entry</a> to the
+ <dt><code><var title="">fd</var> . <a href="#dom-formdata-append" title="dom-FormData-append">append</a>(<var title="">name</var>, <var title="">value</var> [, <var title="">filename</var>])</code>
+ <dd><p>Appends a new <a href="#concept-formdata-entry" title="concept-FormData-entry">entry</a> to the
  <code><a href="#formdata">FormData</a></code> object.
 </dl>
 
   <p>The
-  <dfn title="dom-FormData" id="dom-formdata"><code>FormData(<var>form</var>)</code></dfn>
+  <dfn id="dom-formdata" title="dom-FormData"><code>FormData(<var>form</var>)</code></dfn>
   constructor must run these steps:
 
   <ol>
    <li><p>Let <var title="">fd</var> be a new <code><a href="#formdata">FormData</a></code> object.
 
    <li><p>If <var>form</var> is given, set <var title="">fd</var>'s
-   <a title="concept-FormData-entry" href="#concept-formdata-entry">entries</a> to the result of
-   <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#constructing-the-form-data-set" class="external">constructing the form data set</a> for <var>form</var>.
+   <a href="#concept-formdata-entry" title="concept-FormData-entry">entries</a> to the result of
+   <a class="external" href="http://www.w3.org/html/wg/drafts/html/master/forms.html#constructing-the-form-data-set">constructing the form data set</a> for <var>form</var>.
 
    <li><p>Return <var title="">fd</var>.
   </ol>
 
 <p>The
-<dfn title="dom-FormData-append" id="dom-formdata-append"><code>append(<var>name</var>, <var>value</var>, <var>filename</var>)</code></dfn>
+<dfn id="dom-formdata-append" title="dom-FormData-append"><code>append(<var>name</var>, <var>value</var>, <var>filename</var>)</code></dfn>
 method must run these steps:
 
 <ol>
  <li><p>Let <var title="">entry</var> be a new
- <a title="concept-FormData-entry" href="#concept-formdata-entry">entry</a>.
+ <a href="#concept-formdata-entry" title="concept-FormData-entry">entry</a>.
 
- <li><p>Set <var title="">entry</var>'s <a title="concept-FormData-entry-name" href="#concept-formdata-entry-name">name</a>
+ <li><p>Set <var title="">entry</var>'s <a href="#concept-formdata-entry-name" title="concept-FormData-entry-name">name</a>
  to <var>name</var>.
 
  <li><p>If <var>value</var> is a <code class="external"><a href="http://dev.w3.org/2006/webapi/FileAPI/#blob">Blob</a></code>, set
  <var>value</var> to a new <code class="external"><a href="http://dev.w3.org/2006/webapi/FileAPI/#file">File</a></code> object whose
- <code title="dom-File-name" class="external"><a href="http://dev.w3.org/2006/webapi/FileAPI/#dfn-name">name</a></code> attribute value is
+ <code class="external" title="dom-File-name"><a href="http://dev.w3.org/2006/webapi/FileAPI/#dfn-name">name</a></code> attribute value is
  "<code title="">blob</code>".
 
  <li><p>If <var>value</var> is a <code class="external"><a href="http://dev.w3.org/2006/webapi/FileAPI/#file">File</a></code> and
  <var title="">filename</var> is given, set <var>value</var>'s
- <code title="dom-File-name" class="external"><a href="http://dev.w3.org/2006/webapi/FileAPI/#dfn-name">name</a></code> attribute value to
+ <code class="external" title="dom-File-name"><a href="http://dev.w3.org/2006/webapi/FileAPI/#dfn-name">name</a></code> attribute value to
  <var title="">filename</var>.
 
- <li><p>Set <var title="">entry</var>'s <a title="concept-FormData-entry-value" href="#concept-formdata-entry-value">value</a>
+ <li><p>Set <var title="">entry</var>'s <a href="#concept-formdata-entry-value" title="concept-FormData-entry-value">value</a>
  to <var>value</var>.
 
  <li><p>Append <var title="">entry</var> to <code><a href="#formdata">FormData</a></code> object's list of
- <a title="concept-FormData-entry" href="#concept-formdata-entry">entries</a>.
+ <a href="#concept-formdata-entry" title="concept-FormData-entry">entries</a>.
 </ol>
 
 
 <h2 id="data:-urls-and-http"><span class="secno">6 </span><code>data:</code> URLs and HTTP</h2>
 
 <p class="note">To ensure
-<a title="data-protocol" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" class="external"><code>data:</code> URLs</a>
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URLs</a>
 can function in APIs designed around HTTP, such as
 <code><a href="#xmlhttprequest">XMLHttpRequest</a></code>, this section details how they work.
 Specifications defining similar URL schemes ought to take inspiration from
 this section.
 
 <p>When a
-<a title="data-protocol" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" class="external"><code>data:</code> URL</a> is
-<a title="fetch" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" class="external">fetched</a> using the HTTP method
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> is
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#fetch" title="fetch">fetched</a> using the HTTP method
 <code>GET</code>, determine the response as follows:
 
 <ul>
@@ -2680,12 +2685,12 @@ this section.
  <span><code>data:</code> URL</span>, or the default otherwise.
 
  <li><p>Set the <a href="#response-entity-body">response entity body</a> to the data the
- <a href="http://url.spec.whatwg.org/#url" class="external">URL</a> encodes, base64 decoded if the
+ <a class="external" href="http://url.spec.whatwg.org/#url">URL</a> encodes, base64 decoded if the
  "<code title="">;base64</code>" flag is present.
 </ul>
 
 <p>Otherwise, including when the
-<a title="data-protocol" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" class="external"><code>data:</code> URL</a> cannot be
+<a class="external" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#data-protocol" title="data-protocol"><code>data:</code> URL</a> cannot be
 parsed, this is a network error.
 
 <h2 class="no-num" id="references">References</h2>
