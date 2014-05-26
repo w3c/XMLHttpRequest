@@ -88,6 +88,7 @@
     "label": "label",
     "macintosh": "macintosh",
     "name": "name",
+    "scalarvaluestring": "scalarvaluestring",
     "shift_jis": "shift_jis",
     "shift_jis decoder": "shift_jis-decoder",
     "shift_jis encoder": "shift_jis-encoder",
